@@ -10,7 +10,7 @@ Repo            | Domain                    | Description
 `dlx-spec`      |      [`spec.dlx.org`][2]  | The specifications for the DLX data format.
 `dlx-api`       |       [`api.dlx.org`][3]  | The API endpoints and authorization.
 `dlx-app`       |       [`app.dlx.org`][4]  | The client-side app.
-`dlx-dev`       | [`developer.dlx.org`][5]  | Information for developers.
+`(dlx-org)` | [`developer.dlx.org`][5]  | Information for developers.
 `dlx-writer`    |    [`writer.dlx.org`][6]  | Platform for writing linguistic publications in HTML, using live DLX data.
 `dlx-tools`     |     [`tools.dlx.org`][7]  | A variety of standalone tools and apps.
 `dlx-{project}` |  `{project}.dlx.org`      | Any other major tools/initiatives we undertake.
