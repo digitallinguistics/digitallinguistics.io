@@ -35,6 +35,5 @@ node_modules
 
 # Custom
 .jshintrc
-build.js
 credentials.js
 dev.js

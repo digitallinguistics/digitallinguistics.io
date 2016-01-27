@@ -43,5 +43,5 @@ server.listen(app.get('port'), () => {
 // dev modules
 if (global.env === 'local') {
   require('./lib/dev');
-  require('./lib/build');
+  require('./build/build');
 }
