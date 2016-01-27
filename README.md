@@ -1,7 +1,7 @@
 # Digital Linguistics (DLx)
 Digital Linguistics (DLx) is the science of the digital storage, representation, manipulation, and dissemination of linguistic data.
 
-## Project Architecture
+## Website Architecture
 (dlx = digitallinguistics)
 
 Repo            | Domain                    | Description
