@@ -29,5 +29,13 @@
   "main": "app.js",
   "engines": {
     "node": "5.x"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0"
+  },
+  "devDependencies": {
+    "less": "^2.5.3"
   }
 }
