@@ -16,11 +16,12 @@ Repo            | Domain                    | Description
 `dlx-tools`     |     [`tools.dlx.org`][8]  | A variety of standalone tools and apps.
 `dlx-{project}` |  `{project}.dlx.org`      | Any other major tools/initiatives we undertake.
 `dlx-js`        |       [(GitHub, npm)][9]  | JavaScript SDK for accessing the DLx API, downloadable/installable from GitHub/npm.
-`dlx-py`        |       [(GitHub, npm)][10] | Python SDK for accessing the DLx API, downloadable/installable from GitHub/npm.
- (any)          |       [`dev.dlx.org`][11] | An Azure Web Apps account for server-side testing.
-`sandbox`       |   [`sandbox.dlx.org`][12] | An area for us to play around in.
-`assets`        |              [(none)][13] | Assets shared across projects.
-`data`          |              [(data)][14] | Sample and temporary data. Should eventually become obsolete once the database is up and running.
+`dlx-node`      |       [(GitHub, npm)][10] | Node SDK for accessing the DLx API, downloadable/installable from GitHub/npm.
+`dlx-py`        |       [(GitHub, npm)][11] | Python SDK for accessing the DLx API, downloadable/installable from GitHub/npm.
+ (any)          |       [`dev.dlx.org`][12] | An Azure Web Apps account for server-side testing.
+`sandbox`       |   [`sandbox.dlx.org`][13] | An area for us to play around in.
+`assets`        |              [(none)][14] | Assets shared across projects.
+`data`          |              [(data)][15] | Sample and temporary data. Should eventually become obsolete once the database is up and running.
 
 [1]:  http://digitallinguistics.org/
 [2]: http://blog.digitallinguistics.org/
@@ -31,8 +32,9 @@ Repo            | Domain                    | Description
 [7]:  http://writer.digitallinguistics.org/
 [8]:  http://tools.digitallinguistics.org/
 [9]:  https://github.com/digitallinguistics/dlx-js/
-[10]:  https://github.com/digitallinguistics/dlx-py/
-[11]: http://dev.digitallinguistics.org/
-[12]: http://sandbox.digitallinguistics.org/
-[13]: https://github.com/digitallinguistics/assets/
-[14]: https://github.com/digitallinguistics/data/
+[10]: https://github.com/digitallinguistics/dlx-node/
+[11]: https://github.com/digitallinguistics/dlx-py/
+[12]: http://dev.digitallinguistics.org/
+[13]: http://sandbox.digitallinguistics.org/
+[14]: https://github.com/digitallinguistics/assets/
+[15]: https://github.com/digitallinguistics/data/

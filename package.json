@@ -1,0 +1,33 @@
+{
+  "name": "dlx-org",
+  "version": "1.0.0",
+  "description": "The DLx website.",
+  "homepage": "https://github.com/digitallinguistics/dlx-org#readme",
+  "contributors": [
+    {
+      "name": "Daniel W. Hieber",
+      "url": "http://danielhieber.com"
+    },
+    {
+      "name": "Patrick J. Hall"
+    }
+  ],
+  "keywords": [
+    "DLx",
+    "Digital Linguistics",
+    "linguistics",
+    "language documentation"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digitallinguistics/dlx-org.git"
+  },
+  "bugs": {
+    "url": "https://github.com/digitallinguistics/dlx-org/issues"
+  },
+  "main": "app.js",
+  "engines": {
+    "node": "5.x"
+  }
+}
