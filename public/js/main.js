@@ -1,3 +1,22 @@
+const main = {
 
+  resize() {
 
-var tag = "Wed Jan 27 2016 17:40:38 GMT-0800 (Pacific Standard Time)";
+    console.log('ran');
+
+    const mobile = window.matchMedia && window.matchMedia('(max-device-width: 699px)').matches || screen.width < 700 || window.innerWidth < 700;
+
+    if (mobile) {
+      document.body.classList.add('mobile');
+      document.body.classList.remove('desktop');
+    } else {
+      document.body.classList.add('desktop');
+      document.body.classList.remove('mobile');
+    }
+  }
+
+};
+
+main.resize();
+
+window.addEventListener('resize', throttle(main.resize));
