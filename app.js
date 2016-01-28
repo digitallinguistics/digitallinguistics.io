@@ -1,5 +1,6 @@
 // Node modules
 require('./lib/config');
+const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const credentials = require('./lib/credentials');
 const express = require('express');
@@ -21,6 +22,8 @@ app.set('view engine', 'handlebars'); // use Handlebars for templating
 app.use(middleware.logUrl); // URL logging for debugging
 app.use(middleware.logins); // gets user and user login status from cookie
 app.use(express.static(__dirname + '/public')); // routing for static files
+app.use(middleware.body); // sets Content-Type header to application/json for POST requests
+app.use(bodyParser.json()); // parse JSON data in the request body
 app.use(cookieParser(credentials.secret)); // cooking handling
 
 // routing
