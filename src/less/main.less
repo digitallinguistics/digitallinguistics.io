@@ -1,0 +1,37 @@
+@wugbotBlue: #3399ff;
+
+.row {
+  flex-direction: row;
+}
+
+#header {
+  #logo { padding: 0.5rem; }
+  div { align-items: center; }
+  h1 { font-size: 2rem; }
+  nav {
+    #menuButton { cursor: pointer; height: 2rem; width: 2rem; }
+    background-color: black;
+    color: white;
+    font-size: 1.5rem;
+    li {
+      padding: 0.5rem;
+      a { border-bottom: 1px solid black; }
+      a:hover { border-bottom: 1px solid white; }
+    }
+  }
+}
+
+.mobile {
+  #header > nav {
+    align-items: center;
+    ul { align-items: center; }
+  }
+}
+
+.desktop {
+  #header {
+    div { .row; }
+    nav > ul { align-items: flex-start; }
+    #menuButton { display: none; }
+  }
+}

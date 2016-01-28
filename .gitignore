@@ -37,3 +37,4 @@ node_modules
 .jshintrc
 credentials.js
 dev.js
+nodemon.json
