@@ -33,7 +33,8 @@
   "dependencies": {
     "cookie-parser": "^1.4.1",
     "express": "^4.13.4",
-    "express-handlebars": "^3.0.0"
+    "express-handlebars": "^3.0.0",
+    "uuid": "^2.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.4.5",
