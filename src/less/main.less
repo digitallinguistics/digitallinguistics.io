@@ -1,9 +1,65 @@
 @wugbotBlue: #3399ff;
 
-.row {
-  flex-direction: row;
+// styling by class
+.boldBlue {
+  color: @wugbotBlue;
+  font-weight: bold;
 }
 
+.button {
+  background-color: white;
+  border: 1.5px solid black;
+  border-radius: 5px;
+  padding: 0.25rem 0.5rem;
+
+  &:hover:not(:disabled) {
+    color: @wugbotBlue;
+    border: 1.5px solid @wugbotBlue;
+  }
+}
+
+code {
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+  font-family: 'Fira Sans Mono';
+  font-size: 0.75rem;
+  padding: 0.25rem;
+}
+
+.field {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 0.25rem 0.5rem;
+
+  &:focus { border: 1px solid @wugbotBlue; }
+}
+
+.header {
+  align-self: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 0rem 0.5rem;
+}
+
+input[type=email],
+input[type=text] {
+  .field;
+}
+
+.link {
+  border-bottom: 2px solid white;
+  &:link { .boldBlue; }
+  &:visited { .boldBlue; }
+  &:hover { border-bottom: 2px solid @wugbotBlue; }
+  &:active { .boldBlue; }
+}
+
+.row { flex-direction: row; }
+
+small { font-size: 80%; }
+
+// styling by DOM
 #header {
   #logo { padding: 0.5rem; }
   div { align-items: center; }
@@ -18,8 +74,23 @@
       a { border-bottom: 1px solid black; }
       a:hover { border-bottom: 1px solid white; }
     }
+    #userName {
+      padding: 0.5rem;
+      a { border-bottom: 1px solid black; padding: 0rem 0.25rem; }
+      a:hover { border-bottom: 1px solid white; }
+    }
   }
 }
+
+main { flex-grow: 1; }
+
+#footer { align-items: center; }
+
+  #github {
+    .link;
+    div { align-items: center; .row; }
+    img { height: 2rem; padding: 0.25rem; width: 2rem; }
+  }
 
 .mobile {
   #header > nav {
@@ -31,7 +102,8 @@
 .desktop {
   #header {
     div { .row; }
-    nav > ul { align-items: flex-start; }
+    nav { .row; }
+    nav > ul { align-items: flex-start; flex-grow: 1; .row; }
     #menuButton { display: none; }
   }
 }

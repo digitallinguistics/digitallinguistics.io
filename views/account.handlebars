@@ -31,3 +31,16 @@
   </form>
 
 </main>
+
+{{#section 'script'}}
+<script>
+
+var enableButton = function (ev) {
+  if (ev.target.tagName === 'INPUT') { document.getElementById('updateInfoButton').disabled = false; }
+  window.removeEventListener('input', enableButton);
+};
+
+window.addEventListener('input', enableButton);
+
+</script>
+{{/section}}
