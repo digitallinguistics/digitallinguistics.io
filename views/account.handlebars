@@ -8,12 +8,12 @@
 
     <label for=firstName>
       <p>First Name (Given Name)</p>
-      <input type=text name=firstName value='{{user.firstName}}'>
+      <input type=text name=firstName value='{{user.firstName}}' required>
     </label>
 
     <label for=lastName>
       <p>Last Name (Family Name)</p>
-      <input type=text name=lastName value='{{user.lastName}}'>
+      <input type=text name=lastName value='{{user.lastName}}' required>
     </label>
 
     <label for=affiliation>
@@ -23,7 +23,7 @@
 
     <label for=email>
       <p>Email</p>
-      <input type=email name=email value={{user.id}}>
+      <input type=email name=email value={{user.id}} required disabled>
     </label>
 
     <button id=updateInfoButton type=submit name=updateInfoButton disabled>Update Information</button>
