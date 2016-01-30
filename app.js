@@ -2,6 +2,7 @@
 require('./lib/config');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 const credentials = require('./lib/credentials');
 const express = require('express');
 const expressHandlebars = require('express-handlebars');
@@ -20,7 +21,7 @@ app.set('view engine', 'handlebars'); // use Handlebars for templating
 
 // middleware
 app.use(middleware.logUrl); // URL logging for debugging
-app.use('/json/:file', require('cors')());
+app.use('/json', cors(middleware.corsOpts));
 app.use(express.static(__dirname + '/public')); // routing for static files
 app.use(cookieParser(credentials.secret)); // cooking handling
 app.use(middleware.requestParser); // pre-formats header, body, and query
