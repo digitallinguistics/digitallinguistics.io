@@ -84,7 +84,7 @@ body { font-size: 1.25rem; }
 
 #header {
   #logo { padding: 0.75rem; }
-  div { align-items: center; }
+  #banner { align-items: center; }
   h1 { font-size: 2rem; }
   nav {
     #menuButton { cursor: pointer; height: 2rem; width: 2rem; }
@@ -98,6 +98,8 @@ body { font-size: 1.25rem; }
     }
     #userName {
       .page-padded;
+      .row;
+      align-items: baseline;
       a { border-bottom: 1px solid black; padding: 0rem 0.25rem; }
       a:hover { border-bottom: 1px solid white; }
     }
@@ -119,7 +121,9 @@ main { flex-grow: 1; }
 .mobile {
   #header > nav {
     align-items: center;
-    ul { align-items: center; }
+    #userName { order: 1; }
+    #menuButton { order: 2; margin: 0.75rem; }
+    ul { align-items: center; order: 3; }
   }
 }
 

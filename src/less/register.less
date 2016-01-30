@@ -1,8 +1,9 @@
 @import (reference) './src/less/main.less';
 
 #register {
-  align-items: center;
-  h1 { .header; }
+  align-items: stretch;
+  h1 { .header; text-align: center; }
+  form { margin: 1rem; }
   button { align-self: center; }
 }
 
@@ -17,5 +18,9 @@
     flex-wrap: wrap;
     justify-content: space-between;
   }
-  input { margin: 0.5rem; }
+  input {
+    flex-grow: 1;
+    margin: 0.5rem;
+    max-width: 50%;
+  }
 }
