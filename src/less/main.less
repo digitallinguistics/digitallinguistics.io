@@ -62,6 +62,7 @@ input[type=text] {
 
 .link {
   border-bottom: 1px solid white;
+  color: @wugbotBlue;
   &:link { color: @wugbotBlue; }
   &:visited { color: @wugbotBlue; }
   &:hover { border-bottom: 1px solid @wugbotBlue; }
@@ -69,6 +70,8 @@ input[type=text] {
 }
 
 .padded { padding: 0.25em 0.5rem; }
+
+.page-padded { padding: 0.5rem 0.75rem; }
 
 .row { flex-direction: row; }
 
@@ -89,12 +92,12 @@ body { font-size: 1.25rem; }
     color: white;
     font-size: 1.5rem;
     li {
-      padding: 0.5rem 0.75rem;
+      .page-padded;
       a { border-bottom: 1px solid black; }
       a:hover { border-bottom: 1px solid white; }
     }
     #userName {
-      padding: 0.5rem 0.75rem;
+      .page-padded;
       a { border-bottom: 1px solid black; padding: 0rem 0.25rem; }
       a:hover { border-bottom: 1px solid white; }
     }
@@ -103,13 +106,15 @@ body { font-size: 1.25rem; }
 
 main { flex-grow: 1; }
 
-#footer { align-items: center; }
-
+#footer {
+  .page-padded;
+  align-items: center;
   #github {
-    .link;
     div { align-items: center; .row; }
     img { height: 2rem; padding: 0.25rem; width: 2rem; }
+    p { .link; }
   }
+}
 
 .mobile {
   #header > nav {
