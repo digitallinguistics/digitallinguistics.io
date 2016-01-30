@@ -17,7 +17,7 @@ const throttle = fn => {
   };
 };
 
-var qs = (function () {
+const qs = (function () {
 
   var hasOwnProperty = function (obj, prop) {
     return Object.prototype.hasOwnProperty.call(obj, prop);
@@ -39,7 +39,7 @@ var qs = (function () {
     }
   };
 
-  var qs = {
+  const qs = {
 
     parse: function (qs, sep, eq, options) {
       sep = sep || '&';
