@@ -61,11 +61,11 @@ input[type=text] {
 }
 
 .link {
-  border-bottom: 2px solid white;
-  &:link { .boldBlue; }
-  &:visited { .boldBlue; }
-  &:hover { border-bottom: 2px solid @wugbotBlue; }
-  &:active { .boldBlue; }
+  border-bottom: 1px solid white;
+  &:link { color: @wugbotBlue; }
+  &:visited { color: @wugbotBlue; }
+  &:hover { border-bottom: 1px solid @wugbotBlue; }
+  &:active { color: @wugbotBlue; }
 }
 
 .padded { padding: 0.25em 0.5rem; }
@@ -77,6 +77,8 @@ small { font-size: 80%; }
 .wide-padded { padding: 0.5em 1em; }
 
 // styling by DOM
+body { font-size: 1.25rem; }
+
 #header {
   #logo { padding: 0.75rem; }
   div { align-items: center; }
@@ -123,4 +125,9 @@ main { flex-grow: 1; }
     nav > ul { align-items: flex-start; flex-grow: 1; .row; }
     #menuButton { display: none; }
   }
+}
+
+#error {
+  padding: 1rem;
+  h1 { .header; align-self: center; }
 }
