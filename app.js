@@ -20,6 +20,7 @@ app.set('view engine', 'handlebars'); // use Handlebars for templating
 
 // middleware
 app.use(middleware.logUrl); // URL logging for debugging
+app.use('/json/:file', require('cors')());
 app.use(express.static(__dirname + '/public')); // routing for static files
 app.use(cookieParser(credentials.secret)); // cooking handling
 app.use(middleware.requestParser); // pre-formats header, body, and query
