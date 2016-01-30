@@ -24,6 +24,7 @@ app.use(express.static(__dirname + '/public')); // routing for static files
 app.use(cookieParser(credentials.secret)); // cooking handling
 app.use(middleware.requestParser); // pre-formats header, body, and query
 app.use(bodyParser.json()); // parse JSON data in the request body
+app.use(bodyParser.urlencoded({ extended: false })); // parse form data in the request body
 
 // routing
 require('./lib/router')(app);
