@@ -37,6 +37,7 @@ const server = http.createServer(app);
 
 server.listen(app.get('port'), () => {
   console.log(`Server started. Press Ctrl+C to terminate.
+    Project: dlx-org
     Port: ${app.get('port')}
     Time: ${new Date()}
     Node: ${process.version}
