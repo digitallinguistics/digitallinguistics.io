@@ -20,7 +20,6 @@ app.set('view engine', 'handlebars'); // use Handlebars for templating
 
 // middleware
 app.use(middleware.logUrl); // URL logging for debugging
-app.use('/json/:file', require('cors')());
 app.use(express.static(__dirname + '/public')); // routing for static files
 app.use(cookieParser(credentials.secret)); // cooking handling
 app.use(middleware.requestParser); // pre-formats header, body, and query
@@ -38,6 +37,7 @@ const server = http.createServer(app);
 
 server.listen(app.get('port'), () => {
   console.log(`Server started. Press Ctrl+C to terminate.
+    Project: dlx-org
     Port: ${app.get('port')}
     Time: ${new Date()}
     Node: ${process.version}
