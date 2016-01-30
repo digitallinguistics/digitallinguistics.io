@@ -1,20 +1,26 @@
 @wugbotBlue: #3399ff;
 
 // styling by class
-.boldBlue {
-  color: @wugbotBlue;
-  font-weight: bold;
-}
+.boldBlue { color: @wugbotBlue; font-weight: bold; }
 
-.button {
-  background-color: white;
-  border: 1.5px solid black;
+button {
+  .wide-padded;
+  background-color: rgba(51, 153, 255, 0.8);
   border-radius: 5px;
-  padding: 0.25rem 0.5rem;
-
-  &:hover:not(:disabled) {
-    color: @wugbotBlue;
-    border: 1.5px solid @wugbotBlue;
+  color: white;
+  cursor: pointer;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  &:hover, &:focus {
+    background-image: linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
+  }
+  &:active {
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.15) inset, 0 0 6px rgba(0,0,0,0.20) inset;
+  }
+  &:disabled {
+    background-image: none;
+    box-shadow: none;
+    cursor: not-allowed;
+    opacity: 0.40;
   }
 }
 
@@ -27,19 +33,26 @@ code {
 }
 
 .field {
+  .padded;
   background-color: white;
   border: 1px solid #ccc;
-  border-radius: 3px;
-  padding: 0.25rem 0.5rem;
-
-  &:focus { border: 1px solid @wugbotBlue; }
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px #ddd;
+  &:focus {
+    border-color: @wugbotBlue;
+    &:invalid { border-color: #e9322d; color: #b94a48; }
+  }
+  &[disabled] {
+    background-color: #eaeded;
+    color: #cad2d3;
+    cursor: not-allowed;
+  }
 }
 
 .header {
-  align-self: center;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  padding: 0rem 0.5rem;
+  padding: 0.5rem;
 }
 
 input[type=email],
@@ -55,9 +68,13 @@ input[type=text] {
   &:active { .boldBlue; }
 }
 
+.padded { padding: 0.25em 0.5rem; }
+
 .row { flex-direction: row; }
 
 small { font-size: 80%; }
+
+.wide-padded { padding: 0.5em 1em; }
 
 // styling by DOM
 #header {
