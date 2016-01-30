@@ -1,0 +1,21 @@
+@import (reference) './src/less/main.less';
+
+#register {
+  align-items: center;
+  h1 { .header; }
+  button { align-self: center; }
+}
+
+.mobile #register {
+  label { margin: 0.5rem 0rem; }
+}
+
+.desktop #register {
+  label {
+    .row;
+    align-items: baseline;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  input { margin: 0.5rem; }
+}

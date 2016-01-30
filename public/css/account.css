@@ -1,1 +1,1 @@
-#account{align-items:center}#account h1{font-size:1.5rem;font-weight:bold;padding:.5rem}#account label{flex-direction:row;align-items:baseline;flex-wrap:wrap;justify-content:space-between}#account input{margin:.5rem}#account button{align-self:center;margin-right:.5rem}
+#account{align-items:center}#account h1{font-size:1.5rem;font-weight:bold;padding:.5rem}#account button{align-self:center}.mobile #account label{margin:.5rem 0}.desktop #account label{flex-direction:row;align-items:baseline;flex-wrap:wrap;justify-content:space-between}.desktop #account input{margin:.5rem}
