@@ -57,8 +57,7 @@ var deleteAccount = function (ev) {
     .then(res => {
       if (res.status === 204) { window.location.href = '/?logout=true'; }
       else { alert('There was a problem deleting your account.'); }
-    })
-    .catch(err => alert('There was a problem deleting your account.'));
+    }).catch(err => alert('There was a problem deleting your account.'));
 
   }
 };
