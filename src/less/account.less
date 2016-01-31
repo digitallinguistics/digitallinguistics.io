@@ -4,11 +4,16 @@
   align-items: stretch;
   h1 { .header; text-align: center; }
   form { margin: 1rem; }
-  button { align-self: center; }
+  button { align-self: center; margin: 0.5rem; }
+  #deleteAccountButton {
+    background-color: @errorRed;
+  }
 }
 
 .mobile #account {
   label { margin: 0.5rem 0rem; }
+  #updateInfoButton { order: 1; }
+  #deleteAccountButton { order: 2; }
 }
 
 .desktop #account {
@@ -22,5 +27,9 @@
     flex-grow: 1;
     margin: 0.5rem;
     max-width: 50%;
+  }
+  #buttons {
+    .row;
+    justify-content: space-around;
   }
 }
