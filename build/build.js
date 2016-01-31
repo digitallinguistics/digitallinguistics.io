@@ -3,12 +3,12 @@ const converter = require('./converter');
 const lessConverter = require('./less');
 
 const babelConfig = {
-  src: { path: './src/js', ext: 'js' },
+  src: { path: './src', ext: 'js' },
   dest: { path: './public/js', ext: 'js' }
 };
 
 const lessConfig = {
-  src: { path: './src/less', ext: 'less' },
+  src: { path: './public/less', ext: 'less' },
   dest: { path: './public/css', ext: 'css' }
 };
 
