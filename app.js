@@ -2,6 +2,7 @@
 require('./lib/config');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 const credentials = require('./lib/credentials');
 const express = require('express');
 const expressHandlebars = require('express-handlebars');
@@ -20,7 +21,12 @@ app.set('view engine', 'handlebars'); // use Handlebars for templating
 
 // middleware
 app.use(middleware.logUrl); // URL logging for debugging
+app.use('/static', cors(), express.static(__dirname + '/public')); // enable CORS and routing for static files
+
+// TODO: change references to all static files in DLx projects to use `/static` rather than just `/`
+// deprecate the following line
 app.use(express.static(__dirname + '/public')); // routing for static files
+
 app.use(cookieParser(credentials.secret)); // cooking handling
 app.use(middleware.requestParser); // pre-formats header, body, and query
 app.use(bodyParser.json()); // parse JSON data in the request body
