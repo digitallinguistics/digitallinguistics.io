@@ -13,7 +13,7 @@ Repo            | Domain                    | Description
 `dlx-login`     |     [`login.dlx.org`][17] | Single sign-on for any DLx sites or apps. Also handles OAuth requests and JWTs.
 `dlx-blog`      |      [`blog.dlx.org`][2]  | The DLx blog.
 `dlx-spec`      |      [`spec.dlx.org`][3]  | The specifications for the DLx data format.
-`dlx-api`       |       [`api.dlx.org`][4]  | The API endpoints and authorization.
+`dlx-api`       |       [`api.dlx.org`][4]  | The API and Socket.IO endpoints.
 `dlx-app`       |       [`app.dlx.org`][5]  | The client-side app.
 `dlx-dev`       | [`developer.dlx.org`][6]  | Information for developers.
 `dlx-writer`    |    [`writer.dlx.org`][7]  | Platform for writing linguistic publications in HTML, using live DLx data.
@@ -22,9 +22,7 @@ Repo            | Domain                    | Description
 `dlx-js`        |       [(GitHub, npm)][9]  | JavaScript SDK for accessing the DLx API, downloadable/installable from GitHub/npm.
 `dlx-node`      |       [(GitHub, npm)][10] | Node SDK for accessing the DLx API, downloadable/installable from GitHub/npm.
 `dlx-py`        |       [(GitHub, npm)][11] | Python SDK for accessing the DLx API, downloadable/installable from GitHub/npm.
-`sandbox`       |   [`sandbox.dlx.org`][13] | An area for us to play around in.
 `assets`        |       [`cdn.dlx.org`][14] | Assets shared across projects.
-`data`          |              [(data)][15] | Sample and temporary data. Should eventually become obsolete once the database is up and running.
 (any)          |       [`dev.dlx.org`][12] | An Azure Web Apps account for server-side testing.
 
 [1]:  http://digitallinguistics.org/
@@ -39,8 +37,6 @@ Repo            | Domain                    | Description
 [10]: https://github.com/digitallinguistics/dlx-node/
 [11]: https://github.com/digitallinguistics/dlx-py/
 [12]: http://dev.digitallinguistics.org/
-[13]: http://sandbox.digitallinguistics.org/
 [14]: https://github.com/digitallinguistics/assets/
-[15]: https://github.com/digitallinguistics/data/
 [16]: https://github.com/digitallinguistics/dlx-core/
 [17]: https://login.digitallinguistics.org/
