@@ -124,5 +124,3 @@ const qs = (function () {
   return qs;
 
 })();
-
-window.location.query = qs.parse(window.location.search.replace('?', ''));
