@@ -4,9 +4,10 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express = require('express');
 const expressHandlebars = require('express-handlebars');
-const handlers = require('./lib/handlers');
 const http = require('http');
+const package = require('./package');
 const path = require('path');
+const router = require('./lib/router');
 
 const hbsOptions = {
   defaultLayout: 'main',
@@ -43,11 +44,26 @@ app.use((req, res, next) => {
 });
 
 // routing
-require('./lib/router')(app);
+router.main(app);
+router.developer();
 
 // catch-all error handlers
-app.use(handlers.error404);
-app.use(handlers.error500);
+/* eslint-disable no-unused-vars */
+app.use((req, res, next) => {
+  res.render('error', {
+    status: 404,
+    error: 'Not found'
+  });
+});
+
+app.use((req, res, next) => {
+  res.render('error', {
+    status: 500,
+    error: 'Server error',
+    details: `Internal server error. Please consider opening an issue on GitHub: ${package.bugs}`
+  });
+});
+/* eslint-enable no-unused-vars */
 
 // start server
 const server = http.createServer(app);

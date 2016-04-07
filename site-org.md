@@ -7,8 +7,8 @@ Path       | Title         | Description
 /home      | Home          |
 /about     | About DLx     |
 /account   | Account       | => `account.digitallinguistics.org`; GET, POST, and DELETE (vhost)
+/learn     | Learn         | Wugbot, eventually
 /login     | Login         | => `login.digitallinguistics.org`
-/logout    | Logout        | Clears the user cookie
 /dev       | Developer     | => `developer.digitallinguistics.org` (vhost)
 /developer | Developer     | => `developer.digitallinguistics.org` (vhost)
 /blog      | Blog          | => `blog.digitallinguistics.org` (vhost?)
@@ -24,6 +24,7 @@ Path   | Title            | Description
 /home  | Dev Home         |
 /spec  | Data Format      | Include links to docs (GitHub) and raw schemas (permalinks).
 /tools | Tools & SDKS     |
+/app   | DLx App          | GitHub page for the DLx app
 /apps  | My Apps          | App management page.
 /blog  | Dev Blog         | Developer blog (subset of main blog?)
 /api   | The API          | Links to API docs, Swagger interface, Swagger file
