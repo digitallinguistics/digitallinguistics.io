@@ -34,7 +34,8 @@
     "body-parser": "^1.14.2",
     "cookie-parser": "^1.4.1",
     "express": "^4.13.4",
-    "express-handlebars": "^3.0.0"
+    "express-handlebars": "^3.0.0",
+    "vhost": "^3.0.2"
   },
   "devDependencies": {
     "less": "^2.5.3"

@@ -8,6 +8,7 @@ const http = require('http');
 const package = require('./package');
 const path = require('path');
 const router = require('./lib/router');
+const vhost = require('vhost');
 
 const hbsOptions = {
   defaultLayout: 'main',
@@ -22,8 +23,11 @@ const hbsOptions = {
   }
 };
 
-const app = express(); // initialize Express app
+/* eslint-disable new-cap */
+const app = express(); // initialize main Express app
+const dev = express.Router(); // create the router for the `development.digitallinguistics.org` subdomain
 const handlebars = expressHandlebars.create(hbsOptions); // initialize Handlebars
+/* eslint-enable new-cap */
 
 // app settings
 app.disable('x-powered-by'); // hide server information in the response
@@ -36,6 +40,7 @@ app.set('view engine', '.hbs'); // use Handlebars for templating
 app.use(express.static(path.join(__dirname, '/public'))); // routing for static files
 app.use(bodyParser.urlencoded({ extended: false })); // parse form data in the request body
 app.use(cookieParser(process.env.COOKIE_SECRET)); // cooking handling
+app.use(vhost(`development.${process.env.DOMAIN}`, dev)); // bind the `development` subdomain to the dev router
 
 // URL logging for debugging
 app.use((req, res, next) => {
@@ -45,7 +50,7 @@ app.use((req, res, next) => {
 
 // routing
 router.main(app);
-router.developer();
+router.developer(dev);
 
 // catch-all error handlers
 /* eslint-disable no-unused-vars */
