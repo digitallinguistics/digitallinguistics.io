@@ -8,6 +8,7 @@ const http = require('http');
 const package = require('./package');
 const path = require('path');
 const router = require('./lib/router');
+const users = require('./lib/users');
 const vhost = require('vhost');
 
 const hbsOptions = {
@@ -47,6 +48,9 @@ app.use((req, res, next) => {
   console.log(`Requested URL: ${req.url}`);
   next();
 });
+
+// user management
+app.use(users);
 
 // routing
 router.main(app);
