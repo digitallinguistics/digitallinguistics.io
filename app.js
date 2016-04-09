@@ -24,11 +24,9 @@ const hbsOptions = {
   }
 };
 
-/* eslint-disable new-cap */
 const app = express(); // initialize main Express app
-const dev = express.Router(); // create the router for the `development.digitallinguistics.org` subdomain
+const dev = express.Router(); /* create the router for the `development.digitallinguistics.org` subdomain */ // eslint-disable-line
 const handlebars = expressHandlebars.create(hbsOptions); // initialize Handlebars
-/* eslint-enable new-cap */
 
 // app settings
 app.disable('x-powered-by'); // hide server information in the response
@@ -57,22 +55,20 @@ router.main(app);
 router.developer(dev);
 
 // catch-all error handlers
-/* eslint-disable no-unused-vars */
-app.use((req, res, next) => {
+app.use((req, res, next) => { // eslint-disable-line
   res.render('error', {
     status: 404,
     error: 'Not found'
   });
 });
 
-app.use((req, res, next) => {
+app.use((req, res, next) => { // eslint-disable-line
   res.render('error', {
     status: 500,
     error: 'Server error',
     details: `Internal server error. Please consider opening an issue on GitHub: ${package.bugs}`
   });
 });
-/* eslint-enable no-unused-vars */
 
 // start server
 const server = http.createServer(app);
@@ -80,8 +76,8 @@ const server = http.createServer(app);
 server.listen(app.get('port'), () => {
   console.log(`Server started. Press Ctrl+C to terminate.
   Project: dlx-org
-  Port: ${app.get('port')}
-  Time: ${new Date()}
-  Node: ${process.version}
-  Env: ${process.env.NODE_ENV}`);
+  Port:    ${app.get('port')}
+  Time:    ${new Date()}
+  Node:    ${process.version}
+  Env:     ${process.env.NODE_ENV}`);
 });
