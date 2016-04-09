@@ -1,11 +1,13 @@
-const main = {
+'use strict';
+
+var main = {
 
   menuButton: document.getElementById('menuButton'),
   nav: document.querySelector('#nav ul'),
 
-  resize: function () {
+  resize: function resize() {
 
-    const mobile = window.matchMedia && window.matchMedia('(max-device-width: 699px)').matches || screen.width < 700 || window.innerWidth < 700;
+    var mobile = window.matchMedia && window.matchMedia('(max-device-width: 699px)').matches || screen.width < 700 || window.innerWidth < 700;
 
     if (mobile) {
       document.body.classList.add('mobile');
@@ -20,13 +22,14 @@ const main = {
     }
   },
 
-  toggle(el) {
+  toggle: function toggle(el) {
     el.style.display = getComputedStyle(el).display === 'flex' ? 'none' : 'flex';
   }
-
 };
 
 main.resize();
 
-main.menuButton.addEventListener('click', () => main.toggle(main.nav));
+main.menuButton.addEventListener('click', function () {
+  return main.toggle(main.nav);
+});
 window.addEventListener('resize', throttle(main.resize));

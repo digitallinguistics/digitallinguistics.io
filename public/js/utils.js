@@ -1,19 +1,23 @@
-const debounce = fn => {
+'use strict';
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
+var debounce = function debounce(fn) {
   var delayed;
-  return ev => {
+  return function (ev) {
     clearTimeout(delayed);
-    delayed = setTimeout(() => {
+    delayed = setTimeout(function () {
       fn(ev);
     }, 250);
   };
 };
 
-const throttle = fn => {
+var throttle = function throttle(fn) {
   var allowSample = true;
-  return ev => {
+  return function (ev) {
     if (allowSample) {
       allowSample = false;
-      setTimeout(() => {
+      setTimeout(function () {
         allowSample = true;
       }, 250);
       fn(ev);
@@ -21,14 +25,14 @@ const throttle = fn => {
   };
 };
 
-const qs = function () {
+var qs = function () {
 
-  var hasOwnProperty = function (obj, prop) {
+  var hasOwnProperty = function hasOwnProperty(obj, prop) {
     return Object.prototype.hasOwnProperty.call(obj, prop);
   };
 
-  var stringifyPrimitive = function (v) {
-    switch (typeof v) {
+  var stringifyPrimitive = function stringifyPrimitive(v) {
+    switch (typeof v === 'undefined' ? 'undefined' : _typeof(v)) {
       case 'string':
         return v;
 
@@ -43,9 +47,9 @@ const qs = function () {
     }
   };
 
-  const qs = {
+  var qs = {
 
-    parse: function (qs, sep, eq, options) {
+    parse: function parse(qs, sep, eq, options) {
       sep = sep || '&';
       eq = eq || '=';
       var obj = {};
@@ -63,7 +67,7 @@ const qs = function () {
       }
 
       var len = qs.length;
-
+      // maxKeys <= 0 means that we should not limit keys count
       if (maxKeys > 0 && len > maxKeys) {
         len = maxKeys;
       }
@@ -99,14 +103,14 @@ const qs = function () {
       return obj;
     },
 
-    stringify: function (obj, sep, eq, name) {
+    stringify: function stringify(obj, sep, eq, name) {
       sep = sep || '&';
       eq = eq || '=';
       if (obj === null) {
         obj = undefined;
       }
 
-      if (typeof obj === 'object') {
+      if ((typeof obj === 'undefined' ? 'undefined' : _typeof(obj)) === 'object') {
         return Object.keys(obj).map(function (k) {
           var ks = encodeURIComponent(stringifyPrimitive(k)) + eq;
           if (Array.isArray(obj[k])) {
@@ -129,5 +133,3 @@ const qs = function () {
 
   return qs;
 }();
-
-window.location.query = qs.parse(window.location.search.replace('?', ''));
