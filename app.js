@@ -42,8 +42,10 @@ app.use(cookieParser(process.env.COOKIE_SECRET)); // cooking handling
 app.use(vhost(`development.${process.env.DOMAIN}`, dev)); // bind the `development` subdomain to the dev router
 
 // URL logging for debugging
+// inject global variables for Handlebars templates
 app.use((req, res, next) => {
   console.log(`Requested URL: ${req.url}`);
+  res.locals.cdn = 'http://digitallinguistics.blob.core.windows.net';
   next();
 });
 

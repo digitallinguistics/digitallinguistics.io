@@ -30,4 +30,4 @@ const handler = (err, res) => {
 // Anything in the /img folder that might get reused across subdomains
 
 // NB: make sure to change contenType above when you run this
-// storage.createBlockBlobFromLocalFile('less', 'reset.less', './public/less/reset.less', opts, handler);
+// storage.createBlockBlobFromLocalFile('css', 'fonts.css', './public/css/fonts.css', opts, handler);
