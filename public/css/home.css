@@ -1,6 +1,18 @@
 body {
   background-color: #3399ff;
 }
+#header {
+  flex-direction: row;
+}
+#header h1 {
+  color: white;
+}
+#header #logo {
+  display: none;
+}
+#header #white-logo {
+  display: flex;
+}
 #home {
   flex-direction: row;
   align-items: stretch;
