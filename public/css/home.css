@@ -1,0 +1,34 @@
+body {
+  background-color: #3399ff;
+}
+#home {
+  flex-direction: row;
+  align-items: stretch;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0.5rem;
+}
+#home > a {
+  display: flex;
+}
+#home > a section {
+  flex-direction: row;
+  background-color: white;
+  border-radius: 0.5rem;
+  flex-grow: 1;
+  margin: 1rem;
+}
+#home > a section img {
+  align-self: center;
+}
+#home > a section div {
+  padding: 1rem 1rem 1rem 0rem;
+}
+#home > a section h1 {
+  color: #3399ff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.desktop #home > a {
+  max-width: 20rem;
+}

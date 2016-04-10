@@ -1,3 +1,10 @@
+body {
+  overflow-x: hidden;
+}
+#header {
+  flex-direction: row;
+  justify-content: space-between;
+}
 #header #banner {
   flex-direction: row;
   align-items: center;
@@ -6,8 +13,8 @@
   padding: 1rem;
 }
 #header #banner h1 {
+  color: white;
   font-size: 2rem;
-  text-shadow: 0 1px 1px rgba(204, 204, 204, 0.8);
 }
 #header p {
   background-color: #3399ff;
@@ -15,7 +22,7 @@
   font-size: 1.5rem;
   padding: 0.25rem 1rem;
   text-align: right;
-  text-shadow: 0 1px 1px black;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.7);
 }
 #error {
   align-items: center;
@@ -25,4 +32,11 @@
   font-size: 2rem;
   font-weight: bold;
   padding: 1rem 0rem;
+}
+.mobile #header {
+  flex-direction: column;
+  margin-right: 1rem;
+}
+.mobile main {
+  margin-right: 1rem;
 }

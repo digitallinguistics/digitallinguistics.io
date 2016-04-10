@@ -46,6 +46,7 @@ app.use(vhost(`development.${process.env.DOMAIN}`, dev)); // bind the `developme
 app.use((req, res, next) => {
   console.log(`Requested URL: ${req.url}`);
   res.locals.cdn = 'http://digitallinguistics.blob.core.windows.net';
+  res.locals.baseUrl = `//${process.env.DOMAIN}`;
   next();
 });
 
