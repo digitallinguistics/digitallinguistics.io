@@ -1,35 +1,37 @@
 'use strict';
 
-var main = {
+(function () {
 
-  menuButton: document.getElementById('menuButton'),
-  nav: document.querySelector('#nav ul'),
+  var throttle = function throttle(fn, delay) {
+    delay = delay || 250; // eslint-disable-line
+    var allowSample = true;
+    return function (ev) {
+      if (allowSample) {
+        allowSample = false;
+        setTimeout(function () {
+          allowSample = true;
+        }, delay);
+        fn(ev);
+      }
+    };
+  };
 
-  resize: function resize() {
+  var resize = function resize() {
 
-    var mobile = window.matchMedia && window.matchMedia('(max-device-width: 699px)').matches || screen.width < 700 || window.innerWidth < 700;
+    var width = 700;
+
+    var mobile = window.matchMedia && window.matchMedia('(max-device-width: 699px)').matches || screen.width < width || window.innerWidth < width;
 
     if (mobile) {
       document.body.classList.add('mobile');
       document.body.classList.remove('desktop');
-      main.menuButton.style.display = 'flex';
-      main.nav.style.display = 'none';
     } else {
       document.body.classList.add('desktop');
       document.body.classList.remove('mobile');
-      main.menuButton.style.display = 'none';
-      main.nav.style.display = 'flex';
     }
-  },
+  };
 
-  toggle: function toggle(el) {
-    el.style.display = getComputedStyle(el).display === 'flex' ? 'none' : 'flex';
-  }
-};
+  resize();
 
-main.resize();
-
-main.menuButton.addEventListener('click', function () {
-  return main.toggle(main.nav);
-});
-window.addEventListener('resize', throttle(main.resize));
+  window.addEventListener('resize', throttle(resize));
+})();

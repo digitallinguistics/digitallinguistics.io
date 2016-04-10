@@ -56,6 +56,10 @@ app.use(users);
 router.main(app);
 router.developer(dev);
 
+if (process.env.NODE_ENV === 'localhost') {
+  router.test(app);
+}
+
 // catch-all error handlers
 app.use((req, res, next) => { // eslint-disable-line
   res.render('error', {
