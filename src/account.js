@@ -1,20 +1,18 @@
-'use strict';
-
-(function () {
+(() => {
 
   var buttonClick;
 
-  var updateAccountButton = document.getElementById('updateAccountButton');
+  const updateAccountButton = document.getElementById('updateAccountButton');
 
-  var confirmNavigation = function confirmNavigation(ev) {
+  const confirmNavigation = function confirmNavigation (ev) {
     if (!updateAccountButton.disabled && !buttonClick) {
-      var message = 'Are you sure you wish to navigate away from this page? Your changes will be lost.';
+      const message = 'Are you sure you wish to navigate away from this page? Your changes will be lost.';
       ev.returnValue = message;
       return message;
     }
   };
 
-  var deleteAccount = function deleteAccount(ev) {
+  const deleteAccount = function deleteAccount (ev) {
 
     ev.preventDefault();
 
@@ -28,29 +26,29 @@
 
       if (response === 'DELETE') {
 
-        var opts = {
+        const opts = {
           credentials: 'same-origin',
           method: 'DELETE',
           mode: 'same-origin',
           redirect: 'follow'
         };
 
-        fetch('/account', opts).then(function (res) {
+        fetch('/account', opts)
+        .then(res => {
 
-          if (res.status != 204) {
-            // eslint-disable-line
+          if (res.status != 204) { // eslint-disable-line
             alert('There was a problem deleting your account.');
           }
 
           window.location.href = '/?logout=true';
-        }).catch(function (err) {
-          return alert('There was a problem deleting your account.', err, err.stack);
-        });
+
+        }).catch(err => alert('There was a problem deleting your account.', err, err.stack));
+
       }
     }
   };
 
-  var enableButton = function enableButton(ev) {
+  const enableButton = function enableButton (ev) {
     if (ev.target.tagName === 'INPUT') {
       updateAccountButton.disabled = false;
       window.removeEventListener('input', enableButton);
@@ -58,9 +56,8 @@
   };
 
   document.getElementById('deleteAccountButton').addEventListener('click', deleteAccount);
-  updateAccountButton.addEventListener('click', function () {
-    buttonClick = true;
-  });
+  updateAccountButton.addEventListener('click', () => { buttonClick = true; });
   window.addEventListener('beforeunload', confirmNavigation);
   window.addEventListener('input', enableButton);
+
 })();
