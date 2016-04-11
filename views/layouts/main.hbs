@@ -31,11 +31,25 @@
       </div>
     </a>
 
-    {{#if user}}
-      <p><a href=/account>{{user.firstName}}</a></p>
-    {{else}}
-      <p><a href=/login>Sign In / Register</a></p>
-    {{/if}}
+    <nav>
+
+      <ul>
+        <li><a href=/>Home</a></li>
+        <li><a href=/about>About</a></li>
+        <li><a href=http://app.digitallinguistics.org/>App</a></li>
+        <li><a href=http://blog.digitallinguistics.org/>Blog</a></li>
+        <li><a href=/data>Data</a></li>
+        <li><a href=http://developer.digitallinguistics.org/>Developers</a></li>
+        <li><a href=/learn>Learn</a></li>
+      </ul>
+
+      {{#if user}}
+        <p><a href=/account>{{user.firstName}}</a></p>
+      {{else}}
+        <p><a href=/login>Sign In / Register</a></p>
+      {{/if}}
+
+    </nav>
 
   </header>
 

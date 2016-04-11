@@ -18,13 +18,20 @@ body {
 #header #banner h1 {
   font-size: 2rem;
 }
-#header p {
+#header nav {
   background-color: #3399ff;
   color: white;
   font-size: 1.5rem;
-  padding: 0.25rem 2rem;
-  text-align: right;
+  padding: 0rem 1.5rem 0rem 0.5rem;
+  text-align: center;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.7);
+}
+#header nav li,
+#header nav p {
+  padding: 0.5rem;
+}
+#header nav p {
+  white-space: nowrap;
 }
 #error {
   align-items: center;
@@ -35,6 +42,18 @@ body {
   font-weight: bold;
   padding: 1rem 0rem;
 }
-.mobile #header {
-  flex-direction: column;
+.mobile nav {
+  align-items: stretch;
+}
+.mobile nav li {
+  border-bottom: 1.5px solid white;
+}
+.desktop nav {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.desktop nav ul {
+  flex-direction: row;
+  flex-wrap: wrap;
 }

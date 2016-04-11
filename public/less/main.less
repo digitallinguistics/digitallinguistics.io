@@ -26,13 +26,22 @@ body {
 
   }
 
-  p {
+  nav {
     background-color: @wugbotBlue;
     color: white;
     font-size: 1.5rem;
-    padding: 0.25rem 2rem;
-    text-align: right;
+    padding: 0rem 1.5rem 0rem 0.5rem;
+    text-align: center;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.7);
+
+    li, p {
+      padding: 0.5rem;
+    }
+
+    p {
+      white-space: nowrap;
+    }
+
   }
 
 }
@@ -49,7 +58,28 @@ body {
 }
 
 .mobile {
-  #header {
-    flex-direction: column;
+  nav {
+    align-items: stretch;
+
+    li {
+      border-bottom: 1.5px solid white;
+    }
+
   }
+
+}
+
+.desktop {
+  nav {
+    .row;
+    align-items: center;
+    justify-content: space-between;
+
+    ul {
+      .row;
+      flex-wrap: wrap;
+    }
+
+  }
+
 }

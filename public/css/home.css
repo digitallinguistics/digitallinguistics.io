@@ -13,6 +13,9 @@ body {
 #header #white-logo {
   display: flex;
 }
+#header nav ul {
+  display: none;
+}
 #home {
   flex-direction: row;
   align-items: stretch;
