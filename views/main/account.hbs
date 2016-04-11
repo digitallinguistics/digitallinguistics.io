@@ -8,6 +8,8 @@
 
   <form action=/account method=POST>
 
+    <input type=hidden name=email value={{user.id}}>
+
     <label for=firstName>
       <p>First Name (Given Name)</p>
       <input type=text name=firstName value='{{user.firstName}}' required>
