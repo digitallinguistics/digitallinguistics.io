@@ -39,14 +39,18 @@ app.set('view engine', '.hbs'); // use Handlebars for templating
 app.use(express.static(path.join(__dirname, '/public'))); // routing for static files
 app.use(bodyParser.urlencoded({ extended: false })); // parse form data in the request body
 app.use(cookieParser(process.env.COOKIE_SECRET)); // cooking handling
-app.use(vhost(`development.${process.env.DOMAIN}`, dev)); // bind the `development` subdomain to the dev router
+app.use(vhost(`developer.${process.env.DOMAIN}`, dev)); // bind the `developer` subdomain to the dev router
 
 // URL logging for debugging
 // inject global variables for Handlebars templates
 app.use((req, res, next) => {
+  'use strict';
   console.log(`Requested URL: ${req.method} ${req.url}`);
+  let domain = process.env.DOMAIN;
+  if (domain === 'localhost') { domain += `:${process.env.PORT}`; }
   res.locals.cdn = 'http://digitallinguistics.blob.core.windows.net';
-  res.locals.baseUrl = `//${process.env.DOMAIN}`;
+  res.locals.baseUrl = `//${domain}`;
+  res.locals.domain = domain;
   next();
 });
 
