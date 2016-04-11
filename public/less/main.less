@@ -1,76 +1,90 @@
 @import (reference) './public/less/dlx.less';
 
-// styling by class
-button { .button; }
+body {
+  overflow-x: hidden;
 
-code { .code; }
-
-input[type=email],
-input[type=text] {
-  .field;
 }
 
-small { .small; }
-
-// styling by DOM
-body { font-size: 1.25rem; }
+#white-logo {
+  display: none;
+}
 
 #header {
-  #logo { padding: 0.75rem; }
-  #banner { align-items: center; }
-  h1 { font-size: 2rem; }
+  justify-content: space-between;
+
+  #banner {
+    .row;
+    align-items: center;
+
+    #logo, #white-logo {
+      padding: 1rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+  }
+
   nav {
-    #menuButton { cursor: pointer; height: 2rem; width: 2rem; }
-    background-color: black;
+    background-color: @wugbotBlue;
     color: white;
     font-size: 1.5rem;
-    li {
-      .page-padded;
-      a { border-bottom: 1px solid black; }
-      a:hover { border-bottom: 1px solid white; }
+    padding: 0rem 1.5rem 0rem 0.5rem;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.7);
+
+    li, p {
+      padding: 0.5rem;
     }
-    #userName {
-      .page-padded;
-      .row;
-      align-items: baseline;
-      a { border-bottom: 1px solid black; padding: 0rem 0.25rem; }
-      a:hover { border-bottom: 1px solid white; }
+
+    p {
+      white-space: nowrap;
+
+      a + a {
+        margin-left: 0.5rem;
+      }
+
     }
+
   }
+
 }
 
-main { flex-grow: 1; }
-
-#footer {
-  .page-padded;
+#error {
   align-items: center;
-  #github {
-    div { align-items: center; .row; }
-    img { height: 2rem; padding: 0.25rem; width: 2rem; }
-    p { .link; }
+  padding: 1rem;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem 0rem;
   }
 }
 
 .mobile {
-  #header > nav {
-    align-items: center;
-    #userName { order: 1; }
-    #menuButton { order: 2; margin: 0.75rem; }
-    ul { align-items: center; order: 3; }
+  nav {
+    align-items: stretch;
+
+    li {
+      border-bottom: 1.5px solid white;
+    }
+
   }
+
 }
 
 .desktop {
-  #header {
-    div { .row; }
-    nav { .row; }
-    nav > ul { align-items: flex-start; flex-grow: 1; .row; }
-    #menuButton { display: none; }
-  }
-}
+  nav {
+    .row;
+    align-items: center;
+    justify-content: space-between;
 
-#error {
-  padding: 1rem;
-  a { .link; }
-  h1 { .header; align-self: center; }
+    ul {
+      .row;
+      flex-wrap: wrap;
+    }
+
+  }
+
 }

@@ -2,38 +2,43 @@
 require('./lib/config');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const cors = require('cors');
-const credentials = require('./lib/credentials');
 const express = require('express');
 const expressHandlebars = require('express-handlebars');
 const http = require('http');
 const middleware = require('./lib/middleware');
+const path = require('path');
+const router = require('./lib/router');
+const users = require('./lib/users');
+const vhost = require('vhost');
 
-const app = express(); // initialize Express app
+/* eslint-disable new-cap */
+const app = express(); // initialize main Express app
+const dev = express.Router(); // create the router for the `development.digitallinguistics.org` subdomain
 const handlebars = expressHandlebars.create(middleware.hbsOptions); // initialize Handlebars
 
 // app settings
 app.disable('x-powered-by'); // hide server information in the response
 app.enable('trust proxy'); // trust the Azure proxy server
-app.engine('handlebars', handlebars.engine); // declare Handlebars engine
-app.set('port', process.env.PORT || 3000); // set local port to 3000
-app.set('view engine', 'handlebars'); // use Handlebars for templating
+app.engine('.hbs', handlebars.engine); // declare Handlebars engine
+app.set('port', process.env.PORT); // set port for the app (3000 on localhost)
+app.set('view engine', '.hbs'); // use Handlebars for templating
 
 // middleware
-app.use(middleware.logUrl); // URL logging for debugging
-app.use('/static', cors(), express.static(__dirname + '/public')); // enable CORS and routing for static files
-
-// TODO: change references to all static files in DLx projects to use `/static` rather than just `/`
-// deprecate the following line
-app.use(express.static(__dirname + '/public')); // routing for static files
-
-app.use(cookieParser(credentials.secret)); // cooking handling
-app.use(middleware.requestParser); // pre-formats header, body, and query
-app.use(bodyParser.json()); // parse JSON data in the request body
+app.use(express.static(path.join(__dirname, '/public'))); // routing for static files
 app.use(bodyParser.urlencoded({ extended: false })); // parse form data in the request body
+app.use(cookieParser(process.env.COOKIE_SECRET)); // cooking handling
+app.use(middleware.logger); // URL logging for debugging
+app.use(middleware.locals); // inject local variables for Handlebars templates
+app.use(users); // user management
+app.use(vhost(`developer.${process.env.DOMAIN}`, dev)); // bind the `developer` subdomain to the dev router
+dev.use(middleware.developer); // set Handlebars layout to `dev`
 
 // routing
-require('./lib/router')(app);
+router.main(app);
+router.developer(dev);
+if (process.env.NODE_ENV === 'localhost') {
+  router.test(app);
+}
 
 // catch-all error handlers
 app.use(middleware.error404);
@@ -44,15 +49,9 @@ const server = http.createServer(app);
 
 server.listen(app.get('port'), () => {
   console.log(`Server started. Press Ctrl+C to terminate.
-    Project: dlx-org
-    Port: ${app.get('port')}
-    Time: ${new Date()}
-    Node: ${process.version}
-    Env: ${global.env}`);
+  Project: dlx-org
+  Port:    ${app.get('port')}
+  Time:    ${new Date()}
+  Node:    ${process.version}
+  Env:     ${process.env.NODE_ENV}`);
 });
-
-// dev modules
-if (global.env === 'local') {
-  require('./lib/dev');
-  require('./build/build');
-}

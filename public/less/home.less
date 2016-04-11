@@ -1,0 +1,69 @@
+@import (reference) './public/less/dlx.less';
+
+body {
+  background-color: @wugbotBlue;
+}
+
+#header {
+  .row;
+
+  h1 {
+    color: white;
+  }
+
+  #logo {
+    display: none;
+  }
+
+  #white-logo {
+    display: flex;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+}
+
+#home {
+  .row;
+  align-items: stretch;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0.5rem;
+
+  > a {
+    display: flex;
+
+    section {
+      .row;
+      background-color: white;
+      border-radius: 0.5rem;
+      flex-grow: 1;
+      margin: 1rem;
+
+      img {
+        align-self: center;
+      }
+
+      div {
+        padding: 1rem 1rem 1rem 0rem;
+      }
+
+      h1 {
+        color: @wugbotBlue;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+    }
+
+  }
+
+}
+
+.desktop {
+  #home > a {
+    max-width: 20rem;
+  }
+}

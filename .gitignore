@@ -34,6 +34,8 @@ node_modules
 .node_repl_history
 
 # Custom
+.babelrc
+.eslintrc
 .jshintrc
 credentials.js
 dev.js

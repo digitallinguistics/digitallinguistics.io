@@ -1,0 +1,44 @@
+{{#section 'style'}}
+  <link rel=stylesheet href=/css/account.css charset=utf-8>
+{{/section}}
+
+<main id=account>
+
+  <h1>Your Account</h1>
+
+  <form action=/account method=POST>
+
+    <input type=hidden name=email value={{user.id}}>
+
+    <label for=firstName>
+      <p>First Name (Given Name)</p>
+      <input type=text name=firstName value='{{user.firstName}}' required>
+    </label>
+
+    <label for=lastName>
+      <p>Last Name (Family Name)</p>
+      <input type=text name=lastName value='{{user.lastName}}' required>
+    </label>
+
+    <label for=affiliation>
+      <p>Affiliation</p>
+      <input type=text name=affiliation value='{{user.affiliation}}'>
+    </label>
+
+    <label for=email>
+      <p>Email</p>
+      <input type=email name=email value={{user.id}} disabled>
+    </label>
+
+    <div id=buttons>
+      <button id=updateAccountButton type=submit name=updateInfoButton disabled>Update Information</button>
+      <button id=deleteAccountButton type=button name=deleteAccountButton tabindex=-1>Delete Account</button>
+    </div>
+
+  </form>
+
+</main>
+
+{{#section 'script'}}
+  <script src=/js/account.js type=text/javascript charset=utf-8></script>
+{{/section}}

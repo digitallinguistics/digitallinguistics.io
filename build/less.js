@@ -1,13 +1,25 @@
+const fs = require('fs');
 const less = require('less');
 
-module.exports = input => {
-  return new Promise((resolve, reject) => {
+const filenames = fs.readdirSync('./public/less');
 
-    const lessOptions = { compress: true, globalVars: {} };
+filenames.forEach(filename => {
 
-    less.render(input, lessOptions)
-    .then(output => resolve(output.css))
-    .catch(reject);
+  fs.readFile(`./public/less/${filename}`, 'utf8', (err, res) => {
+
+    if (err) {
+      console.error(err, err.stack);
+    } else {
+
+      less.render(res).then(output => {
+
+        fs.writeFileSync(`./public/css/${filename.replace('.less', '.css')}`, output.css, 'utf8');
+
+      }).catch(err => console.error(err, err.stack));
+
+    }
+
 
   });
-};
+
+});

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+
+  <meta charset=utf-8>
+  <title>DLx | Developer</title>
+  <meta name=publisher content='Digital Linguistics'>
+  <meta name=author content='Daniel W. Hieber'>
+  <meta name=description content='The Digital Linguistics (DLx) website.'>
+  <meta name=keywords content='Digital Linguistics, DLx, linguistics, language documentation, University of California Santa Barbara, UCSB'>
+  <meta name=viewport content='initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
+
+  <link rel='shortcut icon' href={{cdn}}/img/favicon.ico type=image/x-icon>
+  <link rel=stylesheet href=/css/reset.css type=text/css charset=utf-8>
+  <link rel=stylesheet href=/css/main.css type=text/css charset=utf-8>
+
+  {{{sections.style}}}
+
+</head>
+
+<body>
+
+  <header id=header>
+
+    <a href=/>
+      <div id=banner>
+        <img id=logo src={{cdn}}/img/tunnel_black.svg alt='DLx logo'>
+        <h1>Digital Linguistics</h1>
+      </div>
+    </a>
+
+    <nav>
+
+      <ul>
+        <li><a href=/>Home</a></li>
+      </ul>
+
+      {{#if user}}
+        <p>
+          <a href=/account>{{user.firstName}}</a>
+          <a href=/?logout=true>(Logout)</a>
+        </p>
+      {{else}}
+        <p><a href=/login>Sign In / Register</a></p>
+      {{/if}}
+
+    </nav>
+
+  </header>
+
+  {{{body}}}
+
+  <script src=/js/main.js type=text/javascript charset=utf-8></script>
+  {{{sections.script}}}
+
+</body>
+
+</html>

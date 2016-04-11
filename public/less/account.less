@@ -1,35 +1,75 @@
-@import (reference) './public/less/main.less';
+@import (reference) './public/less/dlx.less';
 
 #account {
-  align-items: stretch;
-  h1 { .header; text-align: center; }
-  form { margin: 1rem; }
-  button { align-self: center; margin: 0.5rem; }
-  #deleteAccountButton {
-    background-color: @errorRed;
-  }
-}
+  padding: 2rem;
 
-.mobile #account {
-  label { margin: 0.5rem 0rem; }
-  #updateInfoButton { order: 1; }
-  #deleteAccountButton { order: 2; }
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  form {
+    font-size: 1.25rem;
+
+    label {
+      padding: 0.5rem;
+    }
+
+    input {
+      .field;
+    }
+
+    #buttons {
+      align-items: center;
+
+      button {
+        .button;
+        align-items: center;
+        margin: 0.5rem;
+      }
+
+      #deleteAccountButton {
+        background-color: @errorRed;
+      }
+
+    }
+
+  }
+
 }
 
 .desktop #account {
-  label {
-    .row;
-    align-items: baseline;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  align-items: center;
+
+  form {
+    max-width: 75%;
+
+    label {
+      .row;
+      align-items: center;
+      justify-content: space-between;
+
+      p + input {
+        margin-left: 2rem;
+      }
+
+    }
+
+    #buttons {
+      .row;
+      justify-content: center;
+
+      #deleteAccountButton {
+        order: 1;
+      }
+
+      #updateAccountButton {
+        order: 2;
+      }
+
+    }
+
   }
-  input {
-    flex-grow: 1;
-    margin: 0.5rem;
-    max-width: 50%;
-  }
-  #buttons {
-    .row;
-    justify-content: space-around;
-  }
+
 }

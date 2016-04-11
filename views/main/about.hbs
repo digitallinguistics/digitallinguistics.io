@@ -1,0 +1,70 @@
+{{#section 'style'}}
+  <link rel=stylesheet href=/css/about.css charset=utf-8>
+{{/section}}
+
+<main id=about>
+
+  <section>
+
+    <p>
+      <dfn>Digital Linguistics <abbr title='Digital Linguistics'>(DLx)</abbr></dfn> is the science of the computational representation and manipulation of linguistic data. It concerns itself with how to represent linguistic data in a digital form, as well as the best ways for linguists to work with that data, using all the benefits of the modern Open Web Platform <abbr title='Open Web Platform'>(OWP)</abbr>.
+    </p>
+
+    <p>
+      The Digital Linguistics project at the University of California, Santa Barbara, has three primary aims:
+    </p>
+
+    <ul>
+
+      <li>
+        <p>
+          Define a standard data format for storing linguistic data in computer-readable form. This format should be platform-independent, and encode the linguistic concepts that linguists are already familiar with, while still maintaining flexibility. You can read more about this format <a href=http://developer.digitallinguistics.org/spec>here</a>.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Create a variety of tools, utilizing the DLx data format, that allow linguists to more easily enter, search, and manage their data. All of our tools are open source, and we welcome contributions from the community. Check out the <a href=http://app.digitallinguistics.org/>DLx App</a> to get started with your own data.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Educate linguists about best practices in linguistic data management, and how they can apply the concepts of Digital Linguistics to their own work.
+        </p>
+      </li>
+
+    </ul>
+
+  </section>
+
+  <section>
+
+    <h1>Publications</h1>
+
+    <p>
+      Below are a few papers discussing Digital Linguistics or related concepts.
+    </p>
+
+    <ul id=pubs>
+      {{#each docs}}
+        <li>
+          <p>
+            <a href="#">
+            {{#each authors}}
+              {{#if @first}}
+                {{last_name}}, {{first_name}}
+              {{else}}
+                , {{first_name}} {{last_name}}
+              {{/if}}
+            {{/each}}
+            {{year}}. <strong>{{title}}.</strong> <cite>{{source}}.</cite>
+            </a>
+          </p>
+        </li>
+      {{/each}}
+    </ul>
+
+  </section>
+
+</main>
