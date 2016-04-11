@@ -26,7 +26,7 @@ app.set('view engine', '.hbs'); // use Handlebars for templating
 // middleware
 app.use(express.static(path.join(__dirname, '/public'))); // routing for static files
 app.use(bodyParser.urlencoded({ extended: false })); // parse form data in the request body
-app.use(cookieParser(process.env.COOKIE_SECRET)); // cooking handling
+app.use(cookieParser(process.env.COOKIE_SECRET)); // cookie handling
 app.use(middleware.logger); // URL logging for debugging
 app.use(middleware.locals); // inject local variables for Handlebars templates
 app.use(users); // user management
