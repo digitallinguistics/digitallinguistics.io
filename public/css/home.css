@@ -4,8 +4,9 @@ body {
 #header {
   flex-direction: row;
 }
-#header h1 {
+#header #banner h1 {
   color: white;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.7);
 }
 #header #logo {
   display: none;
