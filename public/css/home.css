@@ -3,6 +3,7 @@ body {
 }
 #header {
   flex-direction: row;
+  align-items: center;
 }
 #header #banner h1 {
   color: white;
@@ -13,6 +14,15 @@ body {
 }
 #header #white-logo {
   display: flex;
+}
+#header nav {
+  justify-content: flex-end;
+}
+#header nav ul {
+  display: none;
+}
+#header nav p {
+  align-self: flex-end;
 }
 #header nav ul {
   display: none;
@@ -36,6 +46,10 @@ body {
 }
 #home > a section img {
   align-self: center;
+  height: 4.5rem;
+  min-height: 4.5rem;
+  min-width: 4.5rem;
+  width: 4.5rem;
 }
 #home > a section div {
   padding: 1rem 1rem 1rem 0rem;

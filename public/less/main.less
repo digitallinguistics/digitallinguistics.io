@@ -10,7 +10,12 @@ body {
 }
 
 #header {
+  flex-wrap: wrap;
   justify-content: space-between;
+
+  a {
+    flex-grow: 1;
+  }
 
   #banner {
     .row;
@@ -34,6 +39,7 @@ body {
   nav {
     background-color: @wugbotBlue;
     color: white;
+    flex-grow: 1;
     font-size: 1.5rem;
     padding: 0rem 1.5rem 0rem 0.5rem;
     text-align: center;
