@@ -2,25 +2,35 @@
 
 body {
   overflow-x: hidden;
-
 }
 
 #white-logo {
   display: none;
+  filter: drop-shadow(@black-shadow);
 }
 
 #header {
+  flex-wrap: wrap;
   justify-content: space-between;
+
+  a {
+    flex-grow: 1;
+  }
 
   #banner {
     .row;
     align-items: center;
+
+    #logo {
+      filter: drop-shadow(@gray-shadow);
+    }
 
     #logo, #white-logo {
       padding: 1rem;
     }
 
     h1 {
+      text-shadow: @gray-shadow;
       font-size: 2rem;
     }
 
@@ -29,10 +39,11 @@ body {
   nav {
     background-color: @wugbotBlue;
     color: white;
+    flex-grow: 1;
     font-size: 1.5rem;
     padding: 0rem 1.5rem 0rem 0.5rem;
     text-align: center;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.7);
+    text-shadow: @black-shadow;
 
     li, p {
       padding: 0.5rem;

@@ -6,9 +6,15 @@ body {
 
 #header {
   .row;
+  align-items: center;
 
-  h1 {
-    color: white;
+  #banner {
+
+    h1 {
+      color: white;
+      text-shadow: @black-shadow;
+    }
+
   }
 
   #logo {
@@ -17,6 +23,19 @@ body {
 
   #white-logo {
     display: flex;
+  }
+
+  nav {
+    justify-content: flex-end;
+
+    ul {
+      display: none;
+    }
+
+    p {
+      align-self: flex-end;
+    }
+
   }
 
   nav ul {
@@ -44,6 +63,10 @@ body {
 
       img {
         align-self: center;
+        height: 4.5rem;
+        min-height: 4.5rem;
+        min-width: 4.5rem;
+        width: 4.5rem;
       }
 
       div {
