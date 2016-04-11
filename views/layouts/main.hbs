@@ -44,7 +44,10 @@
       </ul>
 
       {{#if user}}
-        <p><a href=/account>{{user.firstName}}</a></p>
+        <p>
+          <a href=/account>{{user.firstName}}</a>
+          <a href=/?logout=true>(Logout)</a>
+        </p>
       {{else}}
         <p><a href=/login>Sign In / Register</a></p>
       {{/if}}

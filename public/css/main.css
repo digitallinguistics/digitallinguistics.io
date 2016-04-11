@@ -33,6 +33,9 @@ body {
 #header nav p {
   white-space: nowrap;
 }
+#header nav p a + a {
+  margin-left: 0.5rem;
+}
 #error {
   align-items: center;
   padding: 1rem;
