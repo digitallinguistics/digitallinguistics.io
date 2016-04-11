@@ -1,0 +1,86 @@
+#account {
+  padding: 2rem;
+}
+#account h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+#account form {
+  font-size: 1.25rem;
+}
+#account form label {
+  padding: 0.5rem;
+}
+#account form input {
+  padding: 0.25em 0.5rem;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px #ddd;
+}
+#account form input:focus {
+  border-color: #3399ff;
+}
+#account form input:focus:invalid {
+  border-color: #e9322d;
+  color: #b94a48;
+}
+#account form input[disabled] {
+  background-color: #eaeded;
+  color: #cad2d3;
+  cursor: not-allowed;
+}
+#account form #buttons {
+  align-items: center;
+}
+#account form #buttons button {
+  padding: 0.5em 1em;
+  background-color: rgba(51, 153, 255, 0.8);
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  align-items: center;
+  margin: 0.5rem;
+}
+#account form #buttons button:hover,
+#account form #buttons button:focus {
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));
+}
+#account form #buttons button:active {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset;
+}
+#account form #buttons button:disabled {
+  background-image: none;
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: 0.40;
+}
+#account form #buttons #deleteAccountButton {
+  background-color: #ca3c3c;
+}
+.desktop #account {
+  align-items: center;
+}
+.desktop #account form {
+  max-width: 75%;
+}
+.desktop #account form label {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.desktop #account form label p + input {
+  margin-left: 2rem;
+}
+.desktop #account form #buttons {
+  flex-direction: row;
+  justify-content: center;
+}
+.desktop #account form #buttons #deleteAccountButton {
+  order: 1;
+}
+.desktop #account form #buttons #updateAccountButton {
+  order: 2;
+}
