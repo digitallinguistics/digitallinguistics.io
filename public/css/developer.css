@@ -1,3 +1,22 @@
-#developer h1 {
+#developer {
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 1.25rem;
+  justify-content: space-around;
+  margin-right: 1rem;
+  padding: 1rem;
+}
+#developer section {
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 1px 1px black;
+  margin: 1rem;
+  max-width: 20rem;
+  padding: 1rem;
+}
+#developer section a {
+  display: flex;
+}
+#developer section h1 {
+  color: #3399ff;
   font-weight: bold;
 }

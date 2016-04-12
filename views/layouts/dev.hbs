@@ -34,15 +34,22 @@
 
       <ul>
         <li><a href=/>Developer Home</a></li>
+        <li><a href=http://blog.digitallinguistics.org/tag/developers>Developer Blog</a></li>
+        <li><a href=/spec>Data Format</a></li>
+        <li><a href=/api>API</a></li>
+        <li><a href=/app>App</a></li>
+        <li><a href=/tools>Tools &amp; SDKs</a></li>
+        <li><a href=/code>Code</a></li>
+        <li><a href=/apps>My Apps</a></li>
       </ul>
 
       {{#if user}}
-        <p>
+        <div>
           <a href=/account>{{user.firstName}}</a>
           <a href=/?logout=true>(Logout)</a>
-        </p>
+        </div>
       {{else}}
-        <p><a href=/login>Sign In / Register</a></p>
+        <div><a href=/login>Sign In / Register</a></div>
       {{/if}}
 
     </nav>
