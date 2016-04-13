@@ -66,7 +66,7 @@
   <script src=https://api.digitallinguistics.org/socket.io/socket.io.js type=text/javascript charset=utf-8></script>
 
   <script type=text/javascript>
-    const socket = io();
+    const socket = io.connect('https://api.digitallinguistics.org');
     socket.on('message', data => console.log(data));
   </script>
 
