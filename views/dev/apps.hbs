@@ -1,21 +1,35 @@
-{{#section 'style'}}<link rel=stylesheet href=/css/myapps.css charset=utf-8>{{/section}}
+{{#section 'style'}}
+  <link rel=stylesheet href=/css/myapps.css charset=utf-8>
+{{/section}}
 
-<main id=myapps>
+<main id=apps>
 
-  <section id=apps>
+  <section id=app-list>
+
     <h1>My Apps</h1>
 
     <table>
+
       <thead>
-        <tr><td>Application Name</td><td>Application ID</td></tr>
+        <tr><td>Application Name</td><td>Application Id</td></tr>
       </thead>
+
       <tbody>
         {{#each apps}}
-          <tr><td>{{appName}}</td><td>{{id}}</td></tr>
+          <tr data-id={{id}}><td>{{name}}</td><td>{{id}}</td></tr>
         {{/each}}
       </tbody>
+
     </table>
+
   </section>
+
+  id
+  name
+  permissions
+  redirects
+  (permitted) scopes
+  secret
 
   <section id=registration>
     <h1>Register a New App</h1>

@@ -31,13 +31,13 @@ app.use(middleware.logger); // URL logging for debugging
 app.use(middleware.locals); // inject local variables for Handlebars templates
 app.use(users); // user management
 app.use(vhost(`developer.${process.env.DOMAIN}`, dev)); // bind the `developer` subdomain to the dev router
-dev.use(middleware.developer); // set Handlebars layout to `dev`
+dev.use(middleware.developer); // set Handlebars layout to `dev` for developer subdomain
 
 // routing
 router.main(app);
 router.developer(dev);
 if (process.env.NODE_ENV === 'localhost') {
-  router.test(app);
+  router.test(app); // test route
 }
 
 // catch-all error handlers

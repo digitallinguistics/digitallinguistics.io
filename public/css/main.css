@@ -1,6 +1,29 @@
 body {
   overflow-x: hidden;
 }
+code {
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+  font-family: 'Fira Mono';
+  font-size: 0.75rem;
+  padding: 0.25rem;
+}
+p > a {
+  border-bottom: 1px solid white;
+  color: #3399ff;
+}
+p > a:link {
+  color: #3399ff;
+}
+p > a:visited {
+  color: #3399ff;
+}
+p > a:hover {
+  border-bottom: 1px solid #3399ff;
+}
+p > a:active {
+  color: #3399ff;
+}
 #white-logo {
   display: none;
   filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.7));
@@ -36,14 +59,17 @@ body {
   text-align: center;
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.7);
 }
+#header nav li + li {
+  margin-left: 0.5rem;
+}
 #header nav li,
-#header nav p {
+#header nav div {
   padding: 0.5rem;
 }
-#header nav p {
+#header nav div {
   white-space: nowrap;
 }
-#header nav p a + a {
+#header nav div a + a {
   margin-left: 0.5rem;
 }
 #error {
