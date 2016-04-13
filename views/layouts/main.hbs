@@ -59,8 +59,17 @@
 
   {{{body}}}
 
+  {{!-- remote debugging with weinre --}}
   {{!-- <script src=http://192.168.0.11:8080/target/target-script-min.js#anonymous></script> --}}
+
   <script src=/js/main.js type=text/javascript charset=utf-8></script>
+  <script src=https://api.digitallinguistics.org/socket.io/socket.io.js type=text/javascript charset=utf-8></script>
+
+  <script type=text/javascript>
+    const socket = io();
+    socket.on('message', data => console.log(data));
+  </script>
+
   {{{sections.script}}}
 
 </body>

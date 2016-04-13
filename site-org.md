@@ -18,15 +18,19 @@ Path       | Title         | Description
 /explorer  | Data Explorer | => `data.digitallinguistics.org`
 
 ## Developer Subdomain (`developer.digitallinguistics.org`)
-Path   | Title            | Description
------- | ---------------- | -----------
-/      | Dev Home         |
-/home  | Dev Home         |
-/spec  | Data Format      | Include links to docs (GitHub) and raw schemas (permalinks).
-/tools | Tools & SDKs     |
-/sdks  | Tools & SDKs     |
-/app   | DLx App          | GitHub page for the DLx app
-/apps  | My Apps          | App management page.
-/blog  | Dev Blog         | Developer blog (subset of main blog?)
-/api   | The API          | Links to API docs, Swagger interface, Swagger file
-/code  | Open Source Code | DLx info page on GitHub
+Path      | Title            | Description
+--------- | ---------------- | -----------
+/         | Dev Home         |
+/home     | Dev Home         |
+/spec     | Data Format      | Include links to docs (GitHub) and raw schemas (permalinks).
+/tools    | Tools & SDKs     |
+/sdks     | Tools & SDKs     |
+/app      | DLx App          | GitHub page for the DLx app
+/apps     | My Apps          | App management page.
+/blog     | Dev Blog         | Developer blog (subset of main blog?)
+/api      | The API          | Links to API docs, Swagger interface, Swagger file
+/code     | Open Source Code | DLx info page on GitHub
+/api/doc  | Swagger Docs     | => `api.digitallinguistics.org/doc`
+/data     | Data Explorer    |
+/explorer | Data Explorer   |
+/browser  | Data Explorer   |
