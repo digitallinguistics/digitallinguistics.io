@@ -9,38 +9,37 @@ The website does not use release management, just milestones. Each milestone is 
 
 Repo            | Domain                    | Description
 --------------- | ------------------------: | -----------
-`dlx-org`       |       [`www.dlx.org`][1]  | The main site, consisting of mostly informational content. Also serves as a router to the different subdomains (e.g. `dlx.org/spec` --> `spec.dlx.org`). Azure: `dlx`.
-`dlx-login`     |     [`login.dlx.org`][17] | Single sign-on for any DLx sites or apps. Also handles OAuth requests and JWTs.
-`dlx-blog`      |      [`blog.dlx.org`][2]  | The DLx blog.
-`dlx-spec`      |      [`spec.dlx.org`][3]  | The specifications for the DLx data format.
-`dlx-api`       |       [`api.dlx.org`][4]  | The API.
-`dlx-app`       |       [`app.dlx.org`][5]  | The client-side app.
-`dlx-dev`       | [`developer.dlx.org`][6]  | Information for developers. Much of the documentation for DLx projects will also be redirected to the relevant GitHub pages at `digitallinguistics.github.io/{project}`.
-`dlx-writer`    |    [`writer.dlx.org`][7]  | Platform for writing linguistic publications in HTML, using live DLx data.
-`dlx-tools`     |     [`tools.dlx.org`][8]  | A variety of standalone tools and apps.
-`dlx-core`      |       [(GitHub, npm)][16] | The core models and views for DLx projects, downloadable/installable from GitHub/npm. This is just an npm package that bundles the core DLx objects into a single package.
-`dlx-js`        |       [(GitHub, npm)][9]  | Client-side JavaScript SDK for accessing the DLx API, downloadable/installable from GitHub/npm.
-`dlx-node`      |       [(GitHub, npm)][10] | Server-side Node SDK for accessing the DLx API, downloadable/installable from GitHub/npm.
-`dlx-py`        |       [(GitHub, npm)][11] | Python SDK for accessing the DLx API, downloadable/installable from GitHub/npm.
-`sandbox`       |   [`sandbox.dlx.org`][13] | An area for DLx contributors to play around in.
-`assets`        |       [`cdn.dlx.org`][14] | Assets shared across projects.
-`data`          |              [(data)][15] | Sample and temporary data. Should eventually become obsolete once the database is up and running.
+`assets`        |        [`cdn.dlx.org`][1] | Assets shared across DLx projects.
+`dlx-api`       |        [`api.dlx.org`][2] | The DLx database API.
+`dlx-api-js`    |     [GitHub][3], [npm][4] | A JavaScript SDK for interacting with the DLx database.
+`dlx-api-node`  |     [GitHub][5], [npm][6] | A Node.js SDK for interacting with the DLx database.
+`dlx-api-py`    |     [GitHub][7], [npm][8] | A Python SDK for interacting with the DLx database.
+`dlx-app`       |        [`app.dlx.org`][9] | The client-side app for managing linguistic data.
+`dlx-blog`      |      [`blog.dlx.org`][10] | The DLx blog, hosted with Ghost.
+`dlx-js`        |   [GitHub][11], [npm][12] | A JavaScript / Node.js library for working with linguistic data in DLx format.
+`dlx-login`     |     [`login.dlx.org`][13] | Single sign-on for any DLx sites or apps. Also handles OAuth requests and issues API tokens (JWTs).
+`dlx-org`       |       [`www.dlx.org`][14] | The main site, consisting of mostly informational content. Also serves as a router to the different subdomains (e.g. `dlx.org/blog` --> `blog.dlx.org`). Azure: `dlx`.
+`dlx-org`       | [`developer.dlx.org`][15] | Information for developers. Much of the documentation for DLx projects will also be redirected to the relevant GitHub pages at [https://digitallinguistics.github.io/{project}]().
+`dlx-py`        |   [GitHub][16], [npm][17] | A Python library for working with linguistic data in DLx format.
+`dlx-spec`      |   [`schemas.dlx.org`][18] | The specifications for the DLx data format.
+`dlx-writer`    |    [`writer.dlx.org`][19] | Platform for writing linguistic publications in HTML, using live DLx data.
 
-[1]:  http://digitallinguistics.org/
-[2]:  http://blog.digitallinguistics.org/
-[3]:  http://spec.digitallinguistics.org/
-[4]:  https://api.digitallinguistics.org/
-[5]:  http://app.digitallinguistics.org/
-[6]:  http://developer.digitallinguistics.org/
-[7]:  http://writer.digitallinguistics.org/
-[8]:  http://tools.digitallinguistics.org/
-[9]:  https://github.com/digitallinguistics/dlx-js/
-[10]: https://github.com/digitallinguistics/dlx-node/
-[11]: https://github.com/digitallinguistics/dlx-py/
-[12]: http://dev.digitallinguistics.org/
-[13]: http://sandbox.digitallinguistics.org/
-[14]: https://github.com/digitallinguistics/assets/
-[15]: https://github.com/digitallinguistics/data/
-[16]: https://github.com/digitallinguistics/dlx-core/
-[17]: https://login.digitallinguistics.org/
-[18]: http://github.com/digitallinguistics/dlx-text
+[1]:  https://github.com/digitallinguistics/assets
+[2]:  https://digitallinguistics.github.io/dlx-api
+[3]:  https://digitallinguistics.github.io/dlx-api-js
+[4]:  https://www.npmjs.com/package/dlx-js
+[5]:  https://digitallinguistics.github.io/dlx-api-node
+[6]:  https://www.npmjs.com/package/dlx-api-node
+[7]:  https://digitallinguistics.github.io/dlx-api-py
+[8]:  https://www.npmjs.com/package/dlx-api-py
+[9]:  https://app.digitallinguistics.org
+[10]: http://blog.digitallinguistics.org
+[11]: https://digitallinguistics.github.io/dlx-js
+[12]: https://www.npmjs.com/package/dlx-js
+[13]: https://login.digitallinguistics.org
+[14]: http://digitallinguistics.org
+[15]: http://developer.digitallinguistics.org
+[16]: https://digitallinguistics.github.io/dlx-py
+[17]: https://www.npmjs.com/package/dlx-py
+[18]: http://schemas.digitallinguistics.org
+[19]: https://writer.digitallinguistics.org
