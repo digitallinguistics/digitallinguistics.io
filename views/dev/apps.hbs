@@ -1,5 +1,5 @@
 {{#section 'style'}}
-  <link rel=stylesheet type=text/css href=/css/myapps.css charset=utf-8>
+  <link rel=stylesheet type=text/css href=/css/apps.css charset=utf-8>
 {{/section}}
 
 <main id=apps>
@@ -16,7 +16,9 @@
 
       <tbody>
         {{#each apps}}
-          <tr data-id={{id}}><td>{{name}}</td><td>{{id}}</td></tr>
+          <tr data-id={{id}}>
+            <td>{{name}}</td>
+          </tr>
         {{/each}}
       </tbody>
 
