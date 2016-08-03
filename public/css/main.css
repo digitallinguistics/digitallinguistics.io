@@ -69,9 +69,6 @@ p > a:active {
 #header nav div {
   white-space: nowrap;
 }
-#header nav div a + a {
-  margin-left: 0.5rem;
-}
 #error {
   align-items: center;
   padding: 1rem;
