@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang=en>
+
+  <head>
+
+    <meta charset=utf-8>
+    <title>DLx</title>
+    <meta name=publisher content='Digital Linguistics'>
+    <meta name=author content='{{meta.author.name}}'>
+    <meta name=description content='{{meta.description}}'>
+    <meta name=keywords content='{{#each meta.keywords}}{{this}}, {{/each}}'>
+    <meta name=viewport content='initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
+
+    <link href={{cdn}}/img/wugbot.ico rel='shortcut icon' type=image/x-icon>
+    <link href={{cdn}}/css/reset.css rel=stylesheet>
+    <link href=/css/main.css rel=stylesheet>
+
+    {{{sections.style}}}
+
+  </head>
+
+  <body>
+
+    <a href=/>
+      <header>
+        <img id=wugbot src={{cdn}}/img/wugbot.svg alt='DLx wugbot logo'>
+        <h1>Digital Linguistics (DLx)</h1>
+        <img id=wug src={{cdn}}/img/wug.svg alt='DLx wug logo'>
+      </header>
+    </a>
+
+    <nav>
+      <ul>
+        <li><a href=/>Home</a></li>
+        <li><a href=/about>About</a></li>
+        <li><a href=https://app.digitallinguistics.io/ rel='noopener noreferrer'>App</a></li>
+        <li><a href=http://developer.digitallinguistics.io/ rel='noopener noreferrer'>Developers</a></li>
+      </ul>
+    </nav>
+
+    {{{body}}}
+
+    <footer></footer>
+
+    {{{sections.script}}}
+
+  </body>
+
+</html>

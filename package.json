@@ -1,5 +1,5 @@
 {
-  "name": "dlx-org",
+  "name": "digitallinguistics.io",
   "version": "1.0.0",
   "description": "The Digital Linguistics (DLx) website",
   "keywords": [
@@ -26,5 +26,16 @@
   "engines": {
     "node": "7.x"
   },
-  "scripts": {}
+  "scripts": {
+    "build": "npm run less",
+    "less": "node build/less.js"
+  },
+  "dependencies": {
+    "express": "^4.14.1",
+    "express-handlebars": "^3.0.0",
+    "helmet": "^3.4.0"
+  },
+  "devDependencies": {
+    "less": "^2.7.2"
+  }
 }
