@@ -1,50 +1,30 @@
 {
   "name": "dlx-org",
   "version": "1.0.0",
-  "description": "The DLx website.",
+  "description": "The Digital Linguistics (DLx) website",
   "keywords": [
     "DLx",
     "Digital Linguistics",
     "linguistics",
-    "language documentation"
+    "documentation",
+    "language"
   ],
-  "homepage": "https://github.com/digitallinguistics/dlx-org#readme",
+  "homepage": "https://digitallinguistics.io/",
   "bugs": {
-    "url": "https://github.com/digitallinguistics/dlx-org/issues"
+    "url": "https://github.com/digitallinguistics/digitallinguistics.io/issues"
   },
   "license": "MIT",
-  "contributors": [
-    {
-      "name": "Daniel W. Hieber",
-      "url": "http://danielhieber.com"
-    },
-    {
-      "name": "Patrick J. Hall"
-    }
-  ],
+  "author": {
+    "name": "Daniel W. Hieber",
+    "url": "http://danielhieber.com"
+  },
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/digitallinguistics/dlx-org.git"
+    "url": "git+https://github.com/digitallinguistics/digitallinguistics.io.git"
   },
   "engines": {
-    "node": "5.x"
+    "node": "7.x"
   },
-  "scripts": {
-    "build": "babel src -d public/js && node build/less.js"
-  },
-  "dependencies": {
-    "body-parser": "^1.14.2",
-    "cookie-parser": "^1.4.1",
-    "dlx-documentdb": "^4.0.2",
-    "express": "^4.13.4",
-    "express-handlebars": "^3.0.0",
-    "vhost": "^3.0.2"
-  },
-  "devDependencies": {
-    "azure-storage": "^0.10.0",
-    "babel-cli": "^6.7.5",
-    "babel-preset-es2015": "^6.6.0",
-    "less": "^2.6.1"
-  }
+  "scripts": {}
 }
