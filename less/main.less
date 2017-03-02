@@ -29,3 +29,45 @@ body {
   }
 
 }
+
+@cdn:     'https://cdn.digitallinguistics.io';
+@dlxBlue: #3399ff;
+
+.nav ul {
+
+  background-color: @dlxBlue;
+  color: white;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 1.25rem;
+  justify-content: space-around;
+
+  li {
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+  }
+
+  a {
+    text-align: center;
+    padding: 0.5em;
+  }
+
+  a::after {
+    background-image: url('@{cdn}/img/wugbot.svg');
+    background-repeat: no-repeat;
+    background-size: 4rem;
+    content: '';
+    height: 4rem;
+    left: 50%;
+    position: absolute;
+    transform: translateY(1.5rem);
+    transition: transform 0.3s;
+    width: 4rem;
+  }
+
+  a:hover::after {
+    transform: translateY(-1.5rem);
+  }
+
+}

@@ -22,3 +22,35 @@ body {
 .banner .wugbot {
   transform: scale(-1, 0.9) translateY(-9%);
 }
+.nav ul {
+  background-color: #3399ff;
+  color: white;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 1.25rem;
+  justify-content: space-around;
+}
+.nav ul li {
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+}
+.nav ul a {
+  text-align: center;
+  padding: 0.5em;
+}
+.nav ul a::after {
+  background-image: url('https://cdn.digitallinguistics.io/img/wugbot.svg');
+  background-repeat: no-repeat;
+  background-size: 4rem;
+  content: '';
+  height: 4rem;
+  left: 50%;
+  position: absolute;
+  transform: translateY(1.5rem);
+  transition: transform 0.3s;
+  width: 4rem;
+}
+.nav ul a:hover::after {
+  transform: translateY(-1.5rem);
+}
