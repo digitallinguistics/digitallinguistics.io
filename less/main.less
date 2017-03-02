@@ -1,5 +1,31 @@
-#wug,
-#wugbot,
-{
-  transform: scaleX(-1);
+body {
+  font-family: 'Fira Sans';
+  line-height: 1.5;
+}
+
+.banner {
+
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+
+  header {
+    align-items: center;
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .wug {
+    margin-right: 0.5rem;
+    transform: scaleX(-1);
+  }
+
+  .wugbot {
+    transform: scale(-1, 0.9) translateY(-9%);
+  }
+
 }

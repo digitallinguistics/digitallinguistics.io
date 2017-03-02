@@ -1,4 +1,24 @@
-#wug,
-#wugbot {
+body {
+  font-family: 'Fira Sans';
+  line-height: 1.5;
+}
+.banner {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+.banner header {
+  align-items: center;
+  flex-grow: 1;
+  text-align: center;
+}
+.banner h1 {
+  font-size: 2rem;
+}
+.banner .wug {
+  margin-right: 0.5rem;
   transform: scaleX(-1);
+}
+.banner .wugbot {
+  transform: scale(-1, 0.9) translateY(-9%);
 }
