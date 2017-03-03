@@ -45,7 +45,7 @@ body {
   background-size: 4rem;
   content: '';
   height: 4rem;
-  left: 50%;
+  right: 0;
   position: absolute;
   transform: translateY(1.5rem);
   transition: transform 0.3s;
