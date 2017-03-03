@@ -1,6 +1,54 @@
+@cdn:  'https://cdn.digitallinguistics.io';
+
+@wugbotblue:      #6FD1F6;
+
+@verydarkblue:    #017CF2;
+@darkblue:        #0F89FF;
+@blue:            #3399ff;
+@lightblue:       #5CAFFF;
+@verylightblue:   #88C4FE;
+
+@lightblue-transparent:     rgba(92, 175, 255, 0.2);
+@verylightblue-transparent: rgba(136, 196, 254, 0.2);
+
+@verylightgreen:  #7FFED1;
+@lightgreen:      #4FFFC1;
+@green:           #23FFB1;
+@darkgreen:       #00FFA5;
+@verydarkgreen:   #00F39D;
+
+@verylightorange: #FFA97F;
+@lightorange:     #FF884F;
+@orange:          #FF6A23;
+@darkorange:      #FF5300;
+
+@verylightpurple: #9791FE;
+@lightpurple:     #7068FF;
+@purple:          #4D42FF;
+@darkpurple:      #2A1DFF;
+@verydarkpurple:  #1002F4;
+
+@verylightred:    #FF9797;
+@lightred:        #E96363;
+@red:             #CA3C3C;
+@darkred:         #AA1F1F;
+@verydarkred:     #830505;
+
 body {
   font-family: 'Fira Sans';
   line-height: 1.5;
+}
+
+#home {
+  background-color: @verylightblue-transparent;
+  flex-grow: 1;
+}
+
+.cards {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1rem 0rem;
 }
 
 .banner {
@@ -20,8 +68,6 @@ body {
     font-size: 2rem;
   }
 
-  p {}
-
   .wug {
     margin-right: 0.5rem;
     transform: scaleX(-1);
@@ -33,12 +79,58 @@ body {
 
 }
 
-@cdn:     'https://cdn.digitallinguistics.io';
-@dlxBlue: #3399ff;
+.card {
+
+  border-top: 5px solid @blue;
+  border-radius: 5px;
+  box-shadow: 0 0 1px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.05);
+  background-color: white;
+  color: black;
+  margin: 1.5rem;
+  padding: 0.5em 1em;
+  position: relative;
+  transition: box-shadow 0.3s;
+  width: 20rem;
+
+  &:hover {
+    box-shadow: 0 0 1px rgba(0,0,0,0.2), 0 3px 16px rgba(0,0,0,0.15);
+  }
+
+  &::after {
+    background-image: url('@{cdn}/img/wug.svg');
+    background-repeat: no-repeat;
+    background-size: 5rem;
+    content: '';
+    height: 7.5rem;
+    left: 0;
+    position: absolute;
+    transition: transform 0.3s ease;
+    width: 5rem;
+    z-index: -1;
+  }
+
+  &:hover::after {
+    transform: rotate(-20deg) scaleX(-1) translateX(2.5rem);
+  }
+
+  a {
+    align-items: center;
+    display: flex;
+  }
+
+  h1 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    text-align: center;
+  }
+
+}
 
 .nav ul {
 
-  background-color: @dlxBlue;
+  background-color: @blue;
   color: white;
   flex-direction: row;
   flex-wrap: wrap;
