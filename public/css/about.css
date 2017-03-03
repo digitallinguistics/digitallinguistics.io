@@ -1,0 +1,14 @@
+#about {
+  align-self: center;
+  margin: 2rem;
+  max-width: 1000px;
+}
+#about h1 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding-bottom: 0.5em;
+}
+#about p,
+#about li {
+  padding-bottom: 0.75em;
+}

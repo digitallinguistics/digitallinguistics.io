@@ -1,16 +1,16 @@
 body {
-  font-family: 'Fira Sans';
+  font-family: 'Fira Sans', 'Arial', sans-serif;
   line-height: 1.5;
 }
-#home {
-  background-color: rgba(136, 196, 254, 0.2);
-  flex-grow: 1;
+abbr {
+  font-family: 'Fira Mono', 'Monaco', 'Courier New', monospace;
+  font-style: normal;
 }
-.cards {
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 1rem 0rem;
+abbr::after {
+  content: ')';
+}
+abbr::before {
+  content: '(';
 }
 .banner {
   align-items: center;
@@ -33,46 +33,11 @@ body {
 .banner .wugbot {
   transform: scale(-1, 0.9) translateY(-9%);
 }
-.card {
-  border-top: 5px solid #3399ff;
-  border-radius: 5px;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.05);
-  background-color: white;
-  color: black;
-  margin: 1.5rem;
-  padding: 0.5em 1em;
-  position: relative;
-  transition: box-shadow 0.3s;
-  width: 20rem;
+.bulleted {
+  padding-left: 1.25em;
 }
-.card:hover {
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 3px 16px rgba(0, 0, 0, 0.15);
-}
-.card::after {
-  background-image: url('https://cdn.digitallinguistics.io/img/wug.svg');
-  background-repeat: no-repeat;
-  background-size: 5rem;
-  content: '';
-  height: 7.5rem;
-  left: 0;
-  position: absolute;
-  top: 0;
-  transition: transform 0.3s ease;
-  width: 5rem;
-  z-index: -1;
-}
-.card:hover::after {
-  transform: rotate(-20deg) scaleX(-1) translateX(2.5rem);
-}
-.card a {
-  align-items: center;
-  display: flex;
-}
-.card h1 {
-  font-size: 1.25rem;
-}
-.card p {
-  text-align: center;
+dfn {
+  font-style: italic;
 }
 .nav ul {
   background-color: #3399ff;
@@ -105,4 +70,20 @@ body {
 }
 .nav ul a:hover::after {
   transform: translateY(-1.5rem);
+}
+p a {
+  border-bottom: 1px solid white;
+  color: #3399ff;
+}
+p a:link {
+  color: #3399ff;
+}
+p a:visited {
+  color: #3399ff;
+}
+p a:hover {
+  border-bottom: 1px solid #3399ff;
+}
+p a:active {
+  color: #3399ff;
 }

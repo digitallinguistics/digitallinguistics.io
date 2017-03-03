@@ -1,20 +1,19 @@
 @import (reference) 'https://cdn.digitallinguistics.io/less/dlx.less';
 
 body {
-  font-family: 'Fira Sans';
+  font-family: 'Fira Sans', 'Arial', sans-serif;
   line-height: 1.5;
 }
 
-#home {
-  background-color: @verylightblue-transparent;
-  flex-grow: 1;
-}
-
-.cards {
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 1rem 0rem;
+abbr {
+  font-family: 'Fira Mono', 'Monaco', 'Courier New', monospace;
+  font-style: normal;
+  &::after {
+    content: ')';
+  }
+  &::before {
+    content: '(';
+  }
 }
 
 .banner {
@@ -45,54 +44,12 @@ body {
 
 }
 
-.card {
+.bulleted {
+  padding-left: 1.25em;
+}
 
-  border-top: 5px solid @blue;
-  border-radius: 5px;
-  box-shadow: 0 0 1px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.05);
-  background-color: white;
-  color: black;
-  margin: 1.5rem;
-  padding: 0.5em 1em;
-  position: relative;
-  transition: box-shadow 0.3s;
-  width: 20rem;
-
-  &:hover {
-    box-shadow: 0 0 1px rgba(0,0,0,0.2), 0 3px 16px rgba(0,0,0,0.15);
-  }
-
-  &::after {
-    background-image: url('@{cdn}/img/wug.svg');
-    background-repeat: no-repeat;
-    background-size: 5rem;
-    content: '';
-    height: 7.5rem;
-    left: 0;
-    position: absolute;
-    top: 0;
-    transition: transform 0.3s ease;
-    width: 5rem;
-    z-index: -1;
-  }
-
-  &:hover::after {
-    transform: rotate(-20deg) scaleX(-1) translateX(2.5rem);
-  }
-
-  a {
-    align-items: center;
-    display: flex;
-  }
-
-  h1 {
-    font-size: 1.25rem;
-  }
-
-  p {
-    text-align: center;
-  }
-
+dfn {
+  font-style: italic;
 }
 
 .nav ul {
@@ -132,4 +89,8 @@ body {
     transform: translateY(-1.5rem);
   }
 
+}
+
+p a {
+  .link;
 }

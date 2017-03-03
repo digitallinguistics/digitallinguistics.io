@@ -1,16 +1,22 @@
+{{#section 'style'}}
+  <link rel=stylesheet href=/css/about.css>
+{{/section}}
+
 <main id=about>
 
   <section>
 
+    <h1>Introduction</h1>
+
     <p>
-      <dfn>Digital Linguistics <abbr title='Digital Linguistics'>(DLx)</abbr></dfn> is the science of the computational representation and manipulation of linguistic data. It concerns itself with how to represent linguistic data in a digital form, as well as the best ways for linguists to work with that data, using all the benefits of the modern Open Web Platform <abbr title='Open Web Platform'>(OWP)</abbr>.
+      <dfn>Digital Linguistics <abbr title='Digital Linguistics'>DLx</abbr></dfn> is the science of the computational representation and manipulation of linguistic data. It concerns itself with how to represent linguistic data in a digital form, as well as the best ways for linguists to work with that data, using all the benefits of the modern <a href=https://en.wikipedia.org/wiki/Open_Web_Platform target=_blank rel='noopener noreferrer'>Open Web Platform <abbr title='Open Web Platform'>OWP</abbr></a>.
     </p>
 
     <p>
       The Digital Linguistics project at the University of California, Santa Barbara, has three primary aims:
     </p>
 
-    <ul>
+    <ul class=bulleted>
 
       <li>
         <p>
@@ -34,19 +40,19 @@
 
   </section>
 
-  <section id=why-another-app>
+  <section>
 
     <h1>Why Another App?</h1>
 
     <p>
-      There are already a number of tools for linguistic analysis, such as <a href=http://www.laurenceanthony.net/software.html target=_blank rel='noopener noreferrer'>Antconc</a>, <a href=https://tla.mpi.nl/tools/tla-tools/elan/ target=_blank rel='noopener noreferrer'>ELAN</a>, and <a href=http://fieldworks.sil.org/flex/ target=_blank rel='noopener noreferrer'>Fieldworks Language Explorer (FLEx)</a>. So why build yet another application?
+      There are already a number of tools for linguistic analysis, such as <a href=http://www.laurenceanthony.net/software.html target=_blank rel='noopener noreferrer'>Antconc</a>, <a href=https://tla.mpi.nl/tools/tla-tools/elan/ target=_blank rel='noopener noreferrer'>ELAN</a>, and <a href=http://fieldworks.sil.org/flex/ target=_blank rel='noopener noreferrer'>Fieldworks Language Explorer <abbr title='Fieldworks Language Explorer'>FLEx</abbr></a>. So why build yet another application?
     </p>
 
     <p>
       The advantages of the DLx approach, and the modern web technologies it uses, are numerous:
     </p>
 
-    <ul>
+    <ul class=bulleted>
 
       <li>
         <p>
@@ -56,13 +62,13 @@
 
       <li>
         <p>
-          Each piece of software formats its data in different ways, meaning that you can't transfer your data from one program to another without writing scripts or tediously manipulating the data by hand. All DLx tools, on the other hand, use a common, extensible format, that doesn't break when you transfer your data to another tool. This format (called JSON) is also the primary data format used on the web today.
+          Each piece of software formats its data in different ways, meaning that you can't transfer your data from one program to another without writing scripts or tediously manipulating the data by hand. All DLx tools, on the other hand, use a common, extensible format, that doesn't break when you transfer your data to another tool. This format (called <dfn>JavaScript Object Notation <abbr title='Open Web Platform'>JSON</abbr></dfn>) is also the primary data format used on the web today.
         </p>
       </li>
 
       <li>
         <p>
-          Other linguistic software is designed to do one or two things only, so that you constantly have to switch between different programs, and worry about keeping your data in sync. DLx, on the other hand, provides a single web app for all your various tasks, backed by a unified database for your data. All your data stays in sync across different tools. And if the DLx app is missing a feature you need, you or someone else can write a plugin that gets added to the app.
+          Other linguistic software is designed to do one or two things only, so that you constantly have to switch between different programs, and worry about keeping your data in sync. DLx, on the other hand, provides a single web app for all your various tasks, backed by a unified database for your data. All your data stays in sync across different tools. And if the DLx app is missing a feature you need, you or someone else can write a plugin for the app.
         </p>
       </li>
 
@@ -77,7 +83,7 @@
       Below are a few publications discussing Digital Linguistics or related concepts.
     </p>
 
-    <ul id=pubs>
+    <ul id=publications>
       {{#each docs}}
         {{> reference}}
       {{/each}}
