@@ -10,6 +10,7 @@ body {
 .banner header {
   align-items: center;
   flex-grow: 1;
+  padding: 2em 0em;
   text-align: center;
 }
 .banner h1 {
