@@ -1,0 +1,8 @@
+#error {
+  align-items: center;
+  padding: 2rem;
+}
+#error h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
