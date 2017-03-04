@@ -12,11 +12,18 @@
 #about li {
   padding-bottom: 0.75em;
 }
-#publications summary {
-  display: inline;
-  margin-bottom: 0.125em;
-  margin-left: 3rem;
-  text-indent: -3rem;
+#publications {
+  list-style: disc outside none;
+  margin-bottom: 40rem;
+  margin-left: 1.25em;
+}
+#publications p {
+  display: block;
+  margin-left: 2em;
+  text-indent: -2em;
+}
+#publications li {
+  display: list-item;
 }
 #publications cite,
 #publications i {

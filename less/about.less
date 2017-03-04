@@ -22,11 +22,19 @@
 
 #publications {
 
-  summary {
-    display: inline;
-    margin-bottom: 0.125em;
-    margin-left: 3rem;
-    text-indent: -3rem;
+  list-style: disc outside none;
+  margin-bottom: 40rem;
+  margin-left: 1.25em;
+
+
+  p {
+    display: block; // TODO: remove this rule once you have the latest flexbox-reset installed
+    margin-left: 2em;
+    text-indent: -2em;
+  }
+
+  li {
+    display: list-item;
   }
 
   cite,
