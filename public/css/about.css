@@ -12,3 +12,13 @@
 #about li {
   padding-bottom: 0.75em;
 }
+#publications summary {
+  display: inline;
+  margin-bottom: 0.125em;
+  margin-left: 3rem;
+  text-indent: -3rem;
+}
+#publications cite,
+#publications i {
+  font-style: italic;
+}
