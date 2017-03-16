@@ -1,20 +1,4 @@
-@import (reference) 'https://cdn.digitallinguistics.io/less/dlx.less';
-
-body {
-  font-family: 'Fira Sans', 'Arial', sans-serif;
-  line-height: 1.5;
-}
-
-abbr {
-  font-family: 'Fira Mono', 'Monaco', 'Courier New', monospace;
-  font-style: normal;
-  &::after {
-    content: ')';
-  }
-  &::before {
-    content: '(';
-  }
-}
+@import 'https://cdn.digitallinguistics.io/less/dlx.less';
 
 .banner {
 
@@ -23,14 +7,16 @@ abbr {
   flex-direction: row;
 
   header {
+
     align-items: center;
     flex-grow: 1;
     padding: 2em 0em;
     text-align: center;
-  }
 
-  h1 {
-    font-size: 2rem;
+    p {
+      font-size: larger;
+    }
+
   }
 
   .wug {
@@ -44,18 +30,9 @@ abbr {
 
 }
 
-.bulleted {
-  padding-left: 1.25em;
-}
-
-dfn {
-  font-style: italic;
-}
-
 .nav ul {
 
-  background-color: @blue;
-  color: white;
+  .blue-background;
   flex-direction: row;
   flex-wrap: wrap;
   font-size: 1.25rem;
@@ -91,14 +68,9 @@ dfn {
 
 }
 
-p a {
-  .link;
-}
-
 footer {
+  .blue-background;
   align-items: center;
-  background-color: @blue;
-  color: white;
   flex-direction: row;
   justify-content: center;
   img { margin: 1rem; }

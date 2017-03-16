@@ -1,15 +1,26 @@
 {{#section 'style'}}
-  <link rel=stylesheet href=/css/about.css>
+<style>
+  #about {
+    align-self: center;
+    margin: 2rem;
+    max-width: 1000px;
+  }
+
+  #introduction li,
+  #why-another-app li {
+    padding-top: 0.5em;
+  }
+</style>
 {{/section}}
 
 <main id=about>
 
-  <section>
+  <section id=introduction>
 
-    <h1>Introduction</h1>
+    <h1 class=section-header>Introduction</h1>
 
     <p>
-      <dfn>Digital Linguistics <abbr title='Digital Linguistics'>DLx</abbr></dfn> is the science of the computational representation and manipulation of linguistic data. It concerns itself with how to represent linguistic data in a digital form, as well as the best ways for linguists to work with that data, using all the benefits of the modern <a href=https://en.wikipedia.org/wiki/Open_Web_Platform target=_blank rel='noopener noreferrer'>Open Web Platform <abbr title='Open Web Platform'>OWP</abbr></a>.
+      <dfn>Digital Linguistics (<abbr title='Digital Linguistics'>DLx</abbr>)</dfn> is the science of the computational representation and manipulation of linguistic data. It concerns itself with how to represent linguistic data in a digital form, as well as the best ways for linguists to work with that data, using all the benefits of the modern <a href=https://en.wikipedia.org/wiki/Open_Web_Platform target=_blank rel='noopener noreferrer'>Open Web Platform (<abbr title='Open Web Platform'>OWP</abbr>)</a>.
     </p>
 
     <p>
@@ -40,12 +51,12 @@
 
   </section>
 
-  <section>
+  <section id=why-another-app>
 
-    <h1>Why Another App?</h1>
+    <h1 class=section-header>Why Another App?</h1>
 
     <p>
-      There are already a number of tools for linguistic analysis, such as <a href=http://www.laurenceanthony.net/software.html target=_blank rel='noopener noreferrer'>Antconc</a>, <a href=https://tla.mpi.nl/tools/tla-tools/elan/ target=_blank rel='noopener noreferrer'>ELAN</a>, and <a href=http://fieldworks.sil.org/flex/ target=_blank rel='noopener noreferrer'>Fieldworks Language Explorer <abbr title='Fieldworks Language Explorer'>FLEx</abbr></a>. So why build yet another application?
+      There are already a number of tools for linguistic analysis, such as <a href=http://www.laurenceanthony.net/software.html target=_blank rel='noopener noreferrer'>Antconc</a>, <a href=https://tla.mpi.nl/tools/tla-tools/elan/ target=_blank rel='noopener noreferrer'>ELAN</a>, and <a href=http://fieldworks.sil.org/flex/ target=_blank rel='noopener noreferrer'>Fieldworks Language Explorer (<abbr title='Fieldworks Language Explorer'>FLEx</abbr>)</a>. So why build yet another application?
     </p>
 
     <p>
@@ -62,7 +73,7 @@
 
       <li>
         <p>
-          Each piece of software formats its data in different ways, meaning that you can't transfer your data from one program to another without writing scripts or tediously manipulating the data by hand. All DLx tools, on the other hand, use a common, extensible format, that doesn't break when you transfer your data to another tool. This format (called <dfn>JavaScript Object Notation <abbr title='Open Web Platform'>JSON</abbr></dfn>) is also the primary data format used on the web today.
+          Each piece of software formats its data in different ways, meaning that you can't transfer your data from one program to another without writing scripts or tediously manipulating the data by hand. All DLx tools, on the other hand, use a common, extensible format, that doesn't break when you transfer your data to another tool. This format (called <dfn>JavaScript Object Notation</dfn> or <abbr title='Open Web Platform'>JSON</abbr>) is also the primary data format used on the web today.
         </p>
       </li>
 
@@ -75,9 +86,9 @@
     </ul>
   </section>
 
-  <section>
+  <section class=reference-list>
 
-    <h1>Publications</h1>
+    <h1 class=section-header>Publications</h1>
 
     <p>
       Below are a few publications discussing Digital Linguistics or related concepts.

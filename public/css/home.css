@@ -43,9 +43,6 @@
   align-items: center;
   display: flex;
 }
-.card h1 {
-  font-size: 1.25rem;
-}
 .card p {
   text-align: center;
 }

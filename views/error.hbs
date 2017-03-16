@@ -1,8 +1,13 @@
 {{#section 'style'}}
-  <link rel=stylesheet href=/css/error.css>
+<style>
+  #error {
+    align-items: center;
+    padding: 2rem;
+  }
+</style>
 {{/section}}
 
 <main id=error>
-  <h1>{{status}}: {{error}}</h1>
+  <h1 class=section-header>{{status}}: {{error}}</h1>
   <p>{{{details}}}</p>
 </main>
