@@ -73,19 +73,25 @@ dfn {
 }
 p a {
   color: #3399FF;
-  border-bottom: 0.075em solid white;
+  border-bottom: 0.075em solid transparent;
 }
 p a:link {
   color: #3399FF;
 }
 p a:visited {
-  color: #3399FF;
+  color: #4D42FF;
 }
 p a:hover {
   border-bottom: 0.075em solid #3399FF;
 }
 p a:active {
   color: #3399FF;
+}
+p a:visited:hover {
+  border-bottom: 0.075em solid #4D42FF;
+}
+p a:visited:active {
+  color: #4D42FF;
 }
 footer {
   align-items: center;
@@ -110,6 +116,9 @@ footer p > a:visited {
 footer p > a:hover {
   border-bottom: 0.075em solid white;
 }
+footer p > a:visited:hover {
+  border-bottom: 0.075em solid white;
+}
 footer p > a:active {
   color: white;
 }
@@ -124,6 +133,9 @@ footer p > a:active {
   color: white;
 }
 .white-link:hover {
+  border-bottom: 0.075em solid white;
+}
+.white-link:visited:hover {
   border-bottom: 0.075em solid white;
 }
 .white-link:active {
