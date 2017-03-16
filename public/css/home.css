@@ -9,7 +9,7 @@
   margin: 1rem 0rem;
 }
 .card {
-  border-top: 5px solid #3399ff;
+  border-top: 5px solid #3399FF;
   border-radius: 5px;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.05);
   background-color: white;

@@ -38,5 +38,3 @@ node_modules
 .eslintrc
 .jshintrc
 credentials.js
-dev.js
-nodemon.json

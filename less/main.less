@@ -94,3 +94,22 @@ dfn {
 p a {
   .link;
 }
+
+footer {
+  align-items: center;
+  background-color: @blue;
+  color: white;
+  flex-direction: row;
+  justify-content: center;
+  img { margin: 1rem; }
+  p > a { .white-link; }
+}
+
+.white-link {
+  border-bottom: 0.075em solid transparent;
+  color: white;
+  &:link { color: white; }
+  &:visited { color: white; }
+  &:hover { border-bottom: 0.075em solid white; }
+  &:active { color: white; }
+}

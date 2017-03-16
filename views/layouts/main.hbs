@@ -9,7 +9,7 @@
     <meta name=author content='{{meta.author.name}}'>
     <meta name=description content='{{meta.description}}'>
     <meta name=keywords content='{{#each meta.keywords}}{{this}}, {{/each}}'>
-    <meta name=viewport content='initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
+    <meta name=viewport content='width=device-width, initial-scale=1'>
 
     <link href={{cdn}}/img/wugbot.ico rel='shortcut icon' type=image/x-icon>
     <link href={{cdn}}/css/reset.css  rel=stylesheet>
@@ -43,7 +43,15 @@
 
     {{{body}}}
 
-    <footer></footer>
+    <footer>
+
+      <a href=https://github.com/digitallinguistics target=_blank rel='noopener noreferrer'>
+        <img src=/img/octicon-white.svg alt='GitHub octicon logo'>
+      </a>
+
+      <p><a href=https://github.com/digitallinguistics>View Digital Linguistics on GitHub</a></p>
+
+    </footer>
 
     {{{sections.script}}}
 

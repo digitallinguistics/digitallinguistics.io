@@ -40,7 +40,7 @@ dfn {
   font-style: italic;
 }
 .nav ul {
-  background-color: #3399ff;
+  background-color: #3399FF;
   color: white;
   flex-direction: row;
   flex-wrap: wrap;
@@ -72,18 +72,60 @@ dfn {
   transform: translateY(-1.5rem);
 }
 p a {
-  border-bottom: 1px solid white;
-  color: #3399ff;
+  color: #3399FF;
+  border-bottom: 0.075em solid white;
 }
 p a:link {
-  color: #3399ff;
+  color: #3399FF;
 }
 p a:visited {
-  color: #3399ff;
+  color: #3399FF;
 }
 p a:hover {
-  border-bottom: 1px solid #3399ff;
+  border-bottom: 0.075em solid #3399FF;
 }
 p a:active {
-  color: #3399ff;
+  color: #3399FF;
+}
+footer {
+  align-items: center;
+  background-color: #3399FF;
+  color: white;
+  flex-direction: row;
+  justify-content: center;
+}
+footer img {
+  margin: 1rem;
+}
+footer p > a {
+  border-bottom: 0.075em solid transparent;
+  color: white;
+}
+footer p > a:link {
+  color: white;
+}
+footer p > a:visited {
+  color: white;
+}
+footer p > a:hover {
+  border-bottom: 0.075em solid white;
+}
+footer p > a:active {
+  color: white;
+}
+.white-link {
+  border-bottom: 0.075em solid transparent;
+  color: white;
+}
+.white-link:link {
+  color: white;
+}
+.white-link:visited {
+  color: white;
+}
+.white-link:hover {
+  border-bottom: 0.075em solid white;
+}
+.white-link:active {
+  color: white;
 }
