@@ -25,12 +25,11 @@ app.use(middleware);                 // custom middleware
 // URL routing
 // route(app);
 
+// TODO: remove this
+app.get(`/`, (req, res) => res.status(200).json({ hello: `world` }));
+
 // create server
-// const server = http.createServer(app);
-const server = http.createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': `text/plain` });
-  res.end('Hello world!');
-});
+const server = http.createServer(app);
 
 // start server listening
 server.listen(config.port, () => {
