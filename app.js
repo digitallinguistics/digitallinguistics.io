@@ -18,9 +18,9 @@ app.set(`port`, config.port);        // set port for the app (3000 on localhost)
 // app.set(`view engine`, hbs.extname); // use Handlebars for templating
 
 // middleware
-// app.use(helmet());                   // basic security features
-// app.use(express.static(`public`));   // routing for static files
-// app.use(middleware);                 // custom middleware
+app.use(helmet());                   // basic security features
+app.use(express.static(`public`));   // routing for static files
+app.use(middleware);                 // custom middleware
 
 // URL routing
 // route(app);
