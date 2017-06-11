@@ -6,7 +6,7 @@ const helmet     = require('helmet');
 const http       = require('http');
 const meta       = require('./package.json');
 const middleware = require('./lib/middleware');
-// const route      = require('./lib/router');
+const route      = require('./lib/router');
 
 // initialize Express
 const app = express();
