@@ -1,10 +1,10 @@
-// const config = require('./lib/config');
+const config = require('./lib/config');
 
 // const express    = require('express');
 // const hbs        = require('./lib/handlebars');
 // const helmet     = require('helmet');
 const http       = require('http');
-// const meta       = require('./package.json');
+const meta       = require('./package.json');
 // const middleware = require('./lib/middleware');
 // const route      = require('./lib/router');
 
@@ -27,19 +27,14 @@ const http       = require('http');
 
 // create server
 // const server = http.createServer(app);
+const server = http.createServer();
 
 // start server listening
-// server.listen(config.port, () => {
-//   console.log(`\nServer started. Press Ctrl+C to terminate.
-//   Project:  ${meta.name}
-//   Port:     ${config.port}
-//   Time:     ${new Date}
-//   Node:     ${process.version}
-//   Env:      ${config.env}`);
-// });
-
-// TODO: remove this
-http.createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('Hello world!');
-}).listen(process.env.PORT || 3000);
+server.listen(config.port, () => {
+  console.log(`\nServer started. Press Ctrl+C to terminate.
+  Project:  ${meta.name}
+  Port:     ${config.port}
+  Time:     ${new Date}
+  Node:     ${process.version}
+  Env:      ${config.env}`);
+});
