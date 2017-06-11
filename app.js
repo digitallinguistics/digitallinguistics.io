@@ -1,7 +1,7 @@
 const config = require('./lib/config');
 
 const express    = require('express');
-// const hbs        = require('./lib/handlebars');
+const hbs        = require('./lib/handlebars');
 const helmet     = require('helmet');
 const http       = require('http');
 const meta       = require('./package.json');
