@@ -24,7 +24,7 @@
     "url": "git+https://github.com/digitallinguistics/digitallinguistics.io.git"
   },
   "engines": {
-    "node": "7.x"
+    "node": "8.x"
   },
   "scripts": {
     "build": "npm run less",
