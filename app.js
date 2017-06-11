@@ -23,10 +23,7 @@ app.use(express.static(`public`));   // routing for static files
 app.use(middleware);                 // custom middleware
 
 // URL routing
-// route(app);
-
-// TODO: remove this
-app.get(`/`, (req, res) => res.status(200).json({ hello: `world` }));
+route(app);
 
 // create server
 const server = http.createServer(app);
