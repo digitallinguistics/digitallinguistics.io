@@ -9,12 +9,12 @@ const middleware = require('./lib/middleware');
 // const route      = require('./lib/router');
 
 // initialize Express
-// const app = express();
+const app = express();
 
 // app settings
-// app.enable(`trust proxy`);           // trust the Azure proxy server
+app.enable(`trust proxy`);           // trust the Azure proxy server
 // app.engine(hbs.extname, hbs.engine); // declare Handlebars engine
-// app.set(`port`, config.port);        // set port for the app (3000 on localhost)
+app.set(`port`, config.port);        // set port for the app (3000 on localhost)
 // app.set(`view engine`, hbs.extname); // use Handlebars for templating
 
 // middleware
