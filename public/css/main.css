@@ -1,56 +1,5 @@
 /*
-This file declares @font-face rules for each of the fonts used in DLx projects
- */
-@font-face {
-  font-family: 'Fira Sans';
-  src: local('Fira Sans'), url('https://cdn.digitallinguistics.io/fonts/FiraSans-Light.woff2') format('woff2'), url('https://cdn.digitallinguistics.io/fonts/FiraSans-Light.woff') format('woff'), url('https://cdn.digitallinguistics.io/fonts/FiraSans-Light.ttf') format('truetype');
-  font-style: normal;
-  font-weight: normal;
-}
-@font-face {
-  font-family: 'Fira Sans';
-  src: local('Fira Sans Light Italic'), url('https://cdn.digitallinguistics.io/fonts/FiraSans-LightItalic.woff2') format('woff2'), url('https://cdn.digitallinguistics.io/fonts/FiraSans-LightItalic.woff') format('woff'), url('https://cdn.digitallinguistics.io/fonts/FiraSans-LightItalic.ttf') format('truetype');
-  font-style: italic;
-  font-weight: normal;
-}
-@font-face {
-  font-family: 'Fira Sans';
-  src: local('Fira Sans Medium'), url('https://cdn.digitallinguistics.io/fonts/FiraSans-Medium.woff2') format('woff2'), url('https://cdn.digitallinguistics.io/fonts/FiraSans-Medium.woff') format('woff'), url('https://cdn.digitallinguistics.io/fonts/FiraSans-Medium.ttf') format('truetype');
-  font-style: normal;
-  font-weight: bold;
-}
-@font-face {
-  font-family: 'Fira Sans';
-  src: local('Fira Sans Medium Italic'), url('https://cdn.digitallinguistics.io/fonts/FiraSans-MediumItalic.woff2') format('woff2'), url('https://cdn.digitallinguistics.io/fonts/FiraSans-MediumItalic.woff') format('woff'), url('https://cdn.digitallinguistics.io/fonts/FiraSans-MediumItalic.ttf') format('truetype');
-  font-style: italic;
-  font-weight: bold;
-}
-@font-face {
-  font-family: 'Fira Mono';
-  src: local('Fira Mono Regular'), url('https://cdn.digitallinguistics.io/fonts/FiraMono-Regular.woff2') format('woff2'), url('https://cdn.digitallinguistics.io/fonts/FiraMono-Regular.woff') format('woff'), url('https://cdn.digitallinguistics.io/fonts/FiraMono-Regular.ttf') format('truetype');
-  font-style: normal;
-  font-weight: normal;
-}
-@font-face {
-  font-family: 'Fira Mono';
-  src: local('Fira Mono Bold'), url('https://cdn.digitallinguistics.io/fonts/FiraMono-Bold.woff2') format('woff2'), url('https://cdn.digitallinguistics.io/fonts/FiraMono-Bold.woff') format('woff'), url('https://cdn.digitallinguistics.io/fonts/FiraMono-Bold.ttf') format('truetype');
-  font-style: normal;
-  font-weight: bold;
-}
-@font-face {
-  font-family: 'Gentium Plus';
-  src: local('Gentium Plus Regular'), url('https://cdn.digitallinguistics.io/fonts/GentiumPlus-R.woff2') format('woff2'), url('https://cdn.digitallinguistics.io/fonts/GentiumPlus-R.woff') format('woff'), url('https://cdn.digitallinguistics.io/fonts/GentiumPlus-R.ttf') format('truetype');
-  font-style: normal;
-  font-weight: normal;
-}
-@font-face {
-  font-family: 'Gentium Plus';
-  src: local('Gentium Plus Italic'), url('https://cdn.digitallinguistics.io/fonts/GentiumPlus-I.woff2') format('woff2'), url('https://cdn.digitallinguistics.io/fonts/GentiumPlus-I.woff') format('woff'), url('https://cdn.digitallinguistics.io/fonts/GentiumPlus-I.ttf') format('truetype');
-  font-style: italic;
-  font-weight: normal;
-}
-/*
-This file contains DLx styles that are applied by default, without the need for specifiying them explicitly using CSS classes. This file also applies the flexbox-reset styling.
+This file applies a CSS reset which uses flexbox styling as the default for most cases. See [flexbox-reset](https://github.com/dwhieb/flexbox-reset) for more information.
  */
 html,
 body,
@@ -219,6 +168,7 @@ body {
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
+  line-height: 1;
   min-height: 100vh;
 }
 blockquote,
@@ -265,705 +215,81 @@ thead {
 tr {
   display: table-row;
 }
+/*
+This file declares @font-face rules for each of the fonts used in DLx projects
+ */
+@font-face {
+  font-family: 'Fira Sans';
+  src: local('Fira Sans'), url('https://cdn.digitallinguistics.io/fonts/FiraSans-Light.woff2') format('woff2'), url('https://cdn.digitallinguistics.io/fonts/FiraSans-Light.woff') format('woff'), url('https://cdn.digitallinguistics.io/fonts/FiraSans-Light.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: local('Fira Sans Light Italic'), url('https://cdn.digitallinguistics.io/fonts/FiraSans-LightItalic.woff2') format('woff2'), url('https://cdn.digitallinguistics.io/fonts/FiraSans-LightItalic.woff') format('woff'), url('https://cdn.digitallinguistics.io/fonts/FiraSans-LightItalic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: local('Fira Sans Medium'), url('https://cdn.digitallinguistics.io/fonts/FiraSans-Medium.woff2') format('woff2'), url('https://cdn.digitallinguistics.io/fonts/FiraSans-Medium.woff') format('woff'), url('https://cdn.digitallinguistics.io/fonts/FiraSans-Medium.ttf') format('truetype');
+  font-style: normal;
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: local('Fira Sans Medium Italic'), url('https://cdn.digitallinguistics.io/fonts/FiraSans-MediumItalic.woff2') format('woff2'), url('https://cdn.digitallinguistics.io/fonts/FiraSans-MediumItalic.woff') format('woff'), url('https://cdn.digitallinguistics.io/fonts/FiraSans-MediumItalic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Fira Mono';
+  src: local('Fira Mono Regular'), url('https://cdn.digitallinguistics.io/fonts/FiraMono-Regular.woff2') format('woff2'), url('https://cdn.digitallinguistics.io/fonts/FiraMono-Regular.woff') format('woff'), url('https://cdn.digitallinguistics.io/fonts/FiraMono-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Fira Mono';
+  src: local('Fira Mono Bold'), url('https://cdn.digitallinguistics.io/fonts/FiraMono-Bold.woff2') format('woff2'), url('https://cdn.digitallinguistics.io/fonts/FiraMono-Bold.woff') format('woff'), url('https://cdn.digitallinguistics.io/fonts/FiraMono-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Gentium Plus';
+  src: local('Gentium Plus Regular'), url('https://cdn.digitallinguistics.io/fonts/GentiumPlus-R.woff2') format('woff2'), url('https://cdn.digitallinguistics.io/fonts/GentiumPlus-R.woff') format('woff'), url('https://cdn.digitallinguistics.io/fonts/GentiumPlus-R.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Gentium Plus';
+  src: local('Gentium Plus Italic'), url('https://cdn.digitallinguistics.io/fonts/GentiumPlus-I.woff2') format('woff2'), url('https://cdn.digitallinguistics.io/fonts/GentiumPlus-I.woff') format('woff'), url('https://cdn.digitallinguistics.io/fonts/GentiumPlus-I.ttf') format('truetype');
+  font-style: italic;
+  font-weight: normal;
+}
+p > a {
+  color: #3399FF;
+  border-bottom: 0.075em solid transparent;
+}
+p > a:link {
+  color: #3399FF;
+}
+p > a:visited {
+  color: #4D42FF;
+}
+p > a:hover {
+  border-bottom: 0.075em solid #3399FF;
+}
+p > a:active {
+  color: #3399FF;
+}
+p > a:visited:hover {
+  border-bottom: 0.075em solid #4D42FF;
+}
+p > a:visited:active {
+  color: #4D42FF;
+}
 abbr {
   font-style: italic;
-}
-body {
-  box-sizing: border-box;
-  font-family: 'Fira Sans', 'Calibri', 'DejaVu Sans', 'Verdana', 'Arial', 'Helvetica', sans-serif;
-  line-height: 1.5;
-}
-button {
-  background-color: #3399FF;
-  color: white;
-  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.15), transparent);
-  border-radius: 5px;
-  box-shadow: inset -1px -1px 2px 0px rgba(0, 0, 0, 0.15), 1px 1px 2px #ccc;
-  cursor: pointer;
-  padding: 0.25em 0.5em;
-}
-button:active {
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset;
-}
-button:hover,
-button:focus {
-  background-image: linear-gradient(135deg, transparent, rgba(0, 0, 0, 0.15));
-}
-button:disabled {
-  background-image: none;
-  box-shadow: none;
-  cursor: not-allowed;
-  opacity: 0.40;
-}
-button:active {
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset;
-}
-button:hover,
-button:focus {
-  background-image: linear-gradient(135deg, transparent, rgba(0, 0, 0, 0.15));
-}
-button:disabled {
-  background-image: none;
-  box-shadow: none;
-  cursor: not-allowed;
-  opacity: 0.40;
-}
-cite {
-  font-style: italic;
-}
-code {
-  background-color: #F5F2F0;
-  border: 1px solid black;
-  border-radius: 5px;
-  font-family: 'Fira Mono', 'Monaco', 'DejaVu Mono', 'Courier New', monospace;
-  font-size: 0.75em;
-  font-style: normal;
-  overflow-x: auto;
-  padding: 0.25em;
-  white-space: pre;
-}
-dfn {
-  font-style: italic;
-}
-em {
-  font-style: italic;
-}
-fieldset legend {
-  font-weight: bold;
-}
-input[type=button] {
-  background-color: #3399FF;
-  color: white;
-  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.15), transparent);
-  border-radius: 5px;
-  box-shadow: inset -1px -1px 2px 0px rgba(0, 0, 0, 0.15), 1px 1px 2px #ccc;
-  cursor: pointer;
-  padding: 0.25em 0.5em;
-}
-input[type=button]:active {
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset;
-}
-input[type=button]:hover,
-input[type=button]:focus {
-  background-image: linear-gradient(135deg, transparent, rgba(0, 0, 0, 0.15));
-}
-input[type=button]:disabled {
-  background-image: none;
-  box-shadow: none;
-  cursor: not-allowed;
-  opacity: 0.40;
-}
-input[type=button]:active {
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset;
-}
-input[type=button]:hover,
-input[type=button]:focus {
-  background-image: linear-gradient(135deg, transparent, rgba(0, 0, 0, 0.15));
-}
-input[type=button]:disabled {
-  background-image: none;
-  box-shadow: none;
-  cursor: not-allowed;
-  opacity: 0.40;
-}
-input[type=color] {
-  display: block;
-}
-input[type=date] {
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: inset 0 1px 2px #ddd;
-  cursor: text;
-  padding: 0.125em 0.25em;
-}
-input[type=date]:focus {
-  border-color: #3399FF;
-  box-shadow: inset 0px 1px 2px #3399FF;
-}
-input[type=date]:focus:invalid {
-  border-color: #AA1F1F;
-  box-shadow: inset 0px 1px 2px #AA1F1F;
-  color: #CA3C3C;
-}
-input[type=date][disabled] {
-  background-color: #eaeded;
-  color: #cad2d3;
-  cursor: not-allowed;
-}
-input[type=date]:focus {
-  border-color: #3399FF;
-  box-shadow: inset 0px 1px 2px #3399FF;
-}
-input[type=date]:focus:invalid {
-  border-color: #AA1F1F;
-  box-shadow: inset 0px 1px 2px #AA1F1F;
-  color: #CA3C3C;
-}
-input[type=date][disabled] {
-  background-color: #eaeded;
-  color: #cad2d3;
-  cursor: not-allowed;
-}
-input[type=datetime] {
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: inset 0 1px 2px #ddd;
-  cursor: text;
-  padding: 0.125em 0.25em;
-}
-input[type=datetime]:focus {
-  border-color: #3399FF;
-  box-shadow: inset 0px 1px 2px #3399FF;
-}
-input[type=datetime]:focus:invalid {
-  border-color: #AA1F1F;
-  box-shadow: inset 0px 1px 2px #AA1F1F;
-  color: #CA3C3C;
-}
-input[type=datetime][disabled] {
-  background-color: #eaeded;
-  color: #cad2d3;
-  cursor: not-allowed;
-}
-input[type=datetime]:focus {
-  border-color: #3399FF;
-  box-shadow: inset 0px 1px 2px #3399FF;
-}
-input[type=datetime]:focus:invalid {
-  border-color: #AA1F1F;
-  box-shadow: inset 0px 1px 2px #AA1F1F;
-  color: #CA3C3C;
-}
-input[type=datetime][disabled] {
-  background-color: #eaeded;
-  color: #cad2d3;
-  cursor: not-allowed;
-}
-input[type=datetime-local] {
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: inset 0 1px 2px #ddd;
-  cursor: text;
-  padding: 0.125em 0.25em;
-}
-input[type=datetime-local]:focus {
-  border-color: #3399FF;
-  box-shadow: inset 0px 1px 2px #3399FF;
-}
-input[type=datetime-local]:focus:invalid {
-  border-color: #AA1F1F;
-  box-shadow: inset 0px 1px 2px #AA1F1F;
-  color: #CA3C3C;
-}
-input[type=datetime-local][disabled] {
-  background-color: #eaeded;
-  color: #cad2d3;
-  cursor: not-allowed;
-}
-input[type=datetime-local]:focus {
-  border-color: #3399FF;
-  box-shadow: inset 0px 1px 2px #3399FF;
-}
-input[type=datetime-local]:focus:invalid {
-  border-color: #AA1F1F;
-  box-shadow: inset 0px 1px 2px #AA1F1F;
-  color: #CA3C3C;
-}
-input[type=datetime-local][disabled] {
-  background-color: #eaeded;
-  color: #cad2d3;
-  cursor: not-allowed;
-}
-input[type=email] {
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: inset 0 1px 2px #ddd;
-  cursor: text;
-  padding: 0.125em 0.25em;
-}
-input[type=email]:focus {
-  border-color: #3399FF;
-  box-shadow: inset 0px 1px 2px #3399FF;
-}
-input[type=email]:focus:invalid {
-  border-color: #AA1F1F;
-  box-shadow: inset 0px 1px 2px #AA1F1F;
-  color: #CA3C3C;
-}
-input[type=email][disabled] {
-  background-color: #eaeded;
-  color: #cad2d3;
-  cursor: not-allowed;
-}
-input[type=email]:focus {
-  border-color: #3399FF;
-  box-shadow: inset 0px 1px 2px #3399FF;
-}
-input[type=email]:focus:invalid {
-  border-color: #AA1F1F;
-  box-shadow: inset 0px 1px 2px #AA1F1F;
-  color: #CA3C3C;
-}
-input[type=email][disabled] {
-  background-color: #eaeded;
-  color: #cad2d3;
-  cursor: not-allowed;
-}
-input[type=month] {
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: inset 0 1px 2px #ddd;
-  cursor: text;
-  padding: 0.125em 0.25em;
-}
-input[type=month]:focus {
-  border-color: #3399FF;
-  box-shadow: inset 0px 1px 2px #3399FF;
-}
-input[type=month]:focus:invalid {
-  border-color: #AA1F1F;
-  box-shadow: inset 0px 1px 2px #AA1F1F;
-  color: #CA3C3C;
-}
-input[type=month][disabled] {
-  background-color: #eaeded;
-  color: #cad2d3;
-  cursor: not-allowed;
-}
-input[type=month]:focus {
-  border-color: #3399FF;
-  box-shadow: inset 0px 1px 2px #3399FF;
-}
-input[type=month]:focus:invalid {
-  border-color: #AA1F1F;
-  box-shadow: inset 0px 1px 2px #AA1F1F;
-  color: #CA3C3C;
-}
-input[type=month][disabled] {
-  background-color: #eaeded;
-  color: #cad2d3;
-  cursor: not-allowed;
-}
-input[type=number] {
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: inset 0 1px 2px #ddd;
-  cursor: text;
-  padding: 0.125em 0.25em;
-}
-input[type=number]:focus {
-  border-color: #3399FF;
-  box-shadow: inset 0px 1px 2px #3399FF;
-}
-input[type=number]:focus:invalid {
-  border-color: #AA1F1F;
-  box-shadow: inset 0px 1px 2px #AA1F1F;
-  color: #CA3C3C;
-}
-input[type=number][disabled] {
-  background-color: #eaeded;
-  color: #cad2d3;
-  cursor: not-allowed;
-}
-input[type=number]:focus {
-  border-color: #3399FF;
-  box-shadow: inset 0px 1px 2px #3399FF;
-}
-input[type=number]:focus:invalid {
-  border-color: #AA1F1F;
-  box-shadow: inset 0px 1px 2px #AA1F1F;
-  color: #CA3C3C;
-}
-input[type=number][disabled] {
-  background-color: #eaeded;
-  color: #cad2d3;
-  cursor: not-allowed;
-}
-input[type=password] {
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: inset 0 1px 2px #ddd;
-  cursor: text;
-  padding: 0.125em 0.25em;
-}
-input[type=password]:focus {
-  border-color: #3399FF;
-  box-shadow: inset 0px 1px 2px #3399FF;
-}
-input[type=password]:focus:invalid {
-  border-color: #AA1F1F;
-  box-shadow: inset 0px 1px 2px #AA1F1F;
-  color: #CA3C3C;
-}
-input[type=password][disabled] {
-  background-color: #eaeded;
-  color: #cad2d3;
-  cursor: not-allowed;
-}
-input[type=password]:focus {
-  border-color: #3399FF;
-  box-shadow: inset 0px 1px 2px #3399FF;
-}
-input[type=password]:focus:invalid {
-  border-color: #AA1F1F;
-  box-shadow: inset 0px 1px 2px #AA1F1F;
-  color: #CA3C3C;
-}
-input[type=password][disabled] {
-  background-color: #eaeded;
-  color: #cad2d3;
-  cursor: not-allowed;
-}
-input[type=reset] {
-  background-color: #3399FF;
-  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.15), transparent);
-  border-radius: 5px;
-  box-shadow: inset -1px -1px 2px 0px rgba(0, 0, 0, 0.15), 1px 1px 2px #ccc;
-  cursor: pointer;
-  padding: 0.25em 0.5em;
-  background-color: #00AB6E;
-  color: white;
-}
-input[type=reset]:active {
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset;
-}
-input[type=reset]:hover,
-input[type=reset]:focus {
-  background-image: linear-gradient(135deg, transparent, rgba(0, 0, 0, 0.15));
-}
-input[type=reset]:disabled {
-  background-image: none;
-  box-shadow: none;
-  cursor: not-allowed;
-  opacity: 0.40;
-}
-input[type=reset]:active {
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset;
-}
-input[type=reset]:hover,
-input[type=reset]:focus {
-  background-image: linear-gradient(135deg, transparent, rgba(0, 0, 0, 0.15));
-}
-input[type=reset]:disabled {
-  background-image: none;
-  box-shadow: none;
-  cursor: not-allowed;
-  opacity: 0.40;
-}
-input[type=search] {
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: inset 0 1px 2px #ddd;
-  cursor: text;
-  padding: 0.125em 0.25em;
-}
-input[type=search]:focus {
-  border-color: #3399FF;
-  box-shadow: inset 0px 1px 2px #3399FF;
-}
-input[type=search]:focus:invalid {
-  border-color: #AA1F1F;
-  box-shadow: inset 0px 1px 2px #AA1F1F;
-  color: #CA3C3C;
-}
-input[type=search][disabled] {
-  background-color: #eaeded;
-  color: #cad2d3;
-  cursor: not-allowed;
-}
-input[type=search]:focus {
-  border-color: #3399FF;
-  box-shadow: inset 0px 1px 2px #3399FF;
-}
-input[type=search]:focus:invalid {
-  border-color: #AA1F1F;
-  box-shadow: inset 0px 1px 2px #AA1F1F;
-  color: #CA3C3C;
-}
-input[type=search][disabled] {
-  background-color: #eaeded;
-  color: #cad2d3;
-  cursor: not-allowed;
-}
-input[type=submit] {
-  background-color: #3399FF;
-  color: white;
-  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.15), transparent);
-  border-radius: 5px;
-  box-shadow: inset -1px -1px 2px 0px rgba(0, 0, 0, 0.15), 1px 1px 2px #ccc;
-  cursor: pointer;
-  padding: 0.25em 0.5em;
-}
-input[type=submit]:active {
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset;
-}
-input[type=submit]:hover,
-input[type=submit]:focus {
-  background-image: linear-gradient(135deg, transparent, rgba(0, 0, 0, 0.15));
-}
-input[type=submit]:disabled {
-  background-image: none;
-  box-shadow: none;
-  cursor: not-allowed;
-  opacity: 0.40;
-}
-input[type=submit]:active {
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset;
-}
-input[type=submit]:hover,
-input[type=submit]:focus {
-  background-image: linear-gradient(135deg, transparent, rgba(0, 0, 0, 0.15));
-}
-input[type=submit]:disabled {
-  background-image: none;
-  box-shadow: none;
-  cursor: not-allowed;
-  opacity: 0.40;
-}
-input[type=tel] {
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: inset 0 1px 2px #ddd;
-  cursor: text;
-  padding: 0.125em 0.25em;
-}
-input[type=tel]:focus {
-  border-color: #3399FF;
-  box-shadow: inset 0px 1px 2px #3399FF;
-}
-input[type=tel]:focus:invalid {
-  border-color: #AA1F1F;
-  box-shadow: inset 0px 1px 2px #AA1F1F;
-  color: #CA3C3C;
-}
-input[type=tel][disabled] {
-  background-color: #eaeded;
-  color: #cad2d3;
-  cursor: not-allowed;
-}
-input[type=tel]:focus {
-  border-color: #3399FF;
-  box-shadow: inset 0px 1px 2px #3399FF;
-}
-input[type=tel]:focus:invalid {
-  border-color: #AA1F1F;
-  box-shadow: inset 0px 1px 2px #AA1F1F;
-  color: #CA3C3C;
-}
-input[type=tel][disabled] {
-  background-color: #eaeded;
-  color: #cad2d3;
-  cursor: not-allowed;
-}
-input[type=text] {
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: inset 0 1px 2px #ddd;
-  cursor: text;
-  padding: 0.125em 0.25em;
-  display: flex;
-}
-input[type=text]:focus {
-  border-color: #3399FF;
-  box-shadow: inset 0px 1px 2px #3399FF;
-}
-input[type=text]:focus:invalid {
-  border-color: #AA1F1F;
-  box-shadow: inset 0px 1px 2px #AA1F1F;
-  color: #CA3C3C;
-}
-input[type=text][disabled] {
-  background-color: #eaeded;
-  color: #cad2d3;
-  cursor: not-allowed;
-}
-input[type=text]:focus {
-  border-color: #3399FF;
-  box-shadow: inset 0px 1px 2px #3399FF;
-}
-input[type=text]:focus:invalid {
-  border-color: #AA1F1F;
-  box-shadow: inset 0px 1px 2px #AA1F1F;
-  color: #CA3C3C;
-}
-input[type=text][disabled] {
-  background-color: #eaeded;
-  color: #cad2d3;
-  cursor: not-allowed;
-}
-input[type=time] {
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: inset 0 1px 2px #ddd;
-  cursor: text;
-  padding: 0.125em 0.25em;
-}
-input[type=time]:focus {
-  border-color: #3399FF;
-  box-shadow: inset 0px 1px 2px #3399FF;
-}
-input[type=time]:focus:invalid {
-  border-color: #AA1F1F;
-  box-shadow: inset 0px 1px 2px #AA1F1F;
-  color: #CA3C3C;
-}
-input[type=time][disabled] {
-  background-color: #eaeded;
-  color: #cad2d3;
-  cursor: not-allowed;
-}
-input[type=time]:focus {
-  border-color: #3399FF;
-  box-shadow: inset 0px 1px 2px #3399FF;
-}
-input[type=time]:focus:invalid {
-  border-color: #AA1F1F;
-  box-shadow: inset 0px 1px 2px #AA1F1F;
-  color: #CA3C3C;
-}
-input[type=time][disabled] {
-  background-color: #eaeded;
-  color: #cad2d3;
-  cursor: not-allowed;
-}
-input[type=url] {
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: inset 0 1px 2px #ddd;
-  cursor: text;
-  padding: 0.125em 0.25em;
-}
-input[type=url]:focus {
-  border-color: #3399FF;
-  box-shadow: inset 0px 1px 2px #3399FF;
-}
-input[type=url]:focus:invalid {
-  border-color: #AA1F1F;
-  box-shadow: inset 0px 1px 2px #AA1F1F;
-  color: #CA3C3C;
-}
-input[type=url][disabled] {
-  background-color: #eaeded;
-  color: #cad2d3;
-  cursor: not-allowed;
-}
-input[type=url]:focus {
-  border-color: #3399FF;
-  box-shadow: inset 0px 1px 2px #3399FF;
-}
-input[type=url]:focus:invalid {
-  border-color: #AA1F1F;
-  box-shadow: inset 0px 1px 2px #AA1F1F;
-  color: #CA3C3C;
-}
-input[type=url][disabled] {
-  background-color: #eaeded;
-  color: #cad2d3;
-  cursor: not-allowed;
-}
-input[type=week] {
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: inset 0 1px 2px #ddd;
-  cursor: text;
-  padding: 0.125em 0.25em;
-}
-input[type=week]:focus {
-  border-color: #3399FF;
-  box-shadow: inset 0px 1px 2px #3399FF;
-}
-input[type=week]:focus:invalid {
-  border-color: #AA1F1F;
-  box-shadow: inset 0px 1px 2px #AA1F1F;
-  color: #CA3C3C;
-}
-input[type=week][disabled] {
-  background-color: #eaeded;
-  color: #cad2d3;
-  cursor: not-allowed;
-}
-input[type=week]:focus {
-  border-color: #3399FF;
-  box-shadow: inset 0px 1px 2px #3399FF;
-}
-input[type=week]:focus:invalid {
-  border-color: #AA1F1F;
-  box-shadow: inset 0px 1px 2px #AA1F1F;
-  color: #CA3C3C;
-}
-input[type=week][disabled] {
-  background-color: #eaeded;
-  color: #cad2d3;
-  cursor: not-allowed;
-}
-label {
-  align-items: center;
-  flex-direction: row;
-}
-label span {
-  font-size: smaller;
-  font-weight: bold;
-}
-label input {
-  margin: 0.5em;
-}
-select {
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 0.25em;
-}
-strong {
-  color: #017CF2;
-  font-weight: bold;
-}
-textarea {
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: inset 0 1px 2px #ddd;
-  cursor: text;
-  padding: 0.125em 0.25em;
-}
-textarea:focus {
-  border-color: #3399FF;
-  box-shadow: inset 0px 1px 2px #3399FF;
-}
-textarea:focus:invalid {
-  border-color: #AA1F1F;
-  box-shadow: inset 0px 1px 2px #AA1F1F;
-  color: #CA3C3C;
-}
-textarea[disabled] {
-  background-color: #eaeded;
-  color: #cad2d3;
-  cursor: not-allowed;
-}
-textarea:focus {
-  border-color: #3399FF;
-  box-shadow: inset 0px 1px 2px #3399FF;
-}
-textarea:focus:invalid {
-  border-color: #AA1F1F;
-  box-shadow: inset 0px 1px 2px #AA1F1F;
-  color: #CA3C3C;
-}
-textarea[disabled] {
-  background-color: #eaeded;
-  color: #cad2d3;
-  cursor: not-allowed;
 }
 .banner {
   align-items: center;
@@ -986,37 +312,22 @@ textarea[disabled] {
 .banner .wugbot {
   transform: scale(-1, 0.9) translateY(-9%);
 }
-.nav ul {
-  background-color: #3399FF;
-  color: white;
-  flex-direction: row;
-  flex-wrap: wrap;
-  font-size: 1.25rem;
-  justify-content: space-around;
+body {
+  font-family: 'Fira Sans';
+  line-height: 1.5;
 }
-.nav ul li {
-  flex-grow: 1;
-  position: relative;
-  overflow: hidden;
+.bulleted {
+  list-style: disc outside none;
+  margin-left: 1.5em;
 }
-.nav ul a {
-  text-align: center;
-  padding: 0.5em;
+.bulleted li {
+  display: list-item;
 }
-.nav ul a::after {
-  background-image: url('https://cdn.digitallinguistics.io/img/wugbot.svg');
-  background-repeat: no-repeat;
-  background-size: 4rem;
-  content: '';
-  height: 4rem;
-  right: 0;
-  position: absolute;
-  transform: translateY(1.5rem);
-  transition: transform 0.3s;
-  width: 4rem;
+cite {
+  font-style: italic;
 }
-.nav ul a:hover::after {
-  transform: translateY(-1.5rem);
+dfn {
+  font-style: italic;
 }
 footer {
   background-color: #3399FF;
@@ -1024,6 +335,25 @@ footer {
   align-items: center;
   flex-direction: row;
   justify-content: center;
+}
+footer a {
+  border-bottom: 0.075em solid transparent;
+  color: white;
+}
+footer a:link {
+  color: white;
+}
+footer a:visited {
+  color: white;
+}
+footer a:hover {
+  border-bottom: 0.075em solid white;
+}
+footer a:visited:hover {
+  border-bottom: 0.075em solid white;
+}
+footer a:active {
+  color: white;
 }
 footer img {
   margin: 1rem;
@@ -1047,18 +377,113 @@ footer p > a:visited:hover {
 footer p > a:active {
   color: white;
 }
-footer p > a:link {
+.h-section {
+  font-size: 1.75em;
+  font-weight: bold;
+  padding-bottom: 0.25em;
+  padding-top: 0.5em;
+}
+.nav ul {
+  background-color: #3399FF;
+  color: white;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 1.25rem;
+  justify-content: space-around;
+}
+.nav ul a {
+  border-bottom: 0.075em solid transparent;
   color: white;
 }
-footer p > a:visited {
+.nav ul a:link {
   color: white;
 }
-footer p > a:hover {
+.nav ul a:visited {
+  color: white;
+}
+.nav ul a:hover {
   border-bottom: 0.075em solid white;
 }
-footer p > a:visited:hover {
+.nav ul a:visited:hover {
   border-bottom: 0.075em solid white;
 }
-footer p > a:active {
+.nav ul a:active {
   color: white;
+}
+.nav ul li {
+  padding: 0.5em;
+}
+.nav ul a {
+  text-align: center;
+}
+.nav ul li {
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+}
+.nav ul a,
+.nav ul a:hover {
+  border-bottom: none;
+}
+.nav ul a::after {
+  background-image: url('https://cdn.digitallinguistics.io/img/wugbot.svg');
+  background-repeat: no-repeat;
+  background-size: 4rem;
+  content: '';
+  height: 4rem;
+  right: 0;
+  position: absolute;
+  transform: translateY(1.5rem);
+  transition: transform 0.3s;
+  width: 4rem;
+}
+.nav ul a:hover::after {
+  transform: translateY(-1.5rem);
+}
+.page-title {
+  font-size: 2.5em;
+  text-align: center;
+}
+.reference-list a {
+  color: #3399FF;
+  border-bottom: 0.075em solid transparent;
+}
+.reference-list a:link {
+  color: #3399FF;
+}
+.reference-list a:visited {
+  color: #4D42FF;
+}
+.reference-list a:hover {
+  border-bottom: 0.075em solid #3399FF;
+}
+.reference-list a:active {
+  color: #3399FF;
+}
+.reference-list a:visited:hover {
+  border-bottom: 0.075em solid #4D42FF;
+}
+.reference-list a:visited:active {
+  color: #4D42FF;
+}
+.reference-list h1 {
+  font-size: 1.75em;
+  font-weight: bold;
+  padding-bottom: 0.25em;
+  padding-top: 0.5em;
+}
+.reference-list ol,
+.reference-list ul {
+  list-style: disc outside none;
+  padding: 0.5em 0em;
+  padding-left: 1.5em;
+}
+.reference-list li {
+  display: list-item;
+  padding: 0.25em 0em;
+}
+.reference-list li p {
+  display: block;
+  margin-left: 1.5em;
+  text-indent: -1.5em;
 }

@@ -38,3 +38,4 @@ node_modules
 .eslintrc
 .jshintrc
 credentials.js
+nodemon.json
