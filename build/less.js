@@ -4,13 +4,16 @@
   no-extra-parens,
 */
 
-const fs   = require('fs');
-const less = require('less');
-const util = require('util');
+const CSSCleaner = require('less-plugin-clean-css');
+const fs         = require('fs');
+const less       = require('less');
+const util       = require('util');
+
+const cleaner = new CSSCleaner({ advanced: true });
 
 const convert = async filename => {
   const lessData = await util.promisify(fs.readFile)(`less/${filename}`, `utf8`);
-  const { css }  = await less.render(lessData);
+  const { css }  = await less.render(lessData, { plugins: [cleaner] });
   const path     = `public/css/${filename.replace(`.less`, `.css`)}`;
   await util.promisify(fs.writeFile)(path, css, `utf8`);
 };
