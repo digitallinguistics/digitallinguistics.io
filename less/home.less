@@ -1,4 +1,4 @@
-@import (reference) 'https://cdn.digitallinguistics.io/less/classes.less';
+@import (reference) 'https://digitallinguistics.blob.core.windows.net/less/colors.less';
 
 #home {
   .verylightblue-transparent;
@@ -14,8 +14,8 @@
 
 .card {
 
-  border-top: 5px solid @blue;
-  border-radius: 5px;
+  border-top: 5px solid var(--blue);
+  border-radius: 0.35rem;
   box-shadow: 0 0 1px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.05);
   background-color: white;
   color: black;
@@ -30,7 +30,7 @@
   }
 
   &::after {
-    background-image: url('@{cdn}/img/wug.svg');
+    background-image: url('https://cdn.digitallinguistics.io/img/wug.svg');
     background-repeat: no-repeat;
     background-size: 5rem;
     content: '';
@@ -47,19 +47,14 @@
     transform: rotate(-20deg) scaleX(-1) translateX(2.5rem);
   }
 
-  a {
+  > a {
     align-items: center;
     display: flex;
   }
 
-  #slack {
-
-    align-items: center;
-
-    a {
-      display: inline;
-    }
-
+  h2 {
+    font-size: 1.25em;
+    text-align: center;
   }
 
   p {
