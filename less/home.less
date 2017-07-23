@@ -2,6 +2,8 @@
 
 #home {
   .verylightblue-transparent;
+  align-items: stretch;
+  flex-direction: row;
   flex-grow: 1;
 }
 
@@ -12,21 +14,25 @@
   margin: 1rem 0rem;
 }
 
+.card,
+.twitter-timeline {
+  border-top: 0.35rem solid var(--blue) !important;
+  border-radius: 0.35rem;
+  box-shadow: 0 0 1px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.05) !important;
+  margin: 1.5rem !important;
+  transition: box-shadow 0.3s !important;
+}
+
 .card {
 
-  border-top: 5px solid var(--blue);
-  border-radius: 0.35rem;
-  box-shadow: 0 0 1px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.05);
   background-color: white;
   color: black;
-  margin: 1.5rem;
   padding: 0.5em 1em;
   position: relative;
-  transition: box-shadow 0.3s;
   width: 20rem;
 
   &:hover {
-    box-shadow: 0 0 1px rgba(0,0,0,0.2), 0 3px 16px rgba(0,0,0,0.15);
+    box-shadow: 0 0 1px rgba(0,0,0,0.2), 0 3px 16px rgba(0,0,0,0.15) !important;
   }
 
   &::after {
@@ -61,4 +67,8 @@
     text-align: center;
   }
 
+}
+
+.twitter-timeline {
+  width: 22rem !important;
 }
