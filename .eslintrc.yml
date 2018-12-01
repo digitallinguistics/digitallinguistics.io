@@ -1,6 +1,6 @@
 # ESLint v5.9.0
 parserOptions:
-  ecmaVersion: 2018
+  ecmaVersion: 10
   ecmaFeatures:
     impliedStrict: true
   sourceType: module
