@@ -22,9 +22,11 @@
     "type": "git",
     "url": "git+https://github.com/digitallinguistics/digitallinguistics.io.git"
   },
-  "scripts": {
-    "build": "node build/index.js"
+  "engines": {
+    "node": "10.6.0"
   },
+  "main": "app.js",
+  "scripts": {},
   "dependencies": {},
   "devDependencies": {
     "eslint": "^5.9.0",
