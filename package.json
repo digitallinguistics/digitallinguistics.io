@@ -27,7 +27,9 @@
   },
   "main": "app.js",
   "scripts": {},
-  "dependencies": {},
+  "dependencies": {
+    "koa": "^2.6.2"
+  },
   "devDependencies": {
     "eslint": "^5.9.0",
     "flexbox-reset": "^2.4.0",
