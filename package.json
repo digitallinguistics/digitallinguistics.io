@@ -6,7 +6,7 @@
     "DLx",
     "Digital Linguistics",
     "linguistics",
-    "documentation",
+    "language documentation",
     "language"
   ],
   "homepage": "https://digitallinguistics.io/",
@@ -18,27 +18,11 @@
     "name": "Daniel W. Hieber",
     "url": "http://danielhieber.com"
   },
-  "main": "app.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/digitallinguistics/digitallinguistics.io.git"
   },
-  "engines": {
-    "node": "8.x"
-  },
-  "scripts": {
-    "build": "npm run less",
-    "less": "node build/less.js"
-  },
-  "dependencies": {
-    "express": "^4.15.3",
-    "express-handlebars": "^3.0.0",
-    "helmet": "^3.6.1",
-    "markdown-it": "^8.3.1",
-    "superagent": "^3.5.2"
-  },
-  "devDependencies": {
-    "less": "^2.7.2",
-    "less-plugin-clean-css": "^1.5.1"
-  }
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {}
 }
