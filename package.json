@@ -25,6 +25,7 @@
   "scripts": {},
   "dependencies": {},
   "devDependencies": {
-    "flexbox-reset": "^2.4.0"
+    "flexbox-reset": "^2.4.0",
+    "less": "^3.9.0"
   }
 }
