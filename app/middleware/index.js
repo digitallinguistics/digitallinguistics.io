@@ -1,9 +1,9 @@
 const errors = require(`./errors`);
 const helmet = require(`./helmet`);
-const router = require(`./router`);
+const vary   = require(`./vary`);
 
 module.exports = {
   errors,
   helmet,
-  router,
+  vary,
 };

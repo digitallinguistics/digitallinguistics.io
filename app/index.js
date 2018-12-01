@@ -2,15 +2,16 @@
  * App setup and configuration
  */
 
-const Koa  = require(`koa`);
-const meta = require(`../package.json`);
+const Koa    = require(`koa`);
+const meta   = require(`../package.json`);
+const router = require(`./router`);
 
 const { env, port } = require(`../config`);
 
 const {
   errors,
   helmet,
-  router,
+  vary,
 } = require(`./middleware`);
 
 // Initialize Koa
@@ -22,6 +23,9 @@ app.proxy = true;
 // Middleware
 app.use(errors);
 app.use(helmet);
+app.use(vary);
+
+// Routing
 app.use(router);
 
 // Start server
