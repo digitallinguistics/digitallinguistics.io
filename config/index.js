@@ -9,9 +9,11 @@ const settings = require(`./${process.env.NODE_ENV}`);
 Object.assign(process.env, settings);
 
 module.exports = {
-  development: process.env.NODE_ENV === `development`,
-  env:         process.env.NODE_ENV,
-  localhost:   process.env.NODE_ENV === `localhost`,
-  port:        process.env.PORT,
-  production:  process.env.NODE_ENV === `production`,
+  development:   process.env.NODE_ENV === `development`,
+  env:           process.env.NODE_ENV,
+  localhost:     process.env.NODE_ENV === `localhost`,
+  logAppErrors:  process.env.LOG_APP_ERRORS === `true` || process.env.LOG_APP_ERRORS === true,
+  logUserErrors: process.env.LOG_USER_ERRORS === `true` || process.env.LOG_USER_ERRORS === true,
+  port:          process.env.PORT,
+  production:    process.env.NODE_ENV === `production`,
 };

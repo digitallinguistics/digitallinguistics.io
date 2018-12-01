@@ -2,6 +2,7 @@
  * A generic error handler that returns a simple JSON response
  */
 
+const config = require(`../../config`);
 const { STATUS_CODES: messages } = require(`http`);
 
 module.exports = async (context, next) => {
