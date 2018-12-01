@@ -9,14 +9,19 @@ const { env, port } = require(`../config`);
 
 const {
   errors,
+  helmet,
   router,
 } = require(`./middleware`);
 
 // Initialize Koa
 const app = new Koa();
 
+// Settings
+app.proxy = true;
+
 // Middleware
 app.use(errors);
+app.use(helmet);
 app.use(router);
 
 // Start server
