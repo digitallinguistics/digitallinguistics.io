@@ -9,7 +9,7 @@ const {
   logUserErrors,
 } = require(`../../config`);
 
-module.exports = async (context, next) => {
+async function errors(context, next) {
 
   try {
 
@@ -45,4 +45,6 @@ module.exports = async (context, next) => {
 
   }
 
-};
+}
+
+module.exports = errors;

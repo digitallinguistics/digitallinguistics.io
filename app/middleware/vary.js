@@ -2,7 +2,9 @@
  * Sets the Vary header for all incoming requests
  */
 
-module.exports = (context, next) => {
+function vary(context, next) {
   context.vary(`Upgrade-Insecure-Requests`);
   next();
-};
+}
+
+module.exports = vary;

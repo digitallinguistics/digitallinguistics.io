@@ -6,7 +6,9 @@
   no-param-reassign,
 */
 
-module.exports = url => context => {
+const externalRedirect = url => context => {
   context.status = 301;
   context.redirect(url);
 };
+
+module.exports = externalRedirect;
