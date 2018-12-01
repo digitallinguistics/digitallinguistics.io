@@ -1,4 +1,0 @@
-{
-  "exec": "npm run less & node app.js",
-  "ext": "hbs js less"
-}

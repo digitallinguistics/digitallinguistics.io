@@ -32,10 +32,3 @@ node_modules
 
 # Optional REPL history
 .node_repl_history
-
-# Custom
-.babelrc
-.eslintrc
-.jshintrc
-credentials.js
-nodemon.json
