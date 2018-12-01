@@ -568,3 +568,4 @@ rules:
   yoda:
   - error
   - never
+  - onlyEquality: true

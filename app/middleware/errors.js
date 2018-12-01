@@ -2,8 +2,12 @@
  * A generic error handler that returns a simple JSON response
  */
 
-const config = require(`../../config`);
 const { STATUS_CODES: messages } = require(`http`);
+
+const {
+  logAppErrors,
+  logUserErrors,
+} = require(`../../config`);
 
 module.exports = async (context, next) => {
 
@@ -15,10 +19,14 @@ module.exports = async (context, next) => {
     const message    = messages[status];
 
     if (status === 404) {
+
       context.body = {
         message,
         status,
       };
+
+      if (logUserErrors) console.warn(JSON.stringify(context.body, null, 2));
+
     }
 
   } catch (e) {
@@ -31,6 +39,9 @@ module.exports = async (context, next) => {
       message: e.message || messages[status],
       status,
     };
+
+    if ((400 <= status < 500) && logUserErrors) console.error(e);
+    if ((500 <= status) && logAppErrors) console.error(e);
 
   }
 
