@@ -40,6 +40,7 @@
   "devDependencies": {
     "eslint": "^5.9.0",
     "flexbox-reset": "^2.4.0",
-    "less": "^3.9.0"
+    "less": "^3.9.0",
+    "webpack": "^4.26.1"
   }
 }
