@@ -30,7 +30,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "build": "webpack"
+    "build": "node build/index.js"
   },
   "dependencies": {
     "handlebars": "^4.0.12",
@@ -43,9 +43,6 @@
   "devDependencies": {
     "eslint": "^5.9.0",
     "flexbox-reset": "^2.4.0",
-    "less": "^3.9.0",
-    "less-loader": "^4.1.0",
-    "webpack": "^4.26.1",
-    "webpack-cli": "^3.1.2"
+    "less": "^3.9.0"
   }
 }
