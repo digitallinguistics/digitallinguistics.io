@@ -26,7 +26,6 @@
     "node": "10.6.0"
   },
   "main": "index.js",
-  "scripts": {},
   "dependencies": {
     "handlebars": "^4.0.12",
     "koa": "^2.6.2",

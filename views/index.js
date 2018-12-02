@@ -1,3 +1,3 @@
-const home = require(`./home`);
+const handlers = require(`./pages`);
 
-module.exports = { home };
+module.exports = handlers;

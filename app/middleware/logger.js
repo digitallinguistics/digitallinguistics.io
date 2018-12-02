@@ -1,6 +1,8 @@
 const { logRequests } = require(`../config`);
 
-async function logger({ method, originalUrl }, next) {
+async function logger(context, next) {
+
+  const { method, originalUrl } = context;
 
   if (logRequests) {
     const timestamp = new Date().toISOString();
