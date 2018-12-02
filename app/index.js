@@ -12,6 +12,7 @@ const {
   errors,
   helmet,
   logger,
+  serve,
   vary,
 } = require(`./middleware`);
 
@@ -19,13 +20,14 @@ const {
 const app = new Koa();
 
 // Settings
-app.proxy = true;
+app.proxy = true;   // trust the Azure proxy
 
 // Middleware
-app.use(logger);
-app.use(errors);
-app.use(helmet);
-app.use(vary);
+app.use(serve);  // serve static files
+app.use(logger); // log requests to console
+app.use(errors); // handle errors
+app.use(helmet); // set security settings
+app.use(vary);   // set Vary header
 
 // Routing
 app.use(router);
