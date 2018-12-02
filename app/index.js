@@ -11,6 +11,7 @@ const { env, port } = require(`../config`);
 const {
   errors,
   helmet,
+  logger,
   vary,
 } = require(`./middleware`);
 
@@ -21,6 +22,7 @@ const app = new Koa();
 app.proxy = true;
 
 // Middleware
+app.use(logger);
 app.use(errors);
 app.use(helmet);
 app.use(vary);
