@@ -3,24 +3,27 @@
 
   <head>
 
-    <!-- Essential Metadata -->
+    {{!-- Essential Metadata --}}
     <meta charset=utf-8>
     <meta name=viewport content='width=device-width, initial-scale=1, shrink-to-fit=no'>
     <title>{{#if title}}{{title}} | {{/if}}DLx</title>
 
-    <!-- Metadata -->
-    <meta name=author content='Daniel W. Hieber'>
-    <meta name=description content='Digital Linguistics is the science of digital data management for linguistics'>
+    {{!-- Metadata --}}
+    <meta name=author content='{{meta.author.name}}'>
+    <meta name=description content='{{meta.description}}'>
     <meta name=generator content=Atom>
-    <meta name=keywords content='Digital Linguistics, DLx, linguistics, language documentation, corpus linguistics, digital humanities, language, data management, data science'>
+    <meta name=keywords content='{{#each meta.keywords}}{{#unless @last}}{{this}}, {{else}}{{this}}{{/unless}}{{/each}}'>
     <meta name=publisher content='Digital Linguistics'>
     <meta name=rating content=general>
     <meta name=robots content='index,follow'>
     <meta name=subject content='Digital Linguistics'>
 
-    <!-- Linked Assets -->
+    {{!-- Linked Assets --}}
     <link href=https://danielhieber.com rel=me type=text/html>
-    <link href=https://cdn.digitallinguistics.io/img/wugbot.ico rel='shortcut icon' type=image/x-icon>
+    <link href='{{cdn}}/img/wugbot.ico' rel='shortcut icon' type=image/x-icon>
+
+    {{!-- Page-Specific Head Content --}}
+    {{#block 'head'}}{{/block}}
 
   </head>
 
@@ -28,16 +31,18 @@
 
     <header>
 
-      <img src=https://cdn.digitallinguistics.io/img/wugbot.svg alt='DLx wugbot logo'>
+      <img src='{{cdn}}/img/wugbot.svg' alt='DLx wugbot logo'>
 
       <div>
         <h1>Digital Linguistics (DLx)</h1>
         <p>The science of digital data management for linguistics</p>
       </div>
 
-      <img src=https://cdn.digitallinguistics.io/img/wug.svg alt='DLx wug logo'>
+      <img src='{{cdn}}/img/wug.svg' alt='DLx wug logo'>
 
     </header>
+
+    {{{body}}}
 
   </body>
 
