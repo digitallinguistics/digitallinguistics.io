@@ -10,6 +10,7 @@ const { env, port } = require(`./config`);
 
 const {
   errors,
+  handlebars,
   helmet,
   logger,
   serve,
@@ -20,14 +21,15 @@ const {
 const app = new Koa();
 
 // Settings
-app.proxy = true;   // trust the Azure proxy
+app.proxy = true;    // trust the Azure proxy
 
 // Middleware
-app.use(serve);  // serve static files
-app.use(logger); // log requests to console
-app.use(errors); // handle errors
-app.use(helmet); // set security settings
-app.use(vary);   // set Vary header
+app.use(serve);      // serve static files
+app.use(logger);     // log requests to console
+app.use(errors);     // handle errors
+app.use(helmet);     // set security settings
+app.use(vary);       // set Vary header
+app.use(handlebars); // use Handlebars for rendering
 
 // Routing
 app.use(router);
