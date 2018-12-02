@@ -6,7 +6,7 @@ const Koa    = require(`koa`);
 const meta   = require(`../package.json`);
 const router = require(`./router`);
 
-const { env, port } = require(`../config`);
+const { env, port } = require(`./config`);
 
 const {
   errors,
