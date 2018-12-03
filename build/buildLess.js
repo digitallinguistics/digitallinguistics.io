@@ -1,16 +1,19 @@
-const less      = require(`less`);
-const lessFiles = require(`./less.json`);
-const path      = require(`path`);
+const CleanCSSPlugin = require(`less-plugin-clean-css`);
+const less           = require(`less`);
+const lessFiles      = require(`./less.json`);
+const path           = require(`path`);
 
 const {
   readFile,
   writeFile,
 } = require(`fs`).promises;
 
+const cleanCSSPlugin = new CleanCSSPlugin();
+
 async function buildFile(filePath) {
   const inputPath      = path.join(__dirname, `..`, filePath);
   const lessInput      = await readFile(inputPath, `utf8`);
-  const { css }        = await less.render(lessInput);
+  const { css }        = await less.render(lessInput, { plugins: [cleanCSSPlugin] });
   const inputFilename  = path.basename(inputPath);
   const outputFilename = inputFilename.replace(`.less`, `.css`);
   const outputPath     = path.join(__dirname, `../public/css`, outputFilename);
