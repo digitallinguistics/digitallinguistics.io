@@ -24,7 +24,11 @@ async function buildFile(filePath) {
  * Builds all the LESS files listed in less.json
  */
 async function buildLess() {
-  await Promise.all(lessFiles.map(buildFile));
+  try {
+    await Promise.all(lessFiles.map(buildFile));
+  } catch (e) {
+    console.error(e);
+  }
 }
 
 module.exports = buildLess;
