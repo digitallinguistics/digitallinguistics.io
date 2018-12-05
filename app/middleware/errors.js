@@ -2,7 +2,7 @@
  * A generic error handler that returns a simple JSON response
  */
 
-const { STATUS_CODES: messages } = require(`http`);
+const { STATUS_CODES: statusCodes } = require(`http`);
 
 const {
   logAppErrors,
@@ -16,32 +16,39 @@ async function errors(context, next) {
     await next();
 
     const { status } = context;
-    const message    = messages[status];
+    const statusCode = statusCodes[status];
 
     if (status === 404) {
 
-      context.body = {
+      const message = `The page <code>${context.originalUrl}</code> was not found.`;
+
+      if (logUserErrors) console.warn(message);
+
+      return context.render(`error/error`, {
         message,
         status,
-      };
-
-      if (logUserErrors) console.warn(JSON.stringify(context.body, null, 2));
+        statusCode,
+        title: `Error`,
+      });
 
     }
 
   } catch (e) {
 
-    const status = e.statusCode || e.status || 500;
+    const status     = e.statusCode || e.status || 500;
+    const statusCode = e.statusCode || statusCodes[status];
 
-    context.status = status;
-
-    context.body = {
-      message: e.message || messages[status],
-      status,
-    };
+    const message = `Internal server error. <a href=https://github.com/digitallinguistics/digitallinguistics.io/issues>Please open an issue on GitHub.</a>`;
 
     if ((400 <= status < 500) && logUserErrors) console.error(e);
     if ((500 <= status) && logAppErrors) console.error(e);
+
+    return context.render(`error/error`, {
+      message,
+      status,
+      statusCode,
+      title: `Error`,
+    });
 
   }
 

@@ -14,14 +14,7 @@
 @import '@{lessPath}/page-title.less';
 
 
-// apply .link class when anchor is inline
-// block elements that tend to have inline content
-blockquote, button, caption, dd, dt, figcaption, h1, h2, h3, h4, h5, h6, input, legend, option, output, p, pre, select, textarea,
-// other inline elements
-abbr, acronym, b, bdo, big, br, cite, code, del, dfn, em, i, ins, kbd, mark, q, samp, s, small, span, strike, strong, sub, sup, time, tt, var,
-{
-  a { .link; }
-}
+// BASE STYLING
 
 body {
   font-family:
@@ -35,7 +28,17 @@ body {
 
 main {
   flex-grow: 1;
+  padding:   2.5rem;
+  margin:    auto;
+  max-width: 60rem; // TODO: replace this with var(--measure) once styles issue #100 is closed
 }
+
+p a {
+  .link;
+}
+
+
+// CLASSES & ELEMENTS
 
 .banner {
 
@@ -43,7 +46,8 @@ main {
   color:            black;
 
   div {
-    padding: 1rem;
+    min-width: 0;
+    padding:   1rem;
   }
 
   .wug {
@@ -53,6 +57,37 @@ main {
 
   .wugbot {
     transform: scale(-1, 0.9) translateY(-9%);
+  }
+
+}
+
+
+// TODO: remove this after styles issue #98 is closed
+code,
+pre {
+  font-family: var(--font-mono);
+}
+
+// TODO: remove this after styles issue #98 is closed
+code {
+  background-color: #F5F5F5; // TODO: use var(--codegray) once styles issue #99 is closed
+  border-radius:    var(--border-radius);
+  font-style:       normal;
+  margin:           0;
+  padding:          var(--padding-text);
+  white-space:      pre-line;
+}
+
+footer {
+
+  .blue-background;
+
+  align-items:     center;
+  flex-direction:  row;
+  justify-content: center;
+
+  img {
+    margin: 1rem;
   }
 
 }
@@ -89,16 +124,10 @@ main {
 
 }
 
-footer {
-
-  .blue-background;
-
-  align-items:     center;
-  flex-direction:  row;
-  justify-content: center;
-
-  img {
-    margin: 1rem;
+@media (max-width: 500px) {
+  .banner {
+    p {
+      display: none;
+    }
   }
-
 }
