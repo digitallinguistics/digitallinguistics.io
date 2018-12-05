@@ -33,8 +33,13 @@ main {
   max-width: 60rem; // TODO: replace this with var(--measure) once styles issue #100 is closed
 }
 
-p a {
-  .link;
+// apply .link class when anchor is inline
+// block elements that tend to have inline content
+blockquote, button, caption, dd, dt, figcaption, h1, h2, h3, h4, h5, h6, input, legend, option, output, p, pre, select, textarea,
+// other inline elements
+abbr, acronym, b, bdo, big, br, cite, code, del, dfn, em, i, ins, kbd, mark, q, samp, s, small, span, strike, strong, sub, sup, time, tt, var,
+{
+  a { .link; }
 }
 
 
