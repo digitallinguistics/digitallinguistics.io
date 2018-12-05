@@ -9,6 +9,7 @@ const settings = require(`./${process.env.NODE_ENV}`);
 Object.assign(process.env, settings);
 
 module.exports = {
+  cdn:           process.env.CDN,
   development:   process.env.NODE_ENV === `development`,
   env:           process.env.NODE_ENV,
   localhost:     process.env.NODE_ENV === `localhost`,

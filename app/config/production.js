@@ -1,1 +1,3 @@
-module.exports = {};
+module.exports = {
+  CDN: `https://cdn.digitallinguistics.io`,
+};
