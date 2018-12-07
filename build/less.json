@@ -1,3 +1,4 @@
 [
+  "views/pages/home/home.less",
   "views/layouts/main/main.less"
 ]

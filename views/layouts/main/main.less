@@ -1,17 +1,16 @@
-@cdn:      'https://cdn.digitallinguistics.io';
-@lessPath: '@{cdn}/less';
+@baseURL: 'https://digitallinguistics.blob.core.windows.net';
 
 // Base
 @import 'node_modules/flexbox-reset/flexbox-reset.less';
-@import '@{lessPath}/fonts.less';
-@import '@{lessPath}/colors.less';
-@import '@{lessPath}/variables.less';
+@import '@{baseURL}/less/fonts.less';
+@import '@{baseURL}/less/colors.less';
+@import '@{baseURL}/less/variables.less';
 
 // Components
-@import '@{lessPath}/banner.less';
-@import '@{lessPath}/link.less';
-@import '@{lessPath}/nav.less';
-@import '@{lessPath}/page-title.less';
+@import '@{baseURL}/less/banner.less';
+@import '@{baseURL}/less/link.less';
+@import '@{baseURL}/less/nav.less';
+@import '@{baseURL}/less/page-title.less';
 
 
 // BASE STYLING
@@ -104,7 +103,7 @@ footer {
   }
 
   a::after {
-    background-image:  url('@{cdn}/img/wugbot.svg');
+    background-image:  url('@{baseURL}/img/wugbot.svg');
     background-repeat: no-repeat;
     background-size:   4rem;
     content:           '';
@@ -122,9 +121,10 @@ footer {
 
   li {
     // TODO: remove this rule when styles issue #96 is closed
-    align-items: center;
+    align-items: stretch;
     overflow:    hidden;
     position:    relative;
+    text-align:  center;
   }
 
 }
