@@ -13,25 +13,6 @@
 @import '@{baseURL}/less/page-title.less';
 
 
-// BASE STYLING
-
-body {
-  font-family:
-    'Fira Sans',
-    'Segoe UI',
-    Roboto,
-    sans-serif;
-  font-size:   100%;
-  line-height: 1.5;
-}
-
-main {
-  flex-grow: 1;
-  padding:   2.5rem;
-  margin:    auto;
-  max-width: 60rem; // TODO: replace this with var(--measure) once styles issue #100 is closed
-}
-
 // apply .link class when anchor is inline
 // block elements that tend to have inline content
 blockquote, button, caption, dd, dt, figcaption, h1, h2, h3, h4, h5, h6, input, legend, option, output, p, pre, select, textarea,
@@ -41,17 +22,19 @@ abbr, acronym, b, bdo, big, br, cite, code, del, dfn, em, i, ins, kbd, mark, q, 
   a { .link; }
 }
 
-
-// CLASSES & ELEMENTS
-
 .banner {
 
-  background-color: transparent;
-  color:            black;
+  background-color:     transparent;
+  --link-color:         black;
+  --link-color-visited: black;
 
   div {
     min-width: 0;
     padding:   1rem;
+  }
+
+  p {
+    color: black;
   }
 
   .wug {
@@ -65,6 +48,15 @@ abbr, acronym, b, bdo, big, br, cite, code, del, dfn, em, i, ins, kbd, mark, q, 
 
 }
 
+body {
+  font-family:
+    'Fira Sans',
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  font-size:   100%;
+  line-height: 1.5;
+}
 
 // TODO: remove this after styles issue #98 is closed
 code,
@@ -94,6 +86,13 @@ footer {
     margin: 1rem;
   }
 
+}
+
+main {
+  flex-grow: 1;
+  padding:   2.5rem;
+  margin:    auto;
+  max-width: 60rem; // TODO: replace this with var(--measure) once styles issue #100 is closed
 }
 
 .nav {
