@@ -1,14 +1,19 @@
 const CleanCSSPlugin = require(`less-plugin-clean-css`);
 const less           = require(`less`);
 const lessFiles      = require(`./less.json`);
+const rimraf         = require(`rimraf`);
 const path           = require(`path`);
+const { promisify }  = require(`util`);
 
 const {
+  mkdir,
   readFile,
   writeFile,
 } = require(`fs`).promises;
 
+const removeDir      = promisify(rimraf);
 const cleanCSSPlugin = new CleanCSSPlugin();
+const CSSDir         = path.join(__dirname, `../public/css`);
 
 async function buildFile(filePath) {
   const inputPath      = path.join(__dirname, `..`, filePath);
@@ -25,6 +30,8 @@ async function buildFile(filePath) {
  */
 async function buildLess() {
   try {
+    await removeDir(CSSDir);
+    await mkdir(CSSDir);
     await Promise.all(lessFiles.map(buildFile));
   } catch (e) {
     console.error(e);
