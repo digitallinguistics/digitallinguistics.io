@@ -42,7 +42,7 @@
       <img src='{{cdn}}/img/wugbot.svg' alt='DLx wugbot logo' class=wugbot>
 
       <div>
-        <h1><a href=https://digitallinguistics.io/>Digital Linguistics (DLx)</a></h1>
+        <h1 class='ui header'><a href=https://digitallinguistics.io/>Digital Linguistics (DLx)</a></h1>
         <p>The science of digital data management for linguistics</p>
       </div>
 
@@ -51,16 +51,30 @@
     </header>
 
     <nav class=nav>
-      <ul>
-        <li><a href=https://digitallinguistics.io/>Home</a></li>
-        <li><a href=https://medium.com/digital-linguistics>Blog</a></li>
-        <li><a href=https://developer.digitallinguistics.io>Developers</a></li>
+
+      <ul class='ui huge stackable blue three item inverted borderless left right attached menu'>
+
+        <li class='vertically fitted item link {{#if home}}active{{/if}}'>
+          <a href=https://digitallinguistics.io/ {{#if home}}aria-describedby=current{{/if}}>Home</a>
+        </li>
+
+        <li class='vertically fitted item link'>
+          <a href=https://medium.com/digital-linguistics>Blog</a>
+        </li>
+
+        <li class='vertically fitted item link'>
+          <a href=https://developer.digitallinguistics.io>Developers</a>
+        </li>
+
       </ul>
+
+      <div hidden id=current>Current Page</div>
+
     </nav>
 
     {{{body}}}
 
-    <footer>
+    <footer class='footer ui inverted blue segment left right attached'>
 
       <a href=https://github.com/digitallinguistics rel=noopener>
         <img src='{{cdn}}/img/octicon.white.svg' alt='GitHub octicon logo'>

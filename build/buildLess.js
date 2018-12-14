@@ -29,13 +29,21 @@ async function buildFile(filePath) {
  * Builds all the LESS files listed in less.json
  */
 async function buildLess() {
+
   try {
     await removeDir(CSSDir);
-    await mkdir(CSSDir);
-    await Promise.all(lessFiles.map(buildFile));
   } catch (e) {
     console.error(e);
   }
+
+  try {
+    await mkdir(CSSDir);
+    await Promise.all(lessFiles.map(buildFile));
+    console.info(` - LESS files built`);
+  } catch (e) {
+    console.error(e);
+  }
+
 }
 
 module.exports = buildLess;

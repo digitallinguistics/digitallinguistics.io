@@ -1,40 +1,94 @@
-@baseURL: 'https://digitallinguistics.blob.core.windows.net';
+// Variables
+@basePath:     'node_modules/@digitallinguistics/styles';
+@semanticPath: '@{basePath}/semantic/src';
 
-// Base
-@import 'node_modules/flexbox-reset/flexbox-reset.less';
-@import '@{baseURL}/less/fonts.less';
-@import '@{baseURL}/less/colors.less';
-@import '@{baseURL}/less/variables.less';
+// Globals
+@import '@{basePath}/fonts/fonts.less';
+@import (reference) '@{semanticPath}/themes/default/globals/site.variables';
 
-// Components
-@import '@{baseURL}/less/banner.less';
-@import '@{baseURL}/less/link.less';
-@import '@{baseURL}/less/nav.less';
-@import '@{baseURL}/less/page-title.less';
+// Temp (TODO: replace with individual components)
+@import '@{semanticPath}/semantic.less';
 
 
-// apply .link class when anchor is inline
-// block elements that tend to have inline content
-blockquote, button, caption, dd, dt, figcaption, h1, h2, h3, h4, h5, h6, input, legend, option, output, p, pre, select, textarea,
-// other inline elements
-abbr, acronym, b, bdo, big, br, cite, code, del, dfn, em, i, ins, kbd, mark, q, samp, s, small, span, strike, strong, sub, sup, time, tt, var,
-{
-  a { .link; }
+// Global Styles
+
+a {
+
+  &:link {
+    border-bottom: 0.075em solid transparent;
+  }
+
+  &:hover {
+    border-bottom: 0.075em solid;
+  }
+
+  &:active {
+    border-bottom: none;
+    color:         @lightBlueActive;
+  }
+
 }
+
+body, html {
+  font-family:
+    'Fira Sans',
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  font-size:   100%;
+  line-height: 1.5;
+}
+
+body {
+  display:        flex;
+  flex-direction: column;
+}
+
+main {
+  display:   flex;
+  flex-grow: 1;
+  padding:   2.5rem;
+  margin:    auto;
+  max-width: var(--measure);
+}
+
+
+// Global Classes
+
+.nolink {
+  border: none;
+  color:  black;
+}
+
+
+// Main
 
 .banner {
 
-  background-color:     transparent;
-  --link-color:         black;
-  --link-color-visited: black;
+  align-items:      center;
+  background-color: transparent;
+  display:          flex;
+  flex-direction:   row;
+  justify-content:  space-between;
+  text-align:       center;
+  width:            100%;
+
+  a {
+    .nolink;
+  }
 
   div {
     min-width: 0;
     padding:   1rem;
   }
 
+  .ui.header {
+    font-size:   2.5em;
+    font-weight: 300;
+  }
+
   p {
-    color: black;
+    font-size: larger;
   }
 
   .wug {
@@ -48,90 +102,74 @@ abbr, acronym, b, bdo, big, br, cite, code, del, dfn, em, i, ins, kbd, mark, q, 
 
 }
 
-body {
-  font-family:
-    'Fira Sans',
-    'Segoe UI',
-    Roboto,
-    sans-serif;
-  font-size:   100%;
-  line-height: 1.5;
-}
-
-// TODO: remove this after styles issue #98 is closed
-code,
-pre {
-  font-family: var(--font-mono);
-}
-
-// TODO: remove this after styles issue #98 is closed
-code {
-  background-color: #F5F5F5; // TODO: use var(--codegray) once styles issue #99 is closed
-  border-radius:    var(--border-radius);
-  font-style:       normal;
-  margin:           0;
-  padding:          var(--padding-text);
-  white-space:      pre-line;
-}
-
-footer {
-
-  .blue-background;
+.footer {
 
   align-items:     center;
+  display:         flex;
   flex-direction:  row;
   justify-content: center;
+  padding:         0;
 
   img {
     margin: 1rem;
   }
 
-}
+  a {
+    color: white;
+  }
 
-main {
-  flex-grow: 1;
-  padding:   2.5rem;
-  margin:    auto;
-  max-width: 60rem; // TODO: replace this with var(--measure) once styles issue #100 is closed
+  &.ui.segment {
+    border: none;
+  }
+
 }
 
 .nav {
 
-  a, a:hover {
+  a {
+    padding: 0.75em 0em;
+    width:   100%;
+  }
+
+  a:link,
+  a:hover {
     border-bottom: none;
   }
 
-  a::after {
-    background-image:  url('@{baseURL}/img/wugbot.svg');
-    background-repeat: no-repeat;
-    background-size:   4rem;
-    content:           '';
-    height:            4rem;
-    right:             0;
-    position:          absolute;
-    transform:         translateY(1.5rem);
-    transition:        transform 0.3s;
-    width:             4rem;
-  }
-
-  a:hover::after {
-    transform: translateY(-1.5rem);
-  }
+  // a::after {
+  //   background-image:  url('@{baseURL}/img/wugbot.svg');
+  //   background-repeat: no-repeat;
+  //   background-size:   4rem;
+  //   content:           '';
+  //   height:            4rem;
+  //   right:             0;
+  //   position:          absolute;
+  //   transform:         translateY(1.5rem);
+  //   transition:        transform 0.3s;
+  //   width:             4rem;
+  // }
+  //
+  // a:hover::after {
+  //   transform: translateY(-1.5rem);
+  // }
 
   li {
-    // TODO: remove this rule when styles issue #96 is closed
-    align-items: stretch;
-    overflow:    hidden;
-    position:    relative;
-    text-align:  center;
+    // overflow: hidden;
+    // position: relative;
   }
 
 }
 
 @media (max-width: 500px) {
+
   .banner {
     p {
       display: none;
     }
   }
+
+  .footer {
+    flex-direction: column;
+  }
+
 }
