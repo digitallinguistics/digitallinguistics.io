@@ -38,7 +38,8 @@
     "koa-hbs": "^1.0.0",
     "koa-helmet": "^4.0.0",
     "koa-router": "^7.4.0",
-    "koa-static": "^5.0.0"
+    "koa-static": "^5.0.0",
+    "svg-sprite": "^1.5.0"
   },
   "devDependencies": {
     "@digitallinguistics/styles": "^0.1.0",
