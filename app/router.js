@@ -1,6 +1,6 @@
 const Router               = require(`koa-router`);
 const handlers             = require(`../views`);
-const { externalRedirect } = require(`./utilities`);
+const { externalRedirect } = require(`../lib`);
 
 const router = new Router();
 

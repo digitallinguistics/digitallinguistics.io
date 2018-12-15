@@ -1,4 +1,4 @@
-const { production } = require(`../config`);
+const { production } = require(`../../config`);
 const helmet         = require(`koa-helmet`);
 
 const config = {

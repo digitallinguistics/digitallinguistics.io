@@ -2,17 +2,18 @@
  * App setup and configuration
  */
 
-const Koa    = require(`koa`);
-const meta   = require(`../package.json`);
-const router = require(`./router`);
+const { getLocals } = require(`../lib`);
+const Koa           = require(`koa`);
+const meta          = require(`../package.json`);
+const router        = require(`./router`);
 
-const { env, port } = require(`./config`);
+const { env, port } = require(`../config`);
 
 const {
+  context,
   errors,
   handlebars,
   helmet,
-  locals,
   logger,
   serve,
   vary,
@@ -30,16 +31,18 @@ app.use(logger);     // log requests to console
 app.use(errors);     // handle errors
 app.use(helmet);     // set security settings
 app.use(vary);       // set Vary header
-app.use(locals);     // inject local variables
 app.use(handlebars); // use Handlebars for rendering
 
-// Routing
-app.use(router);
-
-// Start server
-app.listen(port, () => console.info(`Server started. Press Ctrl+C to terminate.
+const startServer = () => app.listen(port, () => console.info(`Server started. Press Ctrl+C to terminate.
   Project: ${meta.name}
   Port:    ${port}
   Time:    ${new Date}
   Node:    ${process.version}
   Env:     ${env}`));
+
+void async function start() {
+  const locals = await getLocals();
+  app.use(context(locals));
+  app.use(router);
+  startServer();
+}();

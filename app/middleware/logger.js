@@ -1,6 +1,6 @@
-const { logRequests } = require(`../config`);
+const { logRequests } = require(`../../config`);
 
-async function logger(context, next) {
+function logger(context, next) {
 
   const { method, originalUrl } = context;
 
@@ -9,7 +9,7 @@ async function logger(context, next) {
     console.info(`${timestamp}: ${method} ${originalUrl}`);
   }
 
-  await next();
+  return next();
 
 }
 

@@ -7,7 +7,7 @@ const { STATUS_CODES: statusCodes } = require(`http`);
 const {
   logAppErrors,
   logUserErrors,
-} = require(`../config`);
+} = require(`../../config`);
 
 async function errors(context, next) {
 
