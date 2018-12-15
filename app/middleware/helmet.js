@@ -4,7 +4,8 @@ const helmet         = require(`koa-helmet`);
 const config = {
   contentSecurityPolicy: {
     directives: {
-      defaultSrc:              [`'self' data: https: *.digitallinguistics.io`],
+      defaultSrc:              [`'self'`, `data:`, `https:`, `*.digitallinguistics.io`],
+      styleSrc:                [`'self'`, `https:`, `'unsafe-inline'`],
       upgradeInsecureRequests: production,
     },
   },

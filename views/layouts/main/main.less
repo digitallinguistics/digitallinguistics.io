@@ -15,11 +15,11 @@
 a {
 
   &:link {
-    border-bottom: 0.075em solid transparent;
+    border-bottom: 0.05em solid transparent;
   }
 
   &:hover {
-    border-bottom: 0.075em solid;
+    border-bottom: 0.05em solid;
   }
 
   &:active {
@@ -57,8 +57,14 @@ main {
 // Global Classes
 
 .nolink {
+
   border: none;
-  color:  black;
+  color:  inherit;
+
+  &:hover {
+    border: none;
+  }
+
 }
 
 
@@ -75,7 +81,7 @@ main {
   width:            100%;
 
   a {
-    .nolink;
+    color: black;
   }
 
   div {
@@ -113,12 +119,16 @@ main {
   flex-direction:  row;
   justify-content: center;
 
-  img {
+  .octicon {
     margin: 1rem;
   }
 
   a {
     color: white;
+  }
+
+  .octicon-link {
+    .nolink;
   }
 
   &.ui.segment {
@@ -140,26 +150,26 @@ main {
     border-bottom: none;
   }
 
-  // a::after {
-  //   background-image:  url('@{baseURL}/img/wugbot.svg');
-  //   background-repeat: no-repeat;
-  //   background-size:   4rem;
-  //   content:           '';
-  //   height:            4rem;
-  //   right:             0;
-  //   position:          absolute;
-  //   transform:         translateY(1.5rem);
-  //   transition:        transform 0.3s;
-  //   width:             4rem;
-  // }
-  //
-  // a:hover::after {
-  //   transform: translateY(-1.5rem);
-  // }
+  a::after {
+    background-image:  url(https://cdn.digitallinguistics.io/img/wugbot.svg);
+    background-repeat: no-repeat;
+    background-size:   4rem;
+    content:           '';
+    height:            4rem;
+    right:             0;
+    position:          absolute;
+    transform:         translateY(1.5rem);
+    transition:        transform 0.3s;
+    width:             4rem;
+  }
+
+  a:hover::after {
+    transform: translateY(-1.5rem);
+  }
 
   li {
-    // overflow: hidden;
-    // position: relative;
+    overflow: hidden;
+    position: relative;
   }
 
 }

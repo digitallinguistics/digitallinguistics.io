@@ -1,6 +1,6 @@
 {
   "events": {
-    "xrestart": "npm run build"
+    "restart": "npm run build"
   },
-  "ext": "hbs,js,less"
+  "ext": "hbs,js,json,less"
 }

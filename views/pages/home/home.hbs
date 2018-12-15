@@ -8,9 +8,16 @@
 
     <section class='ui link card'>
       <a href=https://medium.com/digital-linguistics class=content>
+
         <h2>The DLx Blog</h2>
-        <img src='{{cdn}}/img/blog.svg' alt='The DLx blog'>
+
+        <svg aria-labelledby=title-blog-card height=681px width=681px>
+          <title id=title-blog-card>The DLx blog</title>
+          <use href=#svg-blog></use>
+        </svg>
+
         <p class=description>Keep up to date with the latest DLx tools and features. Subscribe to new posts. Get notified of upcoming events.</p>
+
       </a>
     </section>
 
@@ -25,3 +32,8 @@
   </div>
 
 </main>
+
+{{#contentFor 'svg'}}
+  {{{svg.blog}}}
+  {{{svg.programming}}}
+{{/contentFor}}

@@ -37,19 +37,27 @@
 
   <body>
 
+    {{!-- Banner --}}
     <header class=banner>
 
-      <img src='{{cdn}}/img/wugbot.svg' alt='DLx wugbot logo' class=wugbot>
+      <svg class=wugbot aria-labelledby=title-wugbot-banner height=190px width=129px>
+        <title id=wugbot-banner>DLx wugbot logo</title>
+        <use href=#svg-wugbot></use>
+      </svg>
 
       <div>
         <h1 class='ui header'><a href=https://digitallinguistics.io/>Digital Linguistics (DLx)</a></h1>
         <p>The science of digital data management for linguistics</p>
       </div>
 
-      <img src='{{cdn}}/img/wug.svg' alt='DLx wug logo' class=wug>
+      <svg class=wug aria-labelledby=title-wug-banner height=187px width=115px>
+        <title id=title-wug-banner>DLx wug logo</title>
+        <use href=#svg-wug></use>
+      </svg>
 
     </header>
 
+    {{!-- Nav --}}
     <nav class=nav>
 
       <ul class='ui huge stackable blue three item inverted borderless left right attached menu'>
@@ -72,17 +80,30 @@
 
     </nav>
 
+    {{!-- Main --}}
     {{{body}}}
 
+    {{!-- Footer --}}
     <footer class='footer ui inverted blue segment left right attached'>
 
-      <a href=https://github.com/digitallinguistics rel=noopener>
-        <img src='{{cdn}}/img/octicon.white.svg' alt='GitHub octicon logo'>
+      <a class=octicon-link href=https://github.com/digitallinguistics rel=noopener>
+        <svg class=octicon aria-labelledby=title-octicon-footer height=48px width=48px>
+          <title id=title-octicon-footer>GitHub octicon logo</title>
+          <use href=#svg-octicon-white></use>
+        </svg>
       </a>
 
       <p><a href=https://github.com/digitallinguistics>View Digital Linguistics on GitHub</a></p>
 
     </footer>
+
+    {{!-- SVG Images --}}
+    {{{svg.octicon-white}}}
+    {{{svg.wug}}}
+    {{{svg.wugbot}}}
+
+    {{!-- Page-Specific SVG Images --}}
+    {{#block 'svg'}}{{/block}}
 
   </body>
 

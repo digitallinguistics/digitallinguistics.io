@@ -1,6 +1,6 @@
 const CleanCSSPlugin = require(`less-plugin-clean-css`);
 const less           = require(`less`);
-const lessFiles      = require(`./less.json`);
+const lessFiles      = require(`../less.json`);
 const rimraf         = require(`rimraf`);
 const path           = require(`path`);
 const { promisify }  = require(`util`);
