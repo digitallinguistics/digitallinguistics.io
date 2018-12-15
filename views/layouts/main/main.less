@@ -1,5 +1,6 @@
 // Variables
 @basePath:     'node_modules/@digitallinguistics/styles';
+@cdn:          'https://cdn.digitallinguistics.io';
 @semanticPath: '@{basePath}/semantic/src';
 
 // Globals
@@ -37,6 +38,7 @@ body, html {
     sans-serif;
   font-size:   100%;
   line-height: 1.5;
+  min-height:  100vh;
 }
 
 body {
@@ -151,7 +153,7 @@ main {
   }
 
   a::after {
-    background-image:  url(https://cdn.digitallinguistics.io/img/wugbot.svg);
+    background-image:  url('@{cdn}/img/wugbot.svg');
     background-repeat: no-repeat;
     background-size:   4rem;
     content:           '';

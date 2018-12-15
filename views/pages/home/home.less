@@ -1,38 +1,59 @@
-// .card {
-//
-//   background-color: white;
-//   border-top:       0.35rem solid var(--blue);
-//   border-radius:    0.35rem;
-//   box-shadow:
-//     inset 0.075em 0.075em 0.15em rgba(0, 0, 0, 0.15),
-//     inset -0.075em -0.075em 0.15em rgba(0, 0, 0, 0.15),
-//     0 0 0.05rem rgba(0, 0, 0, 0.08),
-//     0 0.1rem 0.2rem rgba(0, 0, 0, 0.05);
-//   margin:           1.5rem;
-//   padding:          0.5em 1em;
-//   position:         relative;
-//   transition:       box-shadow 0.3s;
-//   width:            20rem;
-//
-//   &:hover {
-//     box-shadow:
-//       inset 0.075em 0.075em 0.15em rgba(0, 0, 0, 0.15),
-//       inset -0.075em -0.075em 0.15em rgba(0, 0, 0, 0.15),
-//       0 0 0.05rem rgba(0, 0, 0, 0.2),
-//       0 0.15rem 0.8rem rgba(0, 0, 0, 0.15);
-//   }
-//
-// }
+@import (reference) 'node_modules/@digitallinguistics/styles/semantic/src/themes/default/globals/site.variables';
 
-// .cards {
-//   flex-flow:       row wrap;
-//   justify-content: center;
-//   margin:          1rem 0rem;
-// }
+@cdn: 'https://cdn.digitallinguistics.io';
 
-// #home {
-//   .blue-transparent;
-//   margin:    0;
-//   max-width: 100%;
-//   padding:   0;
-// }
+#home {
+
+  align-items:      flex-start;
+  background-color: rgba(15, 137, 255, 0.2);
+
+  .cards {
+    z-index: 1;
+  }
+
+  .card {
+
+    position:   relative;
+    text-align: center;
+
+    &::after {
+      background-image:  url('@{cdn}/img/wug.svg');
+      background-repeat: no-repeat;
+      background-size:   5rem;
+      content:           '';
+      height:            7.5rem;
+      left:              0;
+      position:          absolute;
+      top:               0;
+      transition:        transform 0.3s ease;
+      visibility:        visible;
+      width:             5rem;
+      z-index:           -1;
+    }
+
+    &:hover::after {
+      transform: rotate(-20deg) scaleX(-1) translateX(2.5rem);
+    }
+
+    .content {
+
+      align-items:    center;
+      display:        flex;
+      flex-direction: column;
+
+    }
+
+    h2 {
+      font-weight: normal;
+    }
+
+    svg {
+      height:        3rem;
+      margin-bottom: -1rem;
+      margin-top:    0.5rem;
+      width:         3rem;
+    }
+
+  }
+
+}
