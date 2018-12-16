@@ -2,9 +2,18 @@
  * GET handler for the Bibliography page
  */
 
-const locals = {
-  bibliography: true,
-  title:        `Bibliography`,
-};
+const { getReferences } = require(`../../../services`);
 
-module.exports = context => context.render(`bibliography/bibliography`, locals);
+module.exports = async context => {
+
+  const references = await getReferences();
+
+  const locals = {
+    bibliography: true,
+    references,
+    title:        `Bibliography`,
+  };
+
+  return context.render(`bibliography/bibliography`, locals);
+
+};
