@@ -1,4 +1,6 @@
 {
-  "exec": "npm run less & node app.js",
-  "ext": "hbs js less"
+  "events": {
+    "restart": "npm run build"
+  },
+  "ext": "hbs,js,json,less"
 }

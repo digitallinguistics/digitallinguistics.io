@@ -1,1 +1,1 @@
-#about{align-self:center;margin:2rem;max-width:50rem}.bulleted{margin-left:1.5em}p{padding:var(--padding-text)}.section-header{font-weight:500}
+#about{align-items:center;justify-content:center}#about section{max-width:var(--measure)}#about section:not(:last-child){margin-bottom:1em}#about h3{line-height:1}#about ul{margin-left:1.75em}#about li::before{line-height:1.25}

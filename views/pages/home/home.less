@@ -1,0 +1,69 @@
+@import (reference) 'node_modules/@digitallinguistics/styles/semantic/src/themes/default/globals/site.variables';
+
+@cdn: 'https://cdn.digitallinguistics.io';
+
+#home {
+
+  align-items:      center;
+  background-color: @blueBackground;
+  justify-content:  center;
+
+  .cards {
+    justify-content: center;
+    max-width:       var(--measure);
+    z-index:         1;
+  }
+
+  .card {
+
+    position:   relative;
+    text-align: center;
+
+    &::after {
+      background-image:  url('@{cdn}/img/wug.svg');
+      background-repeat: no-repeat;
+      background-size:   5rem;
+      content:           '';
+      height:            7.5rem;
+      left:              0;
+      position:          absolute;
+      top:               0;
+      transition:        transform 0.3s ease;
+      visibility:        visible;
+      width:             5rem;
+      z-index:           -1;
+    }
+
+    &:hover::after {
+      transform: rotate(-20deg) scaleX(-1) translateX(2.5rem);
+    }
+
+    .blog-icon {
+      height:    3.75rem;
+      transform: translateX(10%);
+      width:     3.75rem;
+    }
+
+    .content {
+
+      align-items:    center;
+      display:        flex;
+      flex-direction: column;
+
+    }
+
+    h2 {
+      font-weight: normal;
+    }
+
+    svg {
+      color:         black;
+      height:        3rem;
+      margin-bottom: -1rem;
+      margin-top:    0.5rem;
+      width:         3rem;
+    }
+
+  }
+
+}

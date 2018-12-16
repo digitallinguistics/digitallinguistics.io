@@ -1,0 +1,6 @@
+[
+  "views/pages/about/about.less",
+  "views/pages/bibliography/bibliography.less",
+  "views/pages/home/home.less",
+  "views/layouts/main/main.less"
+]

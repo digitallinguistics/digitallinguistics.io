@@ -1,25 +1,49 @@
-/* eslint-disable
-  func-names,
-  no-console,
-  no-extra-parens,
-*/
+const CleanCSSPlugin = require(`less-plugin-clean-css`);
+const less           = require(`less`);
+const lessFiles      = require(`../manifest/less.json`);
+const rimraf         = require(`rimraf`);
+const path           = require(`path`);
+const { promisify }  = require(`util`);
 
-const CSSCleaner = require('less-plugin-clean-css');
-const fs         = require('fs');
-const less       = require('less');
-const util       = require('util');
+const {
+  mkdir,
+  readFile,
+  writeFile,
+} = require(`fs`).promises;
 
-const cleaner = new CSSCleaner({ advanced: true });
+const removeDir      = promisify(rimraf);
+const cleanCSSPlugin = new CleanCSSPlugin();
+const CSSDir         = path.join(__dirname, `../public/css`);
 
-const convert = async filename => {
-  const lessData = await util.promisify(fs.readFile)(`less/${filename}`, `utf8`);
-  const { css }  = await less.render(lessData, { plugins: [cleaner] });
-  const path     = `public/css/${filename.replace(`.less`, `.css`)}`;
-  await util.promisify(fs.writeFile)(path, css, `utf8`);
-};
+async function buildFile(filePath) {
+  const inputPath      = path.join(__dirname, `..`, filePath);
+  const lessInput      = await readFile(inputPath, `utf8`);
+  const { css }        = await less.render(lessInput, { plugins: [cleanCSSPlugin] });
+  const inputFilename  = path.basename(inputPath);
+  const outputFilename = inputFilename.replace(`.less`, `.css`);
+  const outputPath     = path.join(__dirname, `../public/css`, outputFilename);
+  await writeFile(outputPath, css, `utf8`);
+}
 
-(async function() {
-  const filenames = await util.promisify(fs.readdir)(`less`, `utf8`);
-  await Promise.all(filenames.map(convert));
-  console.log(`LESS files successfully converted.`);
-}());
+/**
+ * Builds all the LESS files listed in less.json
+ */
+async function buildLess() {
+
+  try {
+    await removeDir(CSSDir);
+  } catch (e) {
+    console.error(e);
+  }
+
+  try {
+    await mkdir(CSSDir);
+    await Promise.all(lessFiles.map(buildFile));
+    console.info(` - LESS files built`);
+  } catch (e) {
+    console.error(e);
+  }
+
+}
+
+module.exports = buildLess;
