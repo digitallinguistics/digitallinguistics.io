@@ -33,6 +33,7 @@
     "build": "node build/index.js"
   },
   "dependencies": {
+    "@digitallinguistics/styles": "^0.2.0",
     "compare-func": "^1.3.2",
     "feather-icons": "^4.9.0",
     "handlebars": "^4.0.12",
@@ -47,7 +48,6 @@
     "svg-sprite": "^1.5.0"
   },
   "devDependencies": {
-    "@digitallinguistics/styles": "^0.1.0",
     "eslint": "^5.9.0",
     "less": "^3.9.0",
     "less-plugin-clean-css": "^1.5.1",
