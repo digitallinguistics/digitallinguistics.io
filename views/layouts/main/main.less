@@ -38,6 +38,28 @@ a {
 
 }
 
+p a:not([href*='digitallinguistics.io']) {
+
+  --icon-width: 0.75em;
+  margin-right: var(--icon-width);
+
+  &::after {
+    background-color:    transparent;
+    background-image:    url('@{cdn}/img/external-link.svg');
+    background-repeat:   no-repeat;
+    background-position: center;
+    background-size:     contain;
+    content:             '(external link)';
+    margin-left:         0.1em;
+    overflow:            hidden;
+    position:            absolute;
+    text-indent:         var(--icon-width);
+    white-space:         nowrap;
+    width:               var(--icon-width);
+  }
+
+}
+
 body, html {
   font-family:
     'Fira Sans',
