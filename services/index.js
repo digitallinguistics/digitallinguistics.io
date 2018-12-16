@@ -1,3 +1,3 @@
-const getReferences = require(`./mendeley`);
+const mendeley = require(`./mendeley`);
 
-module.exports = { getReferences };
+module.exports = { mendeley };

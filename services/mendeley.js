@@ -37,6 +37,27 @@ function isAuthenticated() {
   return Boolean(access_token && !expired);
 }
 
+async function getBibtex() {
+
+  if (!isAuthenticated()) await authenticate();
+
+  const params = {
+    group_id: mendeleyBibliography,
+    limit:    500,
+    view:     `bib`,
+  };
+
+  const res = await request
+  .get(`${baseURL}/documents`)
+  .set(`Authorization`, `Bearer ${access_token}`)
+  .accept(`application/x-bibtex`)
+  .query(params);
+
+  return res.body.toString();
+
+}
+
+
 async function getReferences() {
 
   if (!isAuthenticated()) await authenticate();
@@ -57,4 +78,7 @@ async function getReferences() {
 }
 
 // EXPORT
-module.exports = getReferences;
+module.exports = {
+  getBibtex,
+  getReferences,
+};

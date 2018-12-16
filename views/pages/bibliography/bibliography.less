@@ -3,8 +3,36 @@
   align-self: center;
   max-width:  var(--measure);
 
+  #download-bibtex {
+
+    margin: auto;
+
+    .icon {
+      padding: 0.5em;
+    }
+
+    .image {
+      height:        1.25em;
+      width:         4em;
+      margin-bottom: -0.35em;
+      margin-right:  -0.35em;
+    }
+
+  }
+
+  .introduction {
+
+    display:        flex;
+    flex-direction: column;
+
+    p:first-child {
+      margin-bottom: 0;
+    }
+
+  }
+
   .message {
-    margin-top: 2em;
+    margin-top: 0;
   }
 
   .references {
@@ -18,7 +46,13 @@
   }
 
   .statistics {
+
     justify-content: center;
+
+    .value {
+      padding-top: 0.25em;
+    }
+
   }
 
 }

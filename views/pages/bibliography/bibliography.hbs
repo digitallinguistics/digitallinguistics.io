@@ -6,13 +6,17 @@
 
   <h1 class='ui center aligned header'>Digital Linguistics:<br>A bibliography</h1>
 
-  <section>
+  <section class=introduction>
 
     <p class='ui basic segment'>
-      This is a bibliography of publications relating to Digital Linguistics, broadly construed. It includes any publications that touch on the theory or practice of digital data management for linguistics.
+      This is a bibliography of publications relating to Digital Linguistics, broadly construed. It includes any publications that touch on the theory or practice of digital data management for linguistics. You may also download this bibliography as a BibTeX file by clicking the button below.
     </p>
 
-    <div class='ui two tiny statistics'>
+    <p class='ui warning message'>
+      This bibliography is a work in progress, and is being continually updated with new sources. Keep checking back for updates!
+    </p>
+
+    <div class='ui three tiny statistics'>
 
       <p class='ui purple statistic'>
         <span class=label>References</span>
@@ -24,11 +28,27 @@
         <span class=value>{{lastUpdated}}</span>
       </p>
 
-    </div>
+      <div class='ui statistic'>
 
-    <p class='ui warning message'>
-      This bibliography is a work in progress, and is being continually updated with new sources. Keep checking back for updates!
-    </p>
+        <span class=label>Download</span>
+
+        <button id=download-bibtex class='ui purple labeled icon button' type=button>
+
+          <svg aria-labelledby=download-icon-bibtex class=icon>
+            <title id=download-icon-bibtex>Download</title>
+            <use href=#svg-download></use>
+          </svg>
+
+          <svg aria-labelledby=bibtex-button class='image bibtex'>
+            <title id=bibtex-button>BibTeX</title>
+            <use href=#svg-bibtex-white></use>
+          </svg>
+
+        </button>
+
+      </div>
+
+    </div>
 
   </section>
 
@@ -45,3 +65,22 @@
   </section>
 
 </main>
+
+{{#contentFor 'svg'}}
+  {{{svg.bibtex-white}}}
+  {{{svg.download}}}
+{{/contentFor}}
+
+{{#contentFor 'script'}}
+  <script>
+
+    const downloadButton = document.getElementById(`download-bibtex`);
+
+    function download() {
+      document.location = `/bibtex`;
+    }
+
+    downloadButton.addEventListener(`click`, download);
+
+  </script>
+{{/contentFor}}

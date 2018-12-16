@@ -11,6 +11,7 @@ const redirect = router.redirect.bind(router);
 get(`/`, handlers.home);
 get(`/about`, handlers.about);
 get(`/bibliography`, handlers.bibliography);
+get(`/bibtex`, handlers.bibtex);
 get(`/blog`, externalRedirect(`https://medium.com/digital-linguistics`));
 redirect(`/home`, `/`);
 

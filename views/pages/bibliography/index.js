@@ -6,12 +6,12 @@
   camelcase,
 */
 
-const compare           = require(`compare-func`);
-const { getReferences } = require(`../../../services`);
+const compare      = require(`compare-func`);
+const { mendeley } = require(`../../../services`);
 
 module.exports = async context => {
 
-  let references = await getReferences();
+  let references = await mendeley.getReferences();
 
   references = references
   .filter(ref => ref.read)
