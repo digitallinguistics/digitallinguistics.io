@@ -21,7 +21,7 @@
 
       <p class='ui purple statistic'>
         <span class=label>Last Updated</span>
-        <span class=value>December 15, 2018{{lastUpdated}}</span>
+        <span class=value>{{lastUpdated}}</span>
       </p>
 
     </div>
@@ -35,6 +35,12 @@
   <section class='ui basic segment'>
 
     <h2 class='ui dividing header'>References</h2>
+
+    <ul>
+      {{#each references}}
+        <li>{{> reference}}</li>
+      {{/each}}
+    </ul>
 
   </section>
 
