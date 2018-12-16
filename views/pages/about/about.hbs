@@ -4,7 +4,7 @@
 
 <main id=about>
 
-  <section>
+  <section class='ui basic segment'>
 
     <h2>Introduction</h2>
 
@@ -38,7 +38,7 @@
 
   </section>
 
-  <section>
+  <section class='ui basic segment'>
 
     <h2>Austin Principles of Data Citation</h2>
 
@@ -46,27 +46,19 @@
       The <a href=http://site.uit.no/linguisticsdatacitation/>Austin Principles for Data Citation in Linguistics</a> are <q>a set of guidelines that enable linguists to make informed decisions regarding the accessibility and transparency of their research data.</q> (<a href=http://site.uit.no/linguisticsdatacitation/>source</a>) The Data Format for Digital Linguistics both aligns with and helps foster the Austin Principles:
     </p>
 
-    <ol>
+    <ol class='ui relaxed list'>
 
       <li>
 
         <h3>Importance</h3>
 
-        <ul>
+        <blockquote class='ui message' cite=http://site.uit.no/linguisticsdatacitation/austinprinciples/>
+          Data should be considered legitimate, citable products of research.
+        </blockquote>
 
-          <li>
-            <blockquote cite=http://site.uit.no/linguisticsdatacitation/austinprinciples/>
-              Data should be considered legitimate, citable products of research.
-            </blockquote>
-          </li>
-
-          <li>
-            <blockquote cite=http://site.uit.no/linguisticsdatacitation/austinprinciples/>
-              the data on which linguistic analyses are based are of fundamental importance to the field and should be treated as such […] Linguistic data should be citable and cited
-            </blockquote>
-          </li>
-
-        </ul>
+        <blockquote class='ui message' cite=http://site.uit.no/linguisticsdatacitation/austinprinciples/>
+          the data on which linguistic analyses are based are of fundamental importance to the field and should be treated as such […] Linguistic data should be citable and cited
+        </blockquote>
 
         <p>
           The Digital Linguistics enterprise is premised on the idea that primary linguistic data is of fundamental importance to the field of linguistics, and that the management of such data merits careful attention.
@@ -78,13 +70,9 @@
 
         <h3>Credit &amp; Attribution</h3>
 
-        <ul>
-          <li>
-            <blockquote cite=http://site.uit.no/linguisticsdatacitation/austinprinciples/>
-              Data citations should facilitate giving scholarly credit and normative and legal attribution to all contributors to the data
-            </blockquote>
-          </li>
-        </ul>
+        <blockquote class='ui message' cite=http://site.uit.no/linguisticsdatacitation/austinprinciples/>
+          Data citations should facilitate giving scholarly credit and normative and legal attribution to all contributors to the data
+        </blockquote>
 
         <p>
           The Data Format for Digital Linguistics includes recommendations regarding how to store information about the people who contributed to the production and management of the data, and their role(s) in the process.
@@ -96,13 +84,9 @@
 
         <h3>Evidence</h3>
 
-        <ul>
-          <li>
-            <blockquote cite=http://site.uit.no/linguisticsdatacitation/austinprinciples/>
-              Linguists should cite the data upon which scholarly claims are based. In order for data to be citable, it should be stored in an accessible location, preferably a data archive or other trusted repository.
-            </blockquote>
-          </li>
-        </ul>
+        <blockquote class='ui message' cite=http://site.uit.no/linguisticsdatacitation/austinprinciples/>
+          Linguists should cite the data upon which scholarly claims are based. In order for data to be citable, it should be stored in an accessible location, preferably a data archive or other trusted repository.
+        </blockquote>
 
         <p>
           The DLx format, being web-compatible, makes it possible to publish data sets on the web at stable URLs for consumption and citation. Since the JSON format used by DLx is a simple text format, it can easily be stored in any archive or online database.
@@ -114,13 +98,9 @@
 
         <h3>Unique Identification</h3>
 
-        <ul>
-          <li>
-            <blockquote cite=http://site.uit.no/linguisticsdatacitation/austinprinciples/>
-              A data citation should include a persistent method for identification that is machine actionable, globally unique, and widely used by a community.
-            </blockquote>
-          </li>
-        </ul>
+        <blockquote class='ui message' cite=http://site.uit.no/linguisticsdatacitation/austinprinciples/>
+          A data citation should include a persistent method for identification that is machine actionable, globally unique, and widely used by a community.
+        </blockquote>
 
         <p>
           Each of the DLx linguistic schemas allows for both URL and ID fields which are unique identifiers, so that each linguistic object can be permanently associated with a unique URL, and/or unique ID in a database.
@@ -132,21 +112,13 @@
 
         <h3>Access</h3>
 
-        <ul>
+        <blockquote class='ui message' cite=http://site.uit.no/linguisticsdatacitation/austinprinciples/>
+          Data citations should facilitate access to the data themselves and to such associated metadata […] as are necessary for both humans and machines to make informed use of the referenced data.
+        </blockquote>
 
-          <li>
-            <blockquote cite=http://site.uit.no/linguisticsdatacitation/austinprinciples/>
-              Data citations should facilitate access to the data themselves and to such associated metadata […] as are necessary for both humans and machines to make informed use of the referenced data.
-            </blockquote>
-          </li>
-
-          <li>
-            <blockquote cite=http://site.uit.no/linguisticsdatacitation/austinprinciples/>
-              Linguistic data should be as open as possible, in order to facilitate reproducibility; and as closed as necessary, to honor relevant ethical, legal, and speaker community constraints.
-            </blockquote>
-          </li>
-
-        </ul>
+        <blockquote class='ui message' cite=http://site.uit.no/linguisticsdatacitation/austinprinciples/>
+          Linguistic data should be as open as possible, in order to facilitate reproducibility; and as closed as necessary, to honor relevant ethical, legal, and speaker community constraints.
+        </blockquote>
 
         <p>
           The use of JSON format for Digital Linguistics means that data is both human- and machine-readable. The Data Format for Digital Linguistics also makes recommendations regarding how to indicate access rights to various kinds of linguistic data, at every level of granularity.
@@ -158,13 +130,9 @@
 
         <h3>Persistence</h3>
 
-        <ul>
-          <li>
-            <blockquote cite=http://site.uit.no/linguisticsdatacitation/austinprinciples/>
-              Unique identifiers, and metadata describing the data, and its disposition, should persist — even beyond the lifespan of the data they describe.
-            </blockquote>
-          </li>
-        </ul>
+        <blockquote class='ui message' cite=http://site.uit.no/linguisticsdatacitation/austinprinciples/>
+          Unique identifiers, and metadata describing the data, and its disposition, should persist — even beyond the lifespan of the data they describe.
+        </blockquote>
 
         <p>
           The cheap cost of cloud storage today makes it possible to continue storing metadata about the objects of language documentation even when that data no longer exists, is no longer public, or becomes too large for its repository.
@@ -176,21 +144,13 @@
 
         <h3>Specificity &amp; Verifiability</h3>
 
-        <ul>
+        <blockquote class='ui message' cite=http://site.uit.no/linguisticsdatacitation/austinprinciples/>
+          Data citations should make it easy for a curious reader to find the specific datum or subset of data within the larger dataset that support a claim.
+        </blockquote>
 
-          <li>
-            <blockquote cite=http://site.uit.no/linguisticsdatacitation/austinprinciples/>
-              Data citations should make it easy for a curious reader to find the specific datum or subset of data within the larger dataset that support a claim.
-            </blockquote>
-          </li>
-
-          <li>
-            <blockquote cite=http://site.uit.no/linguisticsdatacitation/austinprinciples/>
-              Citations should specify which version of the data is being referenced.
-            </blockquote>
-          </li>
-
-        </ul>
+        <blockquote class='ui message' cite=http://site.uit.no/linguisticsdatacitation/austinprinciples/>
+          Citations should specify which version of the data is being referenced.
+        </blockquote>
 
         <p>
           The Data Format for Digital Linguistics provides a convention for assigning human-readable keys to each piece of data, and every level of granularity, allowing interested parties to easily reference or look up data at the level of the text, utterance, word, morpheme, and phoneme.
@@ -202,21 +162,13 @@
 
         <h3>Interoperability &amp; Flexibility</h3>
 
-        <ul>
+        <blockquote class='ui message' cite=http://site.uit.no/linguisticsdatacitation/austinprinciples/>
+          Data citation methods should be sufficiently flexibile to accommodate the variant practices among communities, but should not differ so much that they compromise interoperability
+        </blockquote>
 
-          <li>
-            <blockquote cite=http://site.uit.no/linguisticsdatacitation/austinprinciples/>
-              Data citation methods should be sufficiently flexibile to accommodate the variant practices among communities, but should not differ so much that they compromise interoperability
-            </blockquote>
-          </li>
-
-          <li>
-            <blockquote cite=http://site.uit.no/linguisticsdatacitation/austinprinciples/>
-              Citation standards developed for linguistics need to meet the needs of the research community, while also meeting the principles described above.
-            </blockquote>
-          </li>
-
-        </ul>
+        <blockquote class='ui message' cite=http://site.uit.no/linguisticsdatacitation/austinprinciples/>
+          Citation standards developed for linguistics need to meet the needs of the research community, while also meeting the principles described above.
+        </blockquote>
 
         <p>
           The Data Format for Digital Linguistics is highly interoperable because it is based on JSON, which has become the standard format for interchanging data on the web. Using web-based tools for Digital Linguistics also means that user interfaces can be designed to allow users to interact with the data in the ways that are most comfortable to them. Using open source tools and software also facilitates the creation of new tools to meet the needs of users.

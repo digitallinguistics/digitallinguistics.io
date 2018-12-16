@@ -19,6 +19,16 @@
   --measure: 60rem;
 }
 
+
+// Semantic UI Overrides / Extensions
+.ui.list {
+  li::before {
+    line-height: 1.5;
+    margin-top:  0.125em;
+  }
+}
+
+
 // Global Styles
 
 a {
@@ -56,6 +66,20 @@ p a:not([href*='digitallinguistics.io']) {
     text-indent:         var(--icon-width);
     white-space:         nowrap;
     width:               var(--icon-width);
+  }
+
+}
+
+blockquote {
+
+  &::before {
+    content:      open-quote;
+    margin-right: -0.25em;
+  }
+
+  &::after {
+    content:     close-quote;
+    margin-left: -0.25em;
   }
 
 }
