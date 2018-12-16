@@ -9,6 +9,7 @@ const redirect = router.redirect.bind(router);
 
 // Routes & Redirects
 get(`/`, handlers.home);
+get(`/about`, handlers.about);
 get(`/blog`, externalRedirect(`https://medium.com/digital-linguistics`));
 redirect(`/home`, `/`);
 

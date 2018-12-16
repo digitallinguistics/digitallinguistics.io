@@ -1,3 +1,7 @@
-const home = require(`./home`);
+const about = require(`./about`);
+const home  = require(`./home`);
 
-module.exports = { home };
+module.exports = {
+  about,
+  home,
+};
