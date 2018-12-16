@@ -33,6 +33,7 @@
     "build": "node build/index.js"
   },
   "dependencies": {
+    "feather-icons": "^4.9.0",
     "handlebars": "^4.0.12",
     "koa": "^2.6.2",
     "koa-hbs": "^1.0.0",
