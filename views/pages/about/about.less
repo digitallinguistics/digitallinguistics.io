@@ -4,11 +4,25 @@
   justify-content: center;
 
   section {
+
     max-width: var(--measure);
+
+    &:not(:last-child) {
+      margin-bottom: 1em;
+    }
+
+  }
+
+  h3 {
+    line-height: 1;
   }
 
   ul {
-    padding-left: 0.5em;
+    margin-left: 1.75em;
+  }
+
+  li::before {
+    line-height: 1.25;
   }
 
 }
