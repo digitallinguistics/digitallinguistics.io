@@ -5,11 +5,19 @@
 
 // Globals
 @import '@{basePath}/fonts/fonts.less';
+@import '@{basePath}/globals/variables.less';
 @import (reference) '@{semanticPath}/themes/default/globals/site.variables';
 
 // Temp (TODO: replace with individual components)
 @import '@{semanticPath}/semantic.less';
 
+
+// Global Variables
+// TODO: remove this when styles issue #100 is closed:
+// https://github.com/digitallinguistics/styles/issues/100
+:root {
+  --measure: 60rem;
+}
 
 // Global Styles
 
@@ -51,8 +59,6 @@ main {
   display:   flex;
   flex-grow: 1;
   padding:   2.5rem;
-  margin:    auto;
-  max-width: var(--measure);
 }
 
 
