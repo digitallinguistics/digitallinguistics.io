@@ -1,9 +1,6 @@
-const { feather } = require(`../../lib`);
 const handlebars  = require(`handlebars`);
 const path        = require(`path`);
 const viewEngine  = require(`koa-hbs`);
-
-handlebars.registerHelper(`feather`, feather);
 
 // Options for view engine
 const options = {

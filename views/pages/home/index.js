@@ -1,5 +1,5 @@
 /**
- * GET handler for the home page
+ * GET handler for the Home page
  */
 
 const locals = {

@@ -60,18 +60,22 @@
     {{!-- Nav --}}
     <nav class=nav>
 
-      <ul class='ui huge stackable blue four item inverted borderless left right attached menu'>
+      <ul class='ui huge stackable blue five item inverted borderless left right attached menu'>
 
         <li class='vertically fitted item link {{#if home}}active{{/if}}'>
-          <a href=/ {{#if home}}aria-describedby=current{{/if}}>Home</a>
+          <a href='{{#if home}}#{{else}}/{{/if}}' {{#if home}}aria-describedby=current{{/if}}>Home</a>
+        </li>
+
+        <li class='vertically fitted item link {{#if about}}active{{/if}}'>
+          <a href='{{#if about}}#{{else}}/about{{/if}}' {{#if about}}aria-describedby=current{{/if}}>About</a>
         </li>
 
         <li class='vertically fitted item link'>
           <a href=https://medium.com/digital-linguistics>Blog</a>
         </li>
 
-        <li class='vertically fitted item link {{#if about}}active{{/if}}'>
-          <a href=/about {{#if about}}aria-describedby=current{{/if}}>About</a>
+        <li class='vertically fitted item link {{#if bibliography}}active{{/if}}'>
+          <a href='{{#if bibliography}}#{{else}}/bibliography{{/if}}' {{#if bibliography}}aria-describedby=current{{/if}}>Bibliography</a>
         </li>
 
         <li class='vertically fitted item link'>

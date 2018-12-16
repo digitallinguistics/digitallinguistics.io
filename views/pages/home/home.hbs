@@ -7,9 +7,24 @@
   <div class='ui two stackable doubling cards'>
 
     <section class='ui blue card'>
+      <a href=/about class=content>
+
+        <svg aria-labelledby=title-info-card>
+          <title id=title-info-card>About Digital Linguistics</title>
+          <use href=#svg-info></use>
+        </svg>
+
+        <h2>About</h2>
+
+        <p class=description>Learn about the science of Digital Linguistics, its goals, and its principles.</p>
+
+      </a>
+    </section>
+
+    <section class='ui blue card'>
       <a href=https://medium.com/digital-linguistics class=content>
 
-        <svg aria-labelledby=title-blog-card height=681px width=681px>
+        <svg aria-labelledby=title-blog-card height=681px width=681px class=blog-icon>
           <title id=title-blog-card>The DLx blog</title>
           <use href=#svg-blog></use>
         </svg>
@@ -17,6 +32,21 @@
         <h2>The DLx Blog</h2>
 
         <p class=description>Keep up to date with the latest DLx tools and features. Subscribe to new posts. Get notified of upcoming events.</p>
+
+      </a>
+    </section>
+
+    <section class='ui blue card'>
+      <a href=/bibliography class=content>
+
+        <svg aria-labelledby=title-references-card height=681px width=681px>
+          <title id=title-references-card>DLx bibliography</title>
+          <use href=#svg-book-open></use>
+        </svg>
+
+        <h2>Bibliography</h2>
+
+        <p class=description>Read publications about Digital Linguistics. See the latest research in the field.</p>
 
       </a>
     </section>
@@ -42,5 +72,7 @@
 
 {{#contentFor 'svg'}}
   {{{svg.blog}}}
+  {{{svg.book-open}}}
+  {{{svg.info}}}
   {{{svg.programming}}}
 {{/contentFor}}
