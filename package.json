@@ -35,7 +35,7 @@
   "dependencies": {
     "@digitallinguistics/styles": "^0.2.0",
     "compare-func": "^1.3.2",
-    "feather-icons": "^4.9.0",
+    "feather-icons": "^4.12.0",
     "handlebars": "^4.0.12",
     "handlebars-helpers": "^0.10.0",
     "koa": "^2.6.2",
@@ -43,14 +43,14 @@
     "koa-helmet": "^4.0.0",
     "koa-router": "^7.4.0",
     "koa-static": "^5.0.0",
-    "ling-ref": "^0.6.0",
-    "superagent": "^4.0.0",
+    "ling-ref": "^0.7.0",
+    "superagent": "^4.1.0",
     "svg-sprite": "^1.5.0"
   },
   "devDependencies": {
-    "eslint": "^5.9.0",
+    "eslint": "^5.12.1",
     "less": "^3.9.0",
     "less-plugin-clean-css": "^1.5.1",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.3"
   }
 }
