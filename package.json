@@ -33,7 +33,7 @@
     "build": "node build/index.js"
   },
   "dependencies": {
-    "@digitallinguistics/styles": "^0.2.0",
+    "@digitallinguistics/styles": "^0.2.1",
     "compare-func": "^1.3.2",
     "feather-icons": "^4.12.0",
     "handlebars": "^4.0.12",
