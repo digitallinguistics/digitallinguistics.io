@@ -1,5 +1,5 @@
 /**
- * A generic error handler that returns a simple JSON response
+ * Error handler and logger. Displays the Error page when an error occurs.
  */
 
 const { STATUS_CODES: statusCodes } = require(`http`);
