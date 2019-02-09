@@ -33,6 +33,7 @@ module.exports = async context => {
 
   const locals = {
     bibliography: true,
+    id:           `bibliography`,
     lastUpdated,
     references,
     title:        `Bibliography`,

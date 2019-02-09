@@ -25,6 +25,7 @@ async function errors(context, next) {
       if (logUserErrors) console.warn(message);
 
       return context.render(`error/error`, {
+        id:    `error`,
         message,
         status,
         statusCode,
@@ -44,6 +45,7 @@ async function errors(context, next) {
     if ((500 <= status) && logAppErrors) console.error(e);
 
     return context.render(`error/error`, {
+      id:    `error`,
       message,
       status,
       statusCode,

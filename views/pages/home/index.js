@@ -4,6 +4,7 @@
 
 const locals = {
   home:  true,
+  id:    `home`,
   title: `Home`,
 };
 
