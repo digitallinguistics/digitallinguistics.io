@@ -92,6 +92,12 @@ body {
   height:         unset;
 }
 
+// better focus styling
+:focus {
+  outline:        0.1em dashed currentColor;
+  outline-offset: 0.1em;
+}
+
 main {
   display:        flex;
   flex-direction: column;
@@ -191,8 +197,8 @@ main {
   z-index:  2;
 
   a {
-    padding: 0.75em 0em;
-    width:   100%;
+    margin: 0.75em;
+    width:  100%;
   }
 
   a:link,
