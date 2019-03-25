@@ -2,7 +2,7 @@ const {
   MENDELEY_BIBLIOGRAPHY,
   MENDELEY_ID,
   MENDELEY_SECRET,
-} = require(`../../credentials/digitallinguistics.io`);
+} = require(`./credentials`);
 
 module.exports = {
   CDN:             `https://digitallinguistics.blob.core.windows.net`,

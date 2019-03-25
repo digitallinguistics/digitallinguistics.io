@@ -20,9 +20,9 @@ const options = {
   extname:       `.hbs`,
   handlebars,
   helpers:       { length },
-  layoutsPath:   path.join(__dirname, `../../views/layouts`),
-  partialsPath:  path.join(__dirname, `../../views/components`),
-  viewPath:      path.join(__dirname, `../../views/pages`),
+  layoutsPath:   path.join(__dirname, `../views/layouts`),
+  partialsPath:  path.join(__dirname, `../views/components`),
+  viewPath:      path.join(__dirname, `../views/pages`),
 };
 
 module.exports = viewEngine.middleware(options);

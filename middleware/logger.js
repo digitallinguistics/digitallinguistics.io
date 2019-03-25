@@ -1,4 +1,4 @@
-const { logRequests } = require(`../../config`);
+const { logRequests } = require(`../config`);
 
 function logger(context, next) {
 
