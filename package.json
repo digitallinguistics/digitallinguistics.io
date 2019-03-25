@@ -47,7 +47,6 @@
     "ling-ref": "^0.8.1",
     "recursive-readdir": "^2.2.2",
     "superagent": "^4.1.0",
-    "svg-sprite": "^1.5.0",
     "svg2sprite": "^2.0.1"
   },
   "devDependencies": {
