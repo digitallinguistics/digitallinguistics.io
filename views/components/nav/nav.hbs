@@ -1,32 +1,32 @@
 <nav class=nav>
 
-  <ul class='ui huge stackable blue seven item inverted borderless left right attached menu'>
+  <ul class=menu>
 
-    <li class='vertically fitted item link {{#if home}}active{{/if}}'>
+    <li {{#if home}}class=current{{/if}}>
       <a href='{{#if home}}#{{else}}/{{/if}}' {{#if home}}aria-describedby=current{{/if}}>Home</a>
     </li>
 
-    <li class='vertically fitted item link {{#if about}}active{{/if}}'>
+    <li {{#if about}}class=current{{/if}}>
       <a href='{{#if about}}#{{else}}/about{{/if}}' {{#if about}}aria-describedby=current{{/if}}>About</a>
     </li>
 
-    <li class='vertically fitted item link'>
+    <li>
       <a href=https://app.digitallinguistics.io>App</a>
     </li>
 
-    <li class='vertically fitted item link'>
+    <li>
       <a href=https://tools.digitallinguistics.io>Tools</a>
     </li>
 
-    <li class='vertically fitted item link'>
+    <li>
       <a href=https://medium.com/digital-linguistics>Blog</a>
     </li>
 
-    <li class='vertically fitted item link {{#if bibliography}}active{{/if}}'>
+    <li {{#if bibliography}}class=current{{/if}}>
       <a href='{{#if bibliography}}#{{else}}/bibliography{{/if}}' {{#if bibliography}}aria-describedby=current{{/if}}>Bibliography</a>
     </li>
 
-    <li class='vertically fitted item link'>
+    <li>
       <a href=https://developer.digitallinguistics.io>Developers</a>
     </li>
 

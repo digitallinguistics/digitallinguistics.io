@@ -1,67 +1,71 @@
 // Variables
-@basePath:       'node_modules/@digitallinguistics/styles';
+@cdn:            'https://cdn.digitallinguistics.io';
 @componentsPath: 'views/components';
-
-// Semantic UI
-@import 'node_modules/semantic-ui-less/semantic.less';
+@stylesPath:     'node_modules/@digitallinguistics/styles';
 
 // Globals
-@import '@{basePath}/fonts/fonts.less';
-@import '@{basePath}/globals/colors.less';
-@import '@{basePath}/globals/variables.less';
+@import '@{stylesPath}/fonts/fonts.less';
+@import '@{stylesPath}/globals/colors.less';
+@import '@{stylesPath}/globals/variables.less';
+@import 'node_modules/flexbox-reset/flexbox-reset.less';
 
-// Components
+// DLx Styles Components
+@import '@{stylesPath}/components/abbreviation/abbreviation.less';
+@import '@{stylesPath}/components/cite/cite.less';
+@import '@{stylesPath}/components/definition/definition.less';
+@import '@{stylesPath}/components/link/link.less';
+@import '@{stylesPath}/components/skip-link/skip-link.less';
+
+// Site-Specific Components
 @import '@{componentsPath}/banner/banner.less';
 @import '@{componentsPath}/footer/footer.less';
-@import '@{componentsPath}/link/link.less';
 @import '@{componentsPath}/nav/nav.less';
-@import '@{componentsPath}/skip-link/skip-link.less';
 
 // Global Styles
 
-a { .link; }
-p a { .external-link; }
-
-// better focus styling
 :focus {
   outline:        0.1em dashed currentColor;
   outline-offset: 0.1em;
 }
 
-// TODO: Remove this when styles issue #121 is closed
-/* stylelint-disable unit-blacklist */
-.visually-hidden {
-  clip:        rect(1px 1px 1px 1px);
-  clip:        rect(1px, 1px, 1px, 1px);
-  clip-path:   inset(1px);
-  display:     block;
-  height:      1px;
-  overflow:    hidden;
-  position:    absolute;
-  white-space: nowrap;
-  width:       1px;
-}
-/* stylelint-enable unit-blacklist */
-
-
 body, html {
   font-family: var(--font);
-  font-size:   100%;
   line-height: 1.5;
-  min-height:  100vh;
 }
 
 body {
-  display:        flex;
-  flex-direction: column;
-  height:         unset;
-  margin:         0;
-  overflow-x:     hidden;
+  overflow-x: hidden;
+}
+
+cite {
+  .cite;
 }
 
 main {
-  display:        flex;
   flex-direction: column;
   flex-grow:      1;
   padding:        2.5rem;
+}
+
+p,
+.citation {
+
+  a {
+
+    .link;
+
+    &:not([href*='digitallinguistics.io']) {
+      .external-link;
+    }
+
+  }
+
+  abbr {
+    .abbreviation;
+  }
+
+  dfn {
+    .definition;
+  }
+
 }

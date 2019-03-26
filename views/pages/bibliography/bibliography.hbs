@@ -4,46 +4,39 @@
 
 <main id=bibliography>
 
-  <h1 class='ui center aligned header'>Digital Linguistics:<br>A bibliography</h1>
+  <h1 class=page-title>Digital Linguistics:<br>A bibliography</h1>
 
   <section class=introduction>
 
-    <p class='ui basic segment'>
+    <p>
       This is a bibliography of publications relating to Digital Linguistics, broadly construed. It includes any publications that touch on the theory or practice of digital data management for linguistics. You may also download this bibliography as a BibTeX file by clicking the button below.
     </p>
 
-    <p class='ui warning message'>
+    <p class=warning>
       This bibliography is a work in progress, and is being continually updated with new sources. Keep checking back for updates!
     </p>
 
-    <div class='ui three tiny statistics'>
+    <div class=statistics>
 
-      <p class='ui purple statistic'>
+      <p class=statistic>
         <span class=label>References</span>
         <span class=value>{{length references}}</span>
       </p>
 
-      <p class='ui purple statistic'>
+      <p class=statistic>
         <span class=label>Last Updated</span>
         <span class=value>{{lastUpdated}}</span>
       </p>
 
-      <div class='ui statistic'>
+      <div class=statistic>
 
         <span class=label>Download</span>
 
-        <button id=download-bibtex class='ui purple labeled icon button' type=button>
-
-          <svg aria-labelledby=download-icon-bibtex class=icon>
-            <title id=download-icon-bibtex>Download</title>
-            <use href=#svg-download xlink:href=#svg-download></use>
-          </svg>
-
-          <svg aria-labelledby=bibtex-button class='image bibtex'>
+        <button id=download-bibtex type=button class='button purple'>
+          <svg aria-labelledby=bibtex-button class=bibtex-icon>
             <title id=bibtex-button>BibTeX</title>
             <use href=#svg-bibtex-white xlink:href=#svg-bibtex-white></use>
           </svg>
-
         </button>
 
       </div>
@@ -52,11 +45,11 @@
 
   </section>
 
-  <section class='ui basic segment'>
+  <section>
 
-    <h2 class='ui dividing header'>References</h2>
+    <h2>References</h2>
 
-    <ul class='references ui relaxed list'>
+    <ul class='references bulleted'>
       {{#each references}}
         <li>{{> reference}}</li>
       {{/each}}

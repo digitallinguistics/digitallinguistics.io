@@ -1,59 +1,85 @@
+@stylesPath: 'node_modules/@digitallinguistics/styles/components';
+
+@import '@{stylesPath}/bulleted/bulleted.less';
+@import '@{stylesPath}/button/button.less';
+@import '@{stylesPath}/paragraph/paragraph.less';
+@import '@{stylesPath}/warning/warning.less';
+
 #bibliography {
 
   align-self: center;
   max-width:  var(--measure);
 
-  #download-bibtex {
+  .bibtex-icon {
+    height:        1.5em;
+    margin-bottom: -0.5em;
+    width:         5em;
+  }
 
-    margin: auto;
+  .bulleted {
+    margin-left: 1.5em;
+  }
 
-    .icon {
-      padding: 0.5em;
-    }
+  .button {
+    padding: 0.75em 1em;
+  }
 
-    .image {
-      height:        1.25em;
-      width:         4em;
-      margin-bottom: -0.35em;
-      margin-right:  -0.35em;
-    }
+  .citation {
+    .hanging;
+    display: inline-block;
+  }
 
+  .download-icon {
+    width: 1.5em;
+  }
+
+  h2 {
+    border-bottom: 0.025em solid silver;
+    font-size:     2em;
+    margin-bottom: 0.5em;
   }
 
   .introduction {
-
-    display:        flex;
-    flex-direction: column;
-
-    p:first-child {
-      margin-bottom: 0;
-    }
-
+    margin-bottom: 1em;
   }
 
-  .message {
-    margin-top: 0;
+  .label {
+    font-variant:   small-caps;
+    font-weight:    bold;
+    text-transform: uppercase;
+  }
+
+  .page-title {
+    align-self:    center;
+    font-size:     2em;
+    margin-bottom: 1em;
+    text-align:    center;
   }
 
   .references {
-
     li {
-      line-height:   1.5;
-      margin-bottom: 0.5em;
-      margin-left:   2.5em;
-      text-indent:   -2.5em;
+      margin-bottom: 1em;
     }
+  }
 
+  .statistic {
+    align-items: center;
+    display:     flex;
+    text-align:  center;
   }
 
   .statistics {
+    flex-direction:  row;
+    justify-content: space-around;
+  }
 
-    justify-content: center;
+  .value {
+    color:     var(--purple);
+    font-size: 2em;
+  }
 
-    .value {
-      padding-top: 0.25em;
-    }
-
+  .warning {
+    margin: 1em;
   }
 
 }

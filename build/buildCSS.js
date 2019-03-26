@@ -1,7 +1,7 @@
 const CleanCSSPlugin = require(`less-plugin-clean-css`);
 const createSpinner  = require(`ora`);
 const less           = require(`less`);
-const lessFiles      = require(`../manifest/less.json`);
+const lessFiles      = require(`./less.json`);
 const path           = require(`path`);
 
 const {
@@ -15,6 +15,8 @@ const cleanCSSPlugin = new CleanCSSPlugin();
 const CSSDir         = path.join(__dirname, `../public/css`);
 
 const lessOptions = {
+  math:    `strict`,
+  paths:   [`node_modules/@digitallinguistics/styles`],
   plugins: [cleanCSSPlugin],
 };
 

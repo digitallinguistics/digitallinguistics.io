@@ -1,26 +1,19 @@
-@import (reference) 'node_modules/@digitallinguistics/styles/semantic/src/themes/default/globals/site.variables';
-
-@cdn: 'https://cdn.digitallinguistics.io';
+@import 'node_modules/@digitallinguistics/styles/components/card/card.less';
 
 #home {
 
-  align-items:      center;
-  background-color: @blueBackground;
+  background-color: hsl(var(--blue-hue), 100%, 95%, 1);
+  flex-flow:        row wrap;
   justify-content:  center;
-
-  .cards {
-    justify-content: center;
-    z-index:         1;
-  }
+  z-index:          1;
 
   .card {
 
-    margin:     1em;
-    position:   relative;
-    text-align: center;
+    position: relative;
+    width:    20em;
 
     &::after {
-      background-image:  url('@{cdn}/img/wug.svg');
+      background-image:  url(https://cdn.digitallinguistics.io/img/wug.svg);
       background-repeat: no-repeat;
       background-size:   5rem;
       content:           '';
@@ -36,30 +29,6 @@
 
     &:hover::after {
       transform: rotate(-20deg) scaleX(-1) translateX(2.5rem);
-    }
-
-    .blog-icon {
-      transform: translateX(10%);
-    }
-
-    .content {
-
-      align-items:    center;
-      display:        flex;
-      flex-direction: column;
-
-    }
-
-    h2 {
-      font-weight: normal;
-    }
-
-    svg {
-      color:         black;
-      height:        3rem;
-      margin-bottom: -1rem;
-      margin-top:    0.5rem;
-      width:         3rem;
     }
 
   }

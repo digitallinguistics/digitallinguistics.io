@@ -4,107 +4,103 @@
 
 <main id=home>
 
-  <div class='ui stackable doubling cards'>
+  <section class=card>
+    <a href=/about class=content>
 
-    <section class='ui blue card'>
-      <a href=/about class=content>
+      <svg class=icon aria-labelledby=title-about-card>
+        <title id=title-about-card>About Digital Linguistics</title>
+        <use href=#svg-about xlink:href=#svg-about></use>
+      </svg>
 
-        <svg aria-labelledby=title-info-card>
-          <title id=title-info-card>About Digital Linguistics</title>
-          <use href=#svg-info xlink:href=#svg-info></use>
-        </svg>
+      <h2>About</h2>
 
-        <h2>About</h2>
+      <p class=description>Learn about the science of Digital Linguistics, its goals, and its principles.</p>
 
-        <p class=description>Learn about the science of Digital Linguistics, its goals, and its principles.</p>
+    </a>
+  </section>
 
-      </a>
-    </section>
+  <section class=card>
+    <a href=https://app.digitallinguistics.io class=content>
 
-    <section class='ui blue card'>
-      <a href=https://app.digitallinguistics.io class=content>
+      <svg class=icon aria-labelledby=title-app-card>
+        <title id=title-app-card>Tools</title>
+        <use href=#svg-lotus xlink:href=#svg-lotus></use>
+      </svg>
 
-        <svg aria-labelledby=title-app-card height=24px width=24px class=app-icon>
-          <title id=title-app-card>Tools</title>
-          <use href=#svg-app xlink:href=#svg-app></use>
-        </svg>
+      <h2>App</h2>
 
-        <h2>App</h2>
+      <p class=description>Manage linguistic texts, media files, and lexicons all in one place with the Lotus web app.</p>
 
-        <p class=description>Manage linguistic texts, media files, and lexicons all in one place with the Lotus web app.</p>
+    </a>
+  </section>
 
-      </a>
-    </section>
+  <section class=card>
+    <a href=https://tools.digitallinguistics.io class=content>
 
-    <section class='ui blue card'>
-      <a href=https://tools.digitallinguistics.io class=content>
+      <svg class=icon aria-labelledby=title-tools-card>
+        <title id=title-tools-card>Tools</title>
+        <use href=#svg-tulip xlink:href=#svg-tulip></use>
+      </svg>
 
-        <svg aria-labelledby=title-tools-card height=24px width=24px class=tools-icon>
-          <title id=title-tools-card>Tools</title>
-          <use href=#svg-tools xlink:href=#svg-tools></use>
-        </svg>
+      <h2>Tools</h2>
 
-        <h2>Tools</h2>
+      <p class=description>Accomplish a variety of tasks using Tulip (Tools for Linguistic Productivity), a collection of tools and utilities for working with linguistic data.</p>
 
-        <p class=description>Accomplish a variety of tasks using Tulip (Tools for Linguistic Productivity), a collection of tools and utilities for working with linguistic data.</p>
+    </a>
+  </section>
 
-      </a>
-    </section>
+  <section class=card>
+    <a href=https://medium.com/digital-linguistics class=content>
 
-    <section class='ui blue card'>
-      <a href=https://medium.com/digital-linguistics class=content>
+      <svg class=icon aria-labelledby=title-blog-card>
+        <title id=title-blog-card>The DLx blog</title>
+        <use href=#svg-blog xlink:href=#svg-blog></use>
+      </svg>
 
-        <svg aria-labelledby=title-blog-card height=681px width=681px class=blog-icon>
-          <title id=title-blog-card>The DLx blog</title>
-          <use href=#svg-blog xlink:href=#svg-blog></use>
-        </svg>
+      <h2>The DLx Blog</h2>
 
-        <h2>The DLx Blog</h2>
+      <p class=description>Keep up to date with the latest DLx tools and features. Subscribe to new posts. Get notified of upcoming events.</p>
 
-        <p class=description>Keep up to date with the latest DLx tools and features. Subscribe to new posts. Get notified of upcoming events.</p>
+    </a>
+  </section>
 
-      </a>
-    </section>
+  <section class=card>
+    <a href=/bibliography class=content>
 
-    <section class='ui blue card'>
-      <a href=/bibliography class=content>
+      <svg class=icon aria-labelledby=title-references-card>
+        <title id=title-references-card>DLx bibliography</title>
+        <use href=#svg-books xlink:href=#svg-books></use>
+      </svg>
 
-        <svg aria-labelledby=title-references-card height=681px width=681px>
-          <title id=title-references-card>DLx bibliography</title>
-          <use href=#svg-book-open xlink:href=#svg-book-open></use>
-        </svg>
+      <h2>Bibliography</h2>
 
-        <h2>Bibliography</h2>
+      <p class=description>Read publications about Digital Linguistics. See the latest research in the field.</p>
 
-        <p class=description>Read publications about Digital Linguistics. See the latest research in the field.</p>
+    </a>
+  </section>
 
-      </a>
-    </section>
+  <section class=card>
+    <a href=https://developers.digitallinguistics.io class=content>
 
-    <section class='ui blue card'>
-      <a href=https://developers.digitallinguistics.io class=content>
+      <svg class=icon aria-labelledby=title-developer-card>
+        <title id=title-developer-card>The DLx developers site</title>
+        <use href=#svg-developer xlink:href=#svg-developer></use>
+      </svg>
 
-        <svg aria-labelledby=title-programming-card height=413px width=413px>
-          <title id=title-programming-card>The DLx developers site</title>
-          <use href=#svg-programming xlink:href=#svg-programming></use>
-        </svg>
+      <h2>Developers</h2>
 
-        <h2>Developers</h2>
+      <p class=description>Want to contribute to DLx? What to use DLx tools in your project? Read the developer documentation. Check out the open source code base.</p>
 
-        <p class=description>Want to contribute to DLx? What to use DLx tools in your project? Read the developer documentation. Check out the open source code base.</p>
-
-      </a>
-    </section>
-
-  </div>
+    </a>
+  </section>
 
 </main>
 
 {{#contentFor 'svg'}}
-  {{{svg.app}}}
+  {{{svg.about}}}
   {{{svg.blog}}}
-  {{{svg.book-open}}}
-  {{{svg.info}}}
-  {{{svg.programming}}}
-  {{{svg.tools}}}
+  {{{svg.books}}}
+  {{{svg.developer}}}
+  {{{svg.lotus}}}
+  {{{svg.tulip}}}
 {{/contentFor}}

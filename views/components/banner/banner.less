@@ -1,32 +1,22 @@
 .banner {
 
-  align-items:      center;
-  background-color: transparent;
-  display:          flex;
-  flex-direction:   row;
-  justify-content:  space-between;
-  text-align:       center;
-  width:            100%;
+  align-items:     center;
+  flex-direction:  row;
+  justify-content: space-between;
+  text-align:      center;
+  width:           100%;
 
-  a {
-    color: black;
+  .page-title {
+    font-size: 2.5em;
   }
 
-  div {
-    align-items:    center;
-    display:        flex;
-    flex-direction: column;
-    min-width:      0;
-    padding:        1rem;
-  }
-
-  .ui.header {
-    font-size:   2.5em;
-    font-weight: 300;
-  }
-
-  p {
+  .subtitle {
     font-size: larger;
+  }
+
+  .titles {
+    margin:  auto;
+    padding: 1rem;
   }
 
   .wug {
@@ -40,10 +30,14 @@
 
 }
 
-@media (max-width: 500px) {
+@media (max-width: 40em) {
   .banner {
-    p {
+
+    .subtitle,
+    .wug,
+    .wugbot {
       display: none;
     }
+
   }
 }
