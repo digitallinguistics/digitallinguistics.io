@@ -1,17 +1,16 @@
 const CleanCSSPlugin = require(`less-plugin-clean-css`);
+const createSpinner  = require(`ora`);
 const less           = require(`less`);
 const lessFiles      = require(`../manifest/less.json`);
-const rimraf         = require(`rimraf`);
 const path           = require(`path`);
-const { promisify }  = require(`util`);
 
 const {
-  mkdir,
+  mkdirp: makeDir,
   readFile,
+  remove: removeDir,
   writeFile,
-} = require(`fs`).promises;
+} = require(`fs-extra`);
 
-const removeDir      = promisify(rimraf);
 const cleanCSSPlugin = new CleanCSSPlugin();
 const CSSDir         = path.join(__dirname, `../public/css`);
 
@@ -30,19 +29,19 @@ async function buildFile(filePath) {
  */
 async function buildLess() {
 
-  try {
-    await removeDir(CSSDir);
-  } catch (e) {
-    console.error(e);
-  }
+  const spinner = createSpinner(`Building CSS files`);
+
+  spinner.start();
 
   try {
-    await mkdir(CSSDir);
+    await removeDir(CSSDir);
+    await makeDir(CSSDir);
     await Promise.all(lessFiles.map(buildFile));
-    console.info(` - LESS files built`);
   } catch (e) {
-    console.error(e);
+    spinner.fail(e);
   }
+
+  spinner.succeed(`CSS files built`);
 
 }
 
