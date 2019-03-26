@@ -1,96 +1,26 @@
 // Variables
-@basePath:     'node_modules/@digitallinguistics/styles';
-@cdn:          'https://cdn.digitallinguistics.io';
-@semanticPath: '@{basePath}/semantic/src';
+@basePath:       'node_modules/@digitallinguistics/styles';
+@componentsPath: 'views/components';
+
+// Semantic UI
+@import 'node_modules/semantic-ui-less/semantic.less';
 
 // Globals
 @import '@{basePath}/fonts/fonts.less';
+@import '@{basePath}/globals/colors.less';
 @import '@{basePath}/globals/variables.less';
-@import (reference) '@{semanticPath}/themes/default/globals/site.variables';
 
-// Temp (TODO: replace with individual components)
-@import '@{semanticPath}/semantic.less';
-
-
-// Global Variables
-// TODO: remove this when styles issue #100 is closed:
-// https://github.com/digitallinguistics/styles/issues/100
-:root {
-  --measure: 60rem;
-}
-
+// Components
+@import '@{componentsPath}/banner/banner.less';
+@import '@{componentsPath}/footer/footer.less';
+@import '@{componentsPath}/link/link.less';
+@import '@{componentsPath}/nav/nav.less';
+@import '@{componentsPath}/skip-link/skip-link.less';
 
 // Global Styles
 
-a {
-
-  &:link {
-    border-bottom: 0.05em solid transparent;
-  }
-
-  &:hover {
-    border-bottom: 0.05em solid;
-  }
-
-  &:active {
-    border-bottom: none;
-    color:         @lightBlueActive;
-  }
-
-}
-
-p a:not([href*='digitallinguistics.io']) {
-
-  --icon-width: 0.75em;
-  margin-right: var(--icon-width);
-
-  &::after {
-    background-color:    transparent;
-    background-image:    url('@{cdn}/img/external-link.svg');
-    background-repeat:   no-repeat;
-    background-position: center;
-    background-size:     contain;
-    content:             '(external link)';
-    margin-left:         0.1em;
-    overflow:            hidden;
-    position:            absolute;
-    text-indent:         var(--icon-width);
-    white-space:         nowrap;
-    width:               var(--icon-width);
-  }
-
-}
-
-blockquote {
-
-  &::before {
-    content:      open-quote;
-    margin-right: -0.25em;
-  }
-
-  &::after {
-    content:     close-quote;
-    margin-left: -0.25em;
-  }
-
-}
-
-body, html {
-  font-family:
-    'Fira Sans',
-    'Segoe UI',
-    Roboto,
-    sans-serif;
-  font-size:   100%;
-  line-height: 1.5;
-  min-height:  100vh;
-}
-
-body {
-  display:        flex;
-  flex-direction: column;
-  height:         unset;
-}
+a { .link; }
+p a { .external-link; }
 
 // better focus styling
 :focus {
@@ -98,150 +28,7 @@ body {
   outline-offset: 0.1em;
 }
 
-main {
-  display:        flex;
-  flex-direction: column;
-  flex-grow:      1;
-  padding:        2.5rem;
-}
-
-
-// Global Classes
-
-.nolink {
-
-  border: none;
-  color:  inherit;
-
-  &:hover {
-    border: none;
-  }
-
-}
-
-
-// Main
-
-.banner {
-
-  align-items:      center;
-  background-color: transparent;
-  display:          flex;
-  flex-direction:   row;
-  justify-content:  space-between;
-  text-align:       center;
-  width:            100%;
-
-  a {
-    color: black;
-  }
-
-  div {
-    align-items:    center;
-    display:        flex;
-    flex-direction: column;
-    min-width:      0;
-    padding:        1rem;
-  }
-
-  .ui.header {
-    font-size:   2.5em;
-    font-weight: 300;
-  }
-
-  p {
-    font-size: larger;
-  }
-
-  .wug {
-    margin-right: 0.5rem;
-    transform:    scaleX(-1);
-  }
-
-  .wugbot {
-    transform: scale(-1, 0.9) translateY(-9%);
-  }
-
-}
-
-.footer {
-
-  align-items:     center;
-  display:         flex;
-  flex-direction:  row;
-  justify-content: center;
-
-  .octicon {
-    margin: 1rem;
-  }
-
-  a {
-    color: white;
-  }
-
-  .octicon-link {
-    .nolink;
-  }
-
-  &.ui.segment {
-    border:  none;
-    padding: 0;
-  }
-
-}
-
-.nav {
-
-  position: sticky;
-  top:      0;
-  z-index:  2;
-
-  a {
-    margin: 0.75em;
-    width:  100%;
-  }
-
-  a:link,
-  a:hover {
-    border-bottom: none;
-  }
-
-  a::after {
-    background-image:  url('@{cdn}/img/wugbot.svg');
-    background-repeat: no-repeat;
-    background-size:   4rem;
-    content:           '';
-    height:            4rem;
-    right:             0;
-    position:          absolute;
-    transform:         translateY(1.5rem);
-    transition:        transform 0.3s;
-    width:             4rem;
-  }
-
-  a:hover::after {
-    transform: translateY(-1.5rem);
-  }
-
-  li {
-    overflow: hidden;
-    position: relative;
-  }
-
-}
-
-.skip-link {
-
-  position:             absolute;
-  text-decoration-skip: ink;
-  z-index:              1;
-
-  &:not(:focus) {
-    .visually-hidden;
-  }
-
-}
-
+// TODO: Remove this when styles issue #121 is closed
 /* stylelint-disable unit-blacklist */
 .visually-hidden {
   clip:        rect(1px 1px 1px 1px);
@@ -256,16 +43,25 @@ main {
 }
 /* stylelint-enable unit-blacklist */
 
-@media (max-width: 500px) {
 
-  .banner {
-    p {
-      display: none;
-    }
-  }
+body, html {
+  font-family: var(--font);
+  font-size:   100%;
+  line-height: 1.5;
+  min-height:  100vh;
+}
 
-  .footer {
-    flex-direction: column;
-  }
+body {
+  display:        flex;
+  flex-direction: column;
+  height:         unset;
+  margin:         0;
+  overflow-x:     hidden;
+}
 
+main {
+  display:        flex;
+  flex-direction: column;
+  flex-grow:      1;
+  padding:        2.5rem;
 }

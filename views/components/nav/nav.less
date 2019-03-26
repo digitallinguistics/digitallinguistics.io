@@ -1,0 +1,46 @@
+@cdn: 'https://cdn.digitallinguistics.io';
+
+.nav {
+
+  top:      0;
+  z-index:  2;
+
+  a {
+    margin: 0.75em;
+    width:  100%;
+  }
+
+  a:link,
+  a:hover {
+    border-bottom: none;
+  }
+
+  a::after {
+    background-image:  url('@{cdn}/img/wugbot.svg');
+    background-repeat: no-repeat;
+    background-size:   4rem;
+    content:           '';
+    height:            4rem;
+    right:             0;
+    position:          absolute;
+    transform:         translateY(1.5rem);
+    transition:        transform 0.3s;
+    width:             4rem;
+  }
+
+  a:hover::after {
+    transform: translateY(-1.5rem);
+  }
+
+  li {
+    overflow: hidden;
+    position: relative;
+  }
+
+}
+
+@media (min-width: 900px) {
+  .nav {
+    position: sticky;
+  }
+}

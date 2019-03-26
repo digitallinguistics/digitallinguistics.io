@@ -1,0 +1,49 @@
+.banner {
+
+  align-items:      center;
+  background-color: transparent;
+  display:          flex;
+  flex-direction:   row;
+  justify-content:  space-between;
+  text-align:       center;
+  width:            100%;
+
+  a {
+    color: black;
+  }
+
+  div {
+    align-items:    center;
+    display:        flex;
+    flex-direction: column;
+    min-width:      0;
+    padding:        1rem;
+  }
+
+  .ui.header {
+    font-size:   2.5em;
+    font-weight: 300;
+  }
+
+  p {
+    font-size: larger;
+  }
+
+  .wug {
+    margin-right: 0.5rem;
+    transform:    scaleX(-1);
+  }
+
+  .wugbot {
+    transform: scale(-1, 0.9) translateY(-9%);
+  }
+
+}
+
+@media (max-width: 500px) {
+  .banner {
+    p {
+      display: none;
+    }
+  }
+}

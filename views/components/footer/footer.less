@@ -1,0 +1,31 @@
+.footer {
+
+  align-items:     center;
+  display:         flex;
+  flex-direction:  row;
+  justify-content: center;
+
+  .octicon {
+    margin: 1rem;
+  }
+
+  a {
+    color: white;
+  }
+
+  .octicon-link {
+    .nolink;
+  }
+
+  &.ui.segment {
+    border:  none;
+    padding: 0;
+  }
+
+}
+
+@media (max-width: 500px) {
+  .footer {
+    flex-direction: column;
+  }
+}

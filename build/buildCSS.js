@@ -14,10 +14,14 @@ const {
 const cleanCSSPlugin = new CleanCSSPlugin();
 const CSSDir         = path.join(__dirname, `../public/css`);
 
+const lessOptions = {
+  plugins: [cleanCSSPlugin],
+};
+
 async function buildFile(filePath) {
   const inputPath      = path.join(__dirname, `..`, filePath);
   const lessInput      = await readFile(inputPath, `utf8`);
-  const { css }        = await less.render(lessInput, { plugins: [cleanCSSPlugin] });
+  const { css }        = await less.render(lessInput, lessOptions);
   const inputFilename  = path.basename(inputPath);
   const outputFilename = inputFilename.replace(`.less`, `.css`);
   const outputPath     = path.join(__dirname, `../public/css`, outputFilename);

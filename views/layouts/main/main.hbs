@@ -30,100 +30,28 @@
     {{!-- Stylesheets --}}
     <link rel=stylesheet href=/css/main.css>
 
-    {{!-- Page-Specific Head Content --}}
+    {{!-- Head Content for Specific Pages --}}
     {{#block 'head'}}{{/block}}
 
   </head>
 
   <body>
 
-    <a href=#{{id}} class=skip-link>Skip to main content</a>
-
-    {{!-- Banner --}}
-    <header class=banner>
-
-      <svg id=wugbot-banner class=wugbot aria-labelledby=title-wugbot-banner height=190px width=129px>
-        <title id=title-wugbot-banner>DLx wugbot logo</title>
-        <use href=#svg-wugbot xlink:href=#svg-wugbot></use>
-      </svg>
-
-      <div>
-        <h1 class='ui header'><a href=https://digitallinguistics.io/>Digital Linguistics (DLx)</a></h1>
-        <p>The science of digital data management for linguistics</p>
-      </div>
-
-      <svg class=wug aria-labelledby=title-wug-banner height=187px width=115px>
-        <title id=title-wug-banner>DLx wug logo</title>
-        <use href=#svg-wug xlink:href=#svg-wug></use>
-      </svg>
-
-    </header>
-
-    {{!-- Nav --}}
-    <nav class=nav>
-
-      <ul class='ui huge stackable blue seven item inverted borderless left right attached menu'>
-
-        <li class='vertically fitted item link {{#if home}}active{{/if}}'>
-          <a href='{{#if home}}#{{else}}/{{/if}}' {{#if home}}aria-describedby=current{{/if}}>Home</a>
-        </li>
-
-        <li class='vertically fitted item link {{#if about}}active{{/if}}'>
-          <a href='{{#if about}}#{{else}}/about{{/if}}' {{#if about}}aria-describedby=current{{/if}}>About</a>
-        </li>
-
-        <li class='vertically fitted item link'>
-          <a href=https://app.digitallinguistics.io>App</a>
-        </li>
-
-        <li class='vertically fitted item link'>
-          <a href=https://tools.digitallinguistics.io>Tools</a>
-        </li>
-
-        <li class='vertically fitted item link'>
-          <a href=https://medium.com/digital-linguistics>Blog</a>
-        </li>
-
-        <li class='vertically fitted item link {{#if bibliography}}active{{/if}}'>
-          <a href='{{#if bibliography}}#{{else}}/bibliography{{/if}}' {{#if bibliography}}aria-describedby=current{{/if}}>Bibliography</a>
-        </li>
-
-        <li class='vertically fitted item link'>
-          <a href=https://developer.digitallinguistics.io>Developers</a>
-        </li>
-
-      </ul>
-
-      <div hidden id=current>Current Page</div>
-
-    </nav>
-
-    {{!-- Main --}}
+    {{> skip-link/skip-link}}
+    {{> banner/banner}}
+    {{> nav/nav}}
     {{{body}}}
+    {{> footer/footer}}
 
-    {{!-- Footer --}}
-    <footer class='footer ui inverted blue segment left right attached'>
-
-      <a class=octicon-link href=https://github.com/digitallinguistics rel=noopener>
-        <svg class=octicon aria-labelledby=title-octicon-footer height=48px width=48px>
-          <title id=title-octicon-footer>GitHub octicon logo</title>
-          <use href=#svg-octicon-white xlink:href=#svg-octicon-white></use>
-        </svg>
-      </a>
-
-      <p><a href=https://github.com/digitallinguistics>View Digital Linguistics on GitHub</a></p>
-
-    </footer>
-
-    {{!-- SVG Images --}}
+    {{!-- SVG Images for Main Layout --}}
     {{{svg.octicon-white}}}
     {{{svg.wug}}}
     {{{svg.wugbot}}}
 
-    {{!-- Page-Specific SVG Images --}}
+    {{!-- SVG Images for Specific Pages --}}
     {{#block 'svg'}}{{/block}}
 
-    {{!-- Page-Specific Scripts --}}
+    {{!-- Scripts for Specific Pages --}}
     {{#block 'script'}}{{/block}}
 
   </body>
