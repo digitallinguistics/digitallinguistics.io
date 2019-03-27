@@ -30,7 +30,9 @@
   },
   "main": "app.js",
   "scripts": {
-    "build": "node build/index.js"
+    "build": "node build/index.js",
+    "build-css": "node build/buildCSS.js",
+    "build-js": "node build/buildJS.js"
   },
   "dependencies": {
     "compare-func": "^1.3.2",

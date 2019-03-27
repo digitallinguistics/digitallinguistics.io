@@ -5,7 +5,7 @@ const config = {
   contentSecurityPolicy: {
     directives: {
       defaultSrc:              [`'self'`, `data:`, `https:`, `*.digitallinguistics.io`],
-      scriptSrc:               [`'unsafe-inline'`],
+      scriptSrc:               [`'self'`, `'unsafe-inline'`],
       styleSrc:                [`'self'`, `https:`, `'unsafe-inline'`],
       upgradeInsecureRequests: production,
     },

@@ -33,7 +33,7 @@ async function buildFile(filePath) {
 /**
  * Builds all the LESS files listed in less.json
  */
-async function buildLess() {
+async function buildCSS() {
 
   const spinner = createSpinner(`Building CSS files`);
 
@@ -51,4 +51,5 @@ async function buildLess() {
 
 }
 
-module.exports = buildLess;
+if (require.main === module) buildCSS();
+else module.exports = buildCSS;
