@@ -50,7 +50,7 @@
     "svg2sprite": "^2.0.1"
   },
   "devDependencies": {
-    "@digitallinguistics/styles": "^0.12.0",
+    "@digitallinguistics/styles": "^0.13.0",
     "eslint": "^5.12.1",
     "flexbox-reset": "^2.4.0",
     "less": "^3.9.0",
