@@ -6,8 +6,18 @@
   camelcase,
 */
 
-const compare      = require(`compare-func`);
-const { mendeley } = require(`../../../services`);
+const compare = require(`compare-func`);
+const hbs     = require(`handlebars`);
+
+const {
+  markdown,
+  mendeley,
+} = require(`../../../lib`);
+
+function convertMarkdown(ref) {
+  ref.title = new hbs.SafeString(markdown.renderInline(ref.title));
+  return ref;
+}
 
 module.exports = async context => {
 
@@ -15,11 +25,7 @@ module.exports = async context => {
 
   references = references
   .filter(ref => ref.read)
-  .map(ref => {
-    delete ref.abstract;
-    delete ref.notes;
-    return ref;
-  })
+  .map(convertMarkdown)
   .sort(compare(`citation_key`));
 
   const lastModified = references

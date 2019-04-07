@@ -2,7 +2,7 @@
  * GET handler for the BibTeX route
  */
 
-const { mendeley } = require(`../../../services`);
+const { mendeley } = require(`../../../lib`);
 
 module.exports = async context => {
   const bibtex = await mendeley.getBibtex();

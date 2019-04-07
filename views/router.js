@@ -1,11 +1,15 @@
-const Router               = require(`koa-router`);
-const handlers             = require(`./views`);
-const { externalRedirect } = require(`./lib`);
+const Router   = require(`koa-router`);
+const handlers = require(`./pages`);
 
 const router = new Router();
 
 const get      = router.get.bind(router);
 const redirect = router.redirect.bind(router);
+
+const externalRedirect = url => context => {
+  context.status = 301; // eslint-disable-line no-param-reassign
+  context.redirect(url);
+};
 
 // Routes & Redirects
 get(`/`, handlers.home);

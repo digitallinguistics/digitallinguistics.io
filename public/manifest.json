@@ -8,7 +8,7 @@
   "css/main.css",
   "js/main.js",
   "manifest.json",
-  "wugbot.ico",
+  "favicon.ico",
   "https://cdn.digitallinguistics.io/fonts/CharisSIL-B.woff2",
   "https://cdn.digitallinguistics.io/fonts/CharisSIL-I.woff2",
   "https://cdn.digitallinguistics.io/fonts/CharisSIL-BI.woff2",
@@ -23,6 +23,6 @@
   "https://cdn.digitallinguistics.io/fonts/FiraSans-SemiBold.woff2",
   "https://cdn.digitallinguistics.io/fonts/FiraSans-SemiBoldItalic.woff2",
   "https://cdn.digitallinguistics.io/img/wug.svg",
-  "https://cdn.digitallinguistics.io/img/wugbot.ico",
+  "https://cdn.digitallinguistics.io/img/favicon.ico",
   "https://cdn.digitallinguistics.io/img/wugbot.svg"
 ]

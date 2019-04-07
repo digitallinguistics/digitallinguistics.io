@@ -7,12 +7,11 @@ const viewEngine       = require(`koa-hbs`);
 
 const { length } = helpers.array();
 
-const referencePath = path.join(process.cwd(), `node_modules/ling-ref/src/reference.hbs`);
+const referencePath = path.join(__dirname, `../node_modules/ling-ref/src/reference.hbs`);
 const reference     = readFileSync(referencePath, `utf8`);
 
-lingRef(handlebars);
-
 handlebars.registerPartial({ reference });
+handlebars.registerHelper(lingRef);
 
 // Options for view engine
 const options = {

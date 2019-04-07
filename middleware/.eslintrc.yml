@@ -1,2 +1,4 @@
+env:
+  browser: false
 rules:
   no-param-reassign: off
