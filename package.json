@@ -12,6 +12,7 @@
     "language documentation",
     "language"
   ],
+  "type": "module",
   "homepage": "https://digitallinguistics.io/",
   "bugs": {
     "url": "https://github.com/digitallinguistics/digitallinguistics.io/issues"
@@ -29,10 +30,14 @@
     "node": "14.x"
   },
   "scripts": {
-    "test": "static-server docs -p 1138 -o"
+    "build": "node build/index.js",
+    "server": "static-server docs -p 1138"
   },
   "dependencies": {},
   "devDependencies": {
+    "eslint": "^7.6.0",
+    "handlebars": "^4.7.6",
+    "recursive-readdir": "^2.2.2",
     "static-server": "^2.2.1"
   }
 }
