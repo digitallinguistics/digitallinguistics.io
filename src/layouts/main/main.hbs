@@ -51,7 +51,58 @@
 
     </header>
 
+    <nav class=nav>
+
+      <ul class=menu>
+
+        <li {{#if home}}class=current{{/if}}>
+          <a href='{{#if home}}#{{else}}/{{/if}}' {{#if home}}aria-describedby=current{{/if}}>Home</a>
+        </li>
+
+        <li {{#if about}}class=current{{/if}}>
+          <a href='{{#if about}}#{{else}}/about{{/if}}' {{#if about}}aria-describedby=current{{/if}}>About</a>
+        </li>
+
+        <li>
+          <a href=https://app.digitallinguistics.io>App</a>
+        </li>
+
+        <li>
+          <a href=https://tools.digitallinguistics.io>Tools</a>
+        </li>
+
+        <li>
+          <a href=https://medium.com/digital-linguistics>Blog</a>
+        </li>
+
+        <li {{#if bibliography}}class=current{{/if}}>
+          <a href='{{#if bibliography}}#{{else}}/bibliography{{/if}}' {{#if bibliography}}aria-describedby=current{{/if}}>Bibliography</a>
+        </li>
+
+        <li>
+          <a href=https://developer.digitallinguistics.io>Developers</a>
+        </li>
+
+      </ul>
+
+      <div hidden id=current>Current Page</div>
+
+    </nav>
+
     {{{page}}}
+
+    <footer class=footer>
+
+      <a class=octicon-link href=https://github.com/digitallinguistics rel=noopener>
+        <svg class=octicon aria-labelledby=title-octicon-footer height=48px width=48px>
+          <title id=title-octicon-footer>GitHub octicon logo</title>
+          <use href=#svg-octicon-white xlink:href=#svg-octicon-white></use>
+        </svg>
+      </a>
+
+      <p><a href=https://github.com/digitallinguistics>View Digital Linguistics on GitHub</a></p>
+
+    </footer>
 
     {{!-- SVG Images for Main Layout --}}
     {{{svg.octicon-white}}}

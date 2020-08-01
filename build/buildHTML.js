@@ -23,6 +23,7 @@ async function buildHTML() {
   // generate home page
 
   const homeContext = {
+    home:     true,
     pageName: `home`,
     title:    `Home`,
   };
@@ -46,7 +47,12 @@ async function buildHTML() {
     const context      = { pageName, title };
     const pageTemplate = compile(page);
     const pageHTML     = pageTemplate(context);
-    const html         = mainTemplate({ page: pageHTML, svg, ...context });
+    const html         = mainTemplate({
+      page:       pageHTML,
+      [pageName]: true,
+      svg,
+      ...context,
+    });
 
     await outputFile(path.join(docsDir, `${pageName}/index.html`), html);
 
