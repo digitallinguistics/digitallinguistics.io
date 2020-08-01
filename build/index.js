@@ -1,4 +1,9 @@
-import buildHTML from './buildHTML.js'
+import buildHTML from './buildHTML.js';
+import emptyDocs from './emptyDocs.js';
 
-buildHTML()
-.catch(console.error);
+async function build() {
+  await emptyDocs();
+  await buildHTML();
+}
+
+build().catch(console.error);

@@ -36,6 +36,7 @@
   "dependencies": {},
   "devDependencies": {
     "eslint": "^7.6.0",
+    "fs-extra": "^9.0.1",
     "handlebars": "^4.7.6",
     "recursive-readdir": "^2.2.2",
     "static-server": "^2.2.1"
