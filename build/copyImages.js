@@ -1,14 +1,12 @@
-import { fileURLToPath } from 'url';
-import fs                from 'fs-extra';
-import path              from 'path';
+const { copy } = require(`fs-extra`);
+const path     = require(`path`);
 
-const { copy } = fs;
+const srcDir  = path.join(__dirname, `../src`);
+const docsDir = path.join(__dirname, `../docs`);
 
-const currentDir = path.dirname(fileURLToPath(import.meta.url));
-const srcDir     = path.join(currentDir, `../src`);
-const docsDir    = path.join(currentDir, `../docs`);
-
-export default async function copyImages() {
+async function copyImages() {
   await copy(path.join(srcDir, `img`), path.join(docsDir, `img`));
   await copy(path.join(srcDir, `favicon.ico`), path.join(docsDir, `favicon.ico`));
 }
+
+module.exports = copyImages;

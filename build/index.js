@@ -1,6 +1,6 @@
-import buildHTML  from './buildHTML.js';
-import copyImages from './copyImages.js';
-import emptyDocs  from './emptyDocs.js';
+const buildHTML  = require(`./buildHTML`);
+const copyImages = require(`./copyImages`);
+const emptyDocs  = require(`./emptyDocs`);
 
 async function build() {
   await emptyDocs();

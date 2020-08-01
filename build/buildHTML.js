@@ -2,18 +2,15 @@
   no-await-in-loop,
 */
 
-import { fileURLToPath } from 'url';
-import fs                from 'fs-extra';
-import Handlebars        from 'handlebars';
-import path              from 'path';
-import recurse           from 'recursive-readdir';
+const { capitalCase } = require(`capital-case`);
+const { compile }     = require(`./handlebars`);
+const path            = require(`path`);
+const recurse         = require(`recursive-readdir`);
 
-const currentDir = path.dirname(fileURLToPath(import.meta.url));
-const srcDir     = path.join(currentDir, `../src`);
-const docsDir    = path.join(currentDir, `../docs`);
+const { readFile, outputFile } = require(`fs-extra`);
 
-const { compile }              = Handlebars;
-const { readFile, outputFile } = fs;
+const srcDir  = path.join(__dirname, `../src`);
+const docsDir = path.join(__dirname, `../docs`);
 
 async function buildHTML() {
 
@@ -23,7 +20,7 @@ async function buildHTML() {
   // generate home page
 
   const homePage = await readFile(path.join(srcDir, `pages/home/home.hbs`), `utf8`);
-  const homeHTML = mainTemplate({ page: homePage });
+  const homeHTML = mainTemplate({ page: homePage, title: `Home` });
 
   await outputFile(path.join(docsDir, `index.html`), homeHTML);
 
@@ -34,8 +31,9 @@ async function buildHTML() {
   for (const file of files) {
 
     const page     = await readFile(file, `utf8`);
-    const pageHTML = mainTemplate({ page });
     const pageName = path.basename(file, `.hbs`);
+    const title    = capitalCase(pageName);
+    const pageHTML = mainTemplate({ page, title });
 
     await outputFile(path.join(docsDir, `${pageName}/index.html`), pageHTML);
 
@@ -49,4 +47,4 @@ function ignoreHomeFiles(file, stats) {
   if (path.extname(file) !== `.hbs`) return true;
 }
 
-export default buildHTML;
+module.exports = buildHTML;

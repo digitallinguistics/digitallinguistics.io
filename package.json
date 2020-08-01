@@ -12,7 +12,6 @@
     "language documentation",
     "language"
   ],
-  "type": "module",
   "homepage": "https://digitallinguistics.io/",
   "bugs": {
     "url": "https://github.com/digitallinguistics/digitallinguistics.io/issues"
@@ -35,6 +34,7 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "capital-case": "^1.0.3",
     "eslint": "^7.6.0",
     "fs-extra": "^9.0.1",
     "handlebars": "^4.7.6",
