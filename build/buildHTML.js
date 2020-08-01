@@ -4,6 +4,7 @@
 
 const { capitalCase } = require(`capital-case`);
 const { compile }     = require(`./handlebars`);
+const createSprites   = require(`./buildSVG.js`);
 const path            = require(`path`);
 const recurse         = require(`recursive-readdir`);
 
@@ -14,15 +15,24 @@ const docsDir = path.join(__dirname, `../docs`);
 
 async function buildHTML() {
 
+  const svg = await createSprites();
+
   const mainLayout   = await readFile(path.join(srcDir, `layouts/main/main.hbs`), `utf8`);
   const mainTemplate = compile(mainLayout);
 
   // generate home page
 
-  const homePage = await readFile(path.join(srcDir, `pages/home/home.hbs`), `utf8`);
-  const homeHTML = mainTemplate({ page: homePage, title: `Home` });
+  const homeContext = {
+    pageName: `home`,
+    title:    `Home`,
+  };
 
-  await outputFile(path.join(docsDir, `index.html`), homeHTML);
+  const homePage     = await readFile(path.join(srcDir, `pages/home/home.hbs`), `utf8`);
+  const homeTemplate = compile(homePage);
+  const homeHTML     = homeTemplate(homeContext);
+  const outputHTML   = mainTemplate({ page: homeHTML, svg, ...homeContext });
+
+  await outputFile(path.join(docsDir, `index.html`), outputHTML);
 
   // generate individual pages
 
@@ -30,12 +40,15 @@ async function buildHTML() {
 
   for (const file of files) {
 
-    const page     = await readFile(file, `utf8`);
-    const pageName = path.basename(file, `.hbs`);
-    const title    = capitalCase(pageName);
-    const pageHTML = mainTemplate({ page, title });
+    const page         = await readFile(file, `utf8`);
+    const pageName     = path.basename(file, `.hbs`);
+    const title        = capitalCase(pageName);
+    const context      = { pageName, title };
+    const pageTemplate = compile(page);
+    const pageHTML     = pageTemplate(context);
+    const html         = mainTemplate({ page: pageHTML, svg, ...context });
 
-    await outputFile(path.join(docsDir, `${pageName}/index.html`), pageHTML);
+    await outputFile(path.join(docsDir, `${pageName}/index.html`), html);
 
   }
 
