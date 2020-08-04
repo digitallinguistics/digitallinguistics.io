@@ -1,12 +1,50 @@
 @componentsPath: 'node_modules/@digitallinguistics/styles/components';
 
 @import '@{componentsPath}/abbreviation/abbreviation.less';
+@import '@{componentsPath}/blockquote/blockquote.less';
+@import '@{componentsPath}/bulleted/bulleted.less';
 @import '@{componentsPath}/definition/definition.less';
+@import '@{componentsPath}/numbered/numbered.less';
 
 abbr {
   .abbr;
 }
 
+#about {
+
+  align-self: center;
+  max-width:  var(--measure);
+
+  p {
+    margin-bottom: var(--space);
+  }
+
+}
+
+.blockquote {
+  margin: 1em 0;
+}
+
+.bulleted {
+  margin-left: 1.5em;
+}
+
 dfn {
   .dfn;
+}
+
+h2 {
+  font-size: var(--text-xxl);
+}
+
+h3 {
+  font-size:   var(--text-lg);
+  margin-left: 1.5em;
+}
+
+.numbered {
+  li::before {
+    font-size: var(--text-lg);
+    left:      0;
+  }
 }
