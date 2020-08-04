@@ -101,5 +101,3 @@ function ignoreHomeFiles(file, stats) {
 }
 
 module.exports = buildHTML;
-
-buildHTML();
