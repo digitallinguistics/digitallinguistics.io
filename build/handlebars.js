@@ -5,12 +5,12 @@
 
 const hbs = require(`handlebars`);
 
-function block(name, opts) {
+function section(name, opts) {
   if (!this.sections) this.sections = {};
   this.sections[name] = opts.fn(this);
   return null;
 }
 
-hbs.registerHelper(`block`, block);
+hbs.registerHelper(`section`, section);
 
 module.exports = hbs;
