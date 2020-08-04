@@ -1,3 +1,61 @@
 <main id={{pageName}}>
-  <h1>{{title}}</h1>
+
+  <h1 class=page-title>Digital Linguistics:<br>A bibliography</h1>
+
+  <section class=introduction>
+
+    <p>
+      This is a bibliography of publications relating to Digital Linguistics, broadly construed. It includes any publications that touch on the theory or practice of digital data management for linguistics. You may also download this bibliography as a BibTeX file by clicking the BibTeX button.
+    </p>
+
+    <p class=warning>
+      This bibliography is a work in progress, and is being continually updated with new sources. Keep checking back for updates!
+    </p>
+
+    <div class=statistics>
+
+      <p class=statistic>
+        <span class=label>References</span>
+        <span class=value>{{numReferences}}</span>
+      </p>
+
+      <p class=statistic>
+        <span class=label>Last Updated</span>
+        <span class=value>{{lastUpdated}}</span>
+      </p>
+
+      <div class=statistic>
+
+        <span class=label>Download</span>
+
+        <button id=download-bibtex type=button class='button purple'>
+          <svg aria-labelledby=bibtex-button class=bibtex-icon>
+            <title id=bibtex-button>BibTeX</title>
+            <use href=#svg-bibtex-white xlink:href=#svg-bibtex-white></use>
+          </svg>
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2>References</h2>
+
+    <ul class=references>
+      {{#each references}}
+        <li>{{> reference}}</li>
+      {{/each}}
+    </ul>
+
+  </section>
+
 </main>
+
+{{#section 'svg'}}
+  {{{svg.bibtex-white}}}
+  {{{svg.download}}}
+{{/section}}
