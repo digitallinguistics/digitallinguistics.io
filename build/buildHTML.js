@@ -56,6 +56,7 @@ async function buildHTML() {
     if (pageName === `bibliography`) {
 
       context.references = await getReferences();
+      console.log(context.references);
 
       context.references = context.references
       .filter(ref => ref.read)
