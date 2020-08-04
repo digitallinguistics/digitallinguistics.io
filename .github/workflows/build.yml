@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name:    build and deply website
+    name:    build and deploy website
     runs-on: ubuntu-latest
     steps:
 
