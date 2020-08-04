@@ -1,0 +1,36 @@
+@import 'node_modules/@digitallinguistics/styles/components/card/card.less';
+
+#home {
+
+  background-color: hsl(var(--blue-hue), 100%, 95%, 1);
+  flex-flow:        row wrap;
+  justify-content:  center;
+  z-index:          1;
+
+  .card {
+
+    position: relative;
+    width:    20em;
+
+    &::after {
+      background-image:  url(https://cdn.digitallinguistics.io/img/wug.svg);
+      background-repeat: no-repeat;
+      background-size:   5rem;
+      content:           '';
+      height:            7.5rem;
+      left:              0;
+      position:          absolute;
+      top:               0;
+      transition:        transform 0.3s ease;
+      visibility:        visible;
+      width:             5rem;
+      z-index:           -1;
+    }
+
+    &:hover::after {
+      transform: rotate(-20deg) scaleX(-1) translateX(2.5rem);
+    }
+
+  }
+
+}

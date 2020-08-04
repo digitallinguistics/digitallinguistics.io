@@ -1,0 +1,71 @@
+// Variables
+@cdn:            'https://cdn.digitallinguistics.io';
+@componentsPath: 'views/components';
+@stylesPath:     'node_modules/@digitallinguistics/styles';
+
+// Globals
+@import '@{stylesPath}/fonts/fonts.less';
+@import '@{stylesPath}/globals/colors.less';
+@import '@{stylesPath}/globals/variables.less';
+@import 'node_modules/flexbox-reset/flexbox-reset.less';
+
+// DLx Styles Components
+@import '@{stylesPath}/components/abbreviation/abbreviation.less';
+@import '@{stylesPath}/components/cite/cite.less';
+@import '@{stylesPath}/components/definition/definition.less';
+@import '@{stylesPath}/components/link/link.less';
+@import '@{stylesPath}/components/skip-link/skip-link.less';
+
+// Site-Specific Components
+@import '@{componentsPath}/banner/banner.less';
+@import '@{componentsPath}/footer/footer.less';
+@import '@{componentsPath}/nav/nav.less';
+
+// Global Styles
+
+:focus {
+  outline:        0.1em dashed currentColor;
+  outline-offset: 0.1em;
+}
+
+body, html {
+  font-family: var(--font);
+  line-height: 1.5;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+cite {
+  .cite;
+}
+
+main {
+  flex-direction: column;
+  flex-grow:      1;
+  padding:        2.5rem;
+}
+
+p,
+.citation {
+
+  a {
+
+    .link;
+
+    &:not([href*='digitallinguistics.io']) {
+      .external-link;
+    }
+
+  }
+
+  abbr {
+    .abbreviation;
+  }
+
+  dfn {
+    .definition;
+  }
+
+}

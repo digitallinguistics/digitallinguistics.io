@@ -35,7 +35,6 @@ async function buildHTML() {
     title:    `Home`,
   };
 
-
   const homePage     = await readFile(path.join(srcDir, `pages/home/home.hbs`), `utf8`);
   const homeTemplate = hbs.compile(homePage);
   const homeHTML     = homeTemplate(homeContext);
