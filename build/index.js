@@ -3,14 +3,14 @@ const buildHTML  = require(`./buildHTML`);
 const copyImages = require(`./copyImages`);
 const emptyDocs  = require(`./emptyDocs`);
 
-async function build() {
-  await emptyDocs();
-  await buildHTML();
-  await buildCSS();
-  await copyImages();
-}
-
-build().catch(err => {
-  console.error(err);
-  throw err;
-});
+void async function build() {
+  try {
+    await emptyDocs();
+    await buildHTML();
+    await buildCSS();
+    await copyImages();
+  } catch (e) {
+    console.error(e);
+    throw e;
+  }
+}();
