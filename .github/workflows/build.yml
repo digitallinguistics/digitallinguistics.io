@@ -24,6 +24,9 @@ jobs:
 
       - name: build
         run:  npm run build
+        env:
+          MENDELEY_ID:     ${{ secrets.MENDELEY_ID }}
+          MENDELEY_SECRET: ${{ secrets.MENDELEY_SECRET }}
 
       - name: publish GitHub pages
         uses: peaceiris/actions-gh-pages@v3
