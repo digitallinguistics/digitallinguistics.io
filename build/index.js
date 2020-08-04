@@ -10,4 +10,7 @@ async function build() {
   await copyImages();
 }
 
-build().catch(console.error);
+build().catch(err => {
+  console.error(err);
+  throw err;
+});
