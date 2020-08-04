@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang=en dir=ltr>
+
+  <head>
+
+    {{!-- Essential Metadata --}}
+    <meta charset=utf-8>
+    <meta name=viewport content='width=device-width, initial-scale=1'>
+    <title>{{#if title}}{{title}} | {{/if}}DLx</title>
+
+    {{!-- Non-Essential Metadata --}}
+    <meta name=author content='Daniel W. Hieber'>
+    <meta name=description content='The Digital Linguistics (DLx) website'>
+    <meta name=keywords content='digital linguistics, DLx, linguistics, digital humanities'>
+    <meta name=rating content=general>
+    <meta name=robots content='index,follow'>
+    <meta name=subject content='Digital Linguistics'>
+    <meta name=theme-color content=#007AE6>
+
+    {{!-- Linked Assets --}}
+    <link rel=apple-touch-icon href=img/tunnel_256x256.png>
+    <link rel=apple-touch-startup-image href=img/wug.png>
+    <link rel=me href=https://danielhieber.com type=text/html>
+    <link rel='shortcut icon' href=favicon.ico type=image/x-icon>
+
+    {{!-- CSS --}}
+    <link rel=stylesheet href=main.css>
+
+    {{!-- Head Content for Specific Pages --}}
+    {{{sections.head}}}
+
+  </head>
+
+  <body>
+
+    <a href=#{{pageName}} class=skip-link>Skip to main content</a>
+
+    <header class=banner>
+
+      <svg id=wugbot-banner class=wugbot aria-labelledby=title-wugbot-banner height=190px width=129px>
+        <title id=title-wugbot-banner>DLx wugbot logo</title>
+        <use href=#svg-wugbot xlink:href=#svg-wugbot></use>
+      </svg>
+
+      <div class=titles>
+        <h1 class=page-title><a href=https://digitallinguistics.io/>Digital Linguistics (DLx)</a></h1>
+        <p class=subtitle>The science of digital data management for linguistics</p>
+      </div>
+
+      <svg class=wug aria-labelledby=title-wug-banner height=187px width=115px>
+        <title id=title-wug-banner>DLx wug logo</title>
+        <use href=#svg-wug xlink:href=#svg-wug></use>
+      </svg>
+
+    </header>
+
+    <nav class=nav>
+
+      <ul class=menu>
+
+        <li {{#if home}}class=current{{/if}}>
+          <a href='{{#if home}}#{{else}}/{{/if}}' {{#if home}}aria-describedby=current{{/if}}>Home</a>
+        </li>
+
+        <li {{#if about}}class=current{{/if}}>
+          <a href='{{#if about}}#{{else}}/about{{/if}}' {{#if about}}aria-describedby=current{{/if}}>About</a>
+        </li>
+
+        {{!-- <li>
+          <a href=https://app.digitallinguistics.io>App</a>
+        </li> --}}
+
+        {{!-- <li>
+          <a href=https://tools.digitallinguistics.io>Tools</a>
+        </li> --}}
+
+        <li>
+          <a href=https://medium.com/digital-linguistics>Blog</a>
+        </li>
+
+        <li {{#if bibliography}}class=current{{/if}}>
+          <a href='{{#if bibliography}}#{{else}}/bibliography{{/if}}' {{#if bibliography}}aria-describedby=current{{/if}}>Bibliography</a>
+        </li>
+
+        <li>
+          <a href=https://developer.digitallinguistics.io>Developers</a>
+        </li>
+
+      </ul>
+
+      <div hidden id=current>Current Page</div>
+
+    </nav>
+
+    {{{page}}}
+
+    <footer class=footer>
+
+      <a class=octicon-link href=https://github.com/digitallinguistics rel=noopener>
+        <svg class=octicon aria-labelledby=title-octicon-footer height=48px width=48px>
+          <title id=title-octicon-footer>GitHub octicon logo</title>
+          <use href=#svg-octicon-white xlink:href=#svg-octicon-white></use>
+        </svg>
+      </a>
+
+      <p><a href=https://github.com/digitallinguistics>View Digital Linguistics on GitHub</a></p>
+
+    </footer>
+
+    {{!-- SVG Images for Main Layout --}}
+    {{{svg.octicon-white}}}
+    {{{svg.wug}}}
+    {{{svg.wugbot}}}
+
+    {{!-- SVG Images for Specific Pages --}}
+    {{{sections.svg}}}
+
+    {{!-- Scripts for Specific Pages --}}
+    {{{sections.script}}}
+
+  </body>
+
+</html>

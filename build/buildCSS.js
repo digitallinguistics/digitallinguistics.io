@@ -1,55 +1,65 @@
+/* eslint-disable
+  no-await-in-loop,
+*/
+
 const CleanCSSPlugin = require(`less-plugin-clean-css`);
-const createSpinner  = require(`ora`);
-const less           = require(`less`);
-const lessFiles      = require(`./less.json`);
 const path           = require(`path`);
+const recurse        = require(`recursive-readdir`);
+const { render }     = require(`less`);
 
 const {
-  mkdirp: makeDir,
+  outputFile,
   readFile,
-  remove: removeDir,
-  writeFile,
 } = require(`fs-extra`);
 
-const cleanCSSPlugin = new CleanCSSPlugin();
-const CSSDir         = path.join(__dirname, `../public/css`);
+const docsDir = path.join(__dirname, `../docs`);
+const srcDir  = path.join(__dirname, `../src`);
 
-const lessOptions = {
+const cleanCSSPlugin = new CleanCSSPlugin;
+const lessOptions    = {
   math:    `strict`,
   paths:   [`node_modules/@digitallinguistics/styles`],
   plugins: [cleanCSSPlugin],
 };
 
-async function buildFile(filePath) {
-  const inputPath      = path.join(__dirname, `..`, filePath);
-  const lessInput      = await readFile(inputPath, `utf8`);
-  const { css }        = await less.render(lessInput, lessOptions);
-  const inputFilename  = path.basename(inputPath);
-  const outputFilename = inputFilename.replace(`.less`, `.css`);
-  const outputPath     = path.join(__dirname, `../public/css`, outputFilename);
-  await writeFile(outputPath, css, `utf8`);
-}
-
-/**
- * Builds all the LESS files listed in less.json
- */
 async function buildCSS() {
 
-  const spinner = createSpinner(`Building CSS files`);
+  // build CSS for main layout
 
-  spinner.start();
+  const mainLess         = await readFile(path.join(srcDir, `layouts/main/main.less`), `utf8`);
+  const { css: mainCSS } = await render(mainLess, lessOptions);
 
-  try {
-    await removeDir(CSSDir);
-    await makeDir(CSSDir);
-    await Promise.all(lessFiles.map(buildFile));
-  } catch (e) {
-    spinner.fail(e);
+  await outputFile(path.join(docsDir, `main.css`), mainCSS, `utf8`);
+
+  // build CSS for Home page
+
+  const homeLess         = await readFile(path.join(srcDir, `pages/home/home.less`), `utf8`);
+  const { css: homeCSS } = await render(homeLess, lessOptions);
+
+  await outputFile(path.join(docsDir, `home.css`), homeCSS, `utf8`);
+
+  // build remaining pages
+
+  const files = await recurse(srcDir, [ignore]);
+
+  for (const file of files) {
+
+    const less    = await readFile(file, `utf8`);
+    const { css } = await render(less, lessOptions);
+    const page    = path.basename(file, `.less`);
+
+    await outputFile(path.join(docsDir, `${page}/${page}.css`), css, `utf8`);
+
   }
-
-  spinner.succeed(`CSS files built`);
 
 }
 
-if (require.main === module) buildCSS();
-else module.exports = buildCSS;
+// Ignores non-LESS files
+function ignore(file, stats) {
+  if (stats.isDirectory()) return false;
+  if (path.extname(file) !== `.less`) return true;
+  if (file.includes(`home.less`)) return true;
+  if (file.includes(`main.less`)) return true;
+}
+
+module.exports = buildCSS;

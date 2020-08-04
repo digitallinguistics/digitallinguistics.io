@@ -1,7 +1,13 @@
-/**
- * Runs all the build steps for the project
- */
+const buildCSS   = require(`./buildCSS`);
+const buildHTML  = require(`./buildHTML`);
+const copyImages = require(`./copyImages`);
+const emptyDocs  = require(`./emptyDocs`);
 
-const buildCSS = require(`./buildCSS`);
+async function build() {
+  await emptyDocs();
+  await buildHTML();
+  await buildCSS();
+  await copyImages();
+}
 
-buildCSS();
+build().catch(console.error);
