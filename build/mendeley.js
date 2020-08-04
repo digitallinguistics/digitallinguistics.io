@@ -2,7 +2,6 @@
   camelcase,
 */
 
-// eslint-disable-next-line no-shadow
 const fetch = require(`node-fetch`);
 
 if (!process.env.MENDELEY_SECRET) {

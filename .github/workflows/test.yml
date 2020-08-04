@@ -1,13 +1,11 @@
 name: build
 
 on:
-  push:
-    branches:
-      - master
+  pull_request:
 
 jobs:
   build:
-    name:    build and deply website
+    name:    test building website
     runs-on: ubuntu-latest
     steps:
 
@@ -27,11 +25,3 @@ jobs:
         env:
           MENDELEY_ID:     ${{ secrets.MENDELEY_ID }}
           MENDELEY_SECRET: ${{ secrets.MENDELEY_SECRET }}
-
-      - name: publish GitHub pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          cname:         digitallinguistics.io
-          enable_jekyll: false
-          github_token:  ${{ secrets.GITHUB_TOKEN }}
-          publish_dir:   ./docs
