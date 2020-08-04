@@ -9,19 +9,14 @@
 const compare = require(`compare-func`);
 const hbs     = require(`handlebars`);
 
-const {
-  markdown,
-  mendeley,
-} = require(`../../../lib`);
+const { markdown } = require(`../../../lib`);
 
 function convertMarkdown(ref) {
   ref.title = new hbs.SafeString(markdown.renderInline(ref.title));
   return ref;
 }
 
-module.exports = async context => {
-
-  let references = await mendeley.getReferences();
+void function() {
 
   references = references
   .filter(ref => ref.read)
@@ -36,15 +31,5 @@ module.exports = async context => {
     month: 'long',
     year:  'numeric',
   });
-
-  const locals = {
-    bibliography: true,
-    id:           `bibliography`,
-    lastUpdated,
-    references,
-    title:        `Bibliography`,
-  };
-
-  return context.render(`bibliography/bibliography`, locals);
 
 };

@@ -38,6 +38,7 @@
     "eslint": "^7.6.0",
     "fs-extra": "^9.0.1",
     "handlebars": "^4.7.6",
+    "node-fetch": "^2.6.0",
     "recursive-readdir": "^2.2.2",
     "static-server": "^2.2.1",
     "svg2sprite": "^2.0.1"
