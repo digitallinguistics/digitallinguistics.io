@@ -13,7 +13,7 @@ function section(name, opts) {
   return null;
 }
 
-hbs.registerHelper(`section`, { section, ...helpers });
+hbs.registerHelper({ section, ...helpers });
 
 const templatePath = path.join(__dirname, `../node_modules/ling-ref/dist/reference.hbs`);
 const reference    = readFileSync(templatePath, `utf8`);
