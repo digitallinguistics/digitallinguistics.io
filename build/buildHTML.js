@@ -25,13 +25,14 @@ async function buildHTML() {
   const homeContext = {
     home:     true,
     pageName: `home`,
+    svg,
     title:    `Home`,
   };
 
   const homePage     = await readFile(path.join(srcDir, `pages/home/home.hbs`), `utf8`);
   const homeTemplate = compile(homePage);
   const homeHTML     = homeTemplate(homeContext);
-  const outputHTML   = mainTemplate({ page: homeHTML, svg, ...homeContext });
+  const outputHTML   = mainTemplate({ page: homeHTML, ...homeContext });
 
   await outputFile(path.join(docsDir, `index.html`), outputHTML);
 
@@ -44,13 +45,12 @@ async function buildHTML() {
     const page         = await readFile(file, `utf8`);
     const pageName     = path.basename(file, `.hbs`);
     const title        = capitalCase(pageName);
-    const context      = { pageName, title };
+    const context      = { pageName, svg, title };
     const pageTemplate = compile(page);
     const pageHTML     = pageTemplate(context);
     const html         = mainTemplate({
       page:       pageHTML,
       [pageName]: true,
-      svg,
       ...context,
     });
 
