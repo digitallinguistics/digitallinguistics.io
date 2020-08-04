@@ -1,9 +1,0 @@
-{
-  "events": {
-    "restart": "node build/buildJS.js"
-  },
-  "ext": "hbs,js,json,less",
-  "ignore": [
-    "public"
-  ]
-}
