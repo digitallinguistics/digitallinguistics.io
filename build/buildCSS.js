@@ -16,7 +16,11 @@ const docsDir = path.join(__dirname, `../docs`);
 const srcDir  = path.join(__dirname, `../src`);
 
 const cleanCSSPlugin = new CleanCSSPlugin;
-const lessOptions    = { math: `strict`, plugins: [cleanCSSPlugin] };
+const lessOptions    = {
+  math:    `strict`,
+  paths:   [`node_modules/@digitallinguistics/styles`],
+  plugins: [cleanCSSPlugin],
+};
 
 async function buildCSS() {
 

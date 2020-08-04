@@ -1,3 +1,203 @@
+@stylesPath: 'node_modules/@digitallinguistics/styles';
+
+@import '@{stylesPath}/fonts/fonts.less';
+@import '@{stylesPath}/globals/colors.less';
+@import '@{stylesPath}/globals/variables.less';
+@import 'node_modules/flexbox-reset/flexbox-reset.less';
+
+@import 'src/layouts/main/temp.less';
+
+@import '@{stylesPath}/components/link/link.less';
+@import '@{stylesPath}/components/skip-link/skip-link.less';
+
+:focus {
+  outline: 0.1rem dashed currentColor;
+}
+
+:root {
+  --underline-width: 0.075em;
+}
+
+.banner {
+  align-items:     center;
+  flex-direction:  row;
+  justify-content: space-between;
+  text-align:      center;
+  width:           100%;
+}
+
 body {
-  color: blue;
+  font-family: var(--font);
+  line-height: 1.5;
+  overflow-x:  hidden;
+}
+
+.current {
+
+  background-color: var(--lightBlue);
+
+  a {
+    border-bottom: var(--underline-width) solid currentColor;
+  }
+
+}
+
+.footer {
+
+  align-items:      center;
+  background-color: var(--blue);
+  flex-direction:   row;
+  justify-content:  center;
+
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    color: white;
+  }
+
+  a::after {
+    display: none;
+  }
+
+  a:not([href*='digitallinguistics.io']) {
+    margin-right: 0;
+  }
+
+  p {
+    padding: var(--text-padding-lg);
+  }
+
+}
+
+main {
+  flex-direction: column;
+  flex-grow:      1;
+  padding:        var(--space-lg);
+}
+
+.menu {
+  flex-flow:       row wrap;
+  justify-content: space-between;
+}
+
+.nav {
+
+  background-color: var(--blue);
+  box-shadow:       0em 0.1em 0.1em #CCC;
+  color:            white;
+  font-size:        var(--text-md);
+  top:              0;
+  z-index:          2;
+
+  a {
+
+    border-bottom: var(--underline-width) solid transparent;
+    position:      relative;
+
+    &::after {
+      background-image:  url(img/wugbot.svg);
+      background-repeat: no-repeat;
+      background-size:   4rem;
+      content:           '';
+      height:            4rem;
+      right:             -2rem;
+      position:          absolute;
+      transform:         translateY(1.5rem);
+      transition:        transform 0.3s;
+      width:             4rem;
+    }
+
+    &:hover {
+      border-bottom: var(--underline-width) solid currentColor;
+    }
+
+    &:hover::after {
+      transform: translateY(-1.5rem);
+    }
+
+  }
+
+  li {
+    align-items: center;
+    flex-grow:   1;
+    overflow:    hidden;
+    padding:     var(--text-padding-lg);
+    text-align:  center;
+  }
+
+}
+
+p {
+
+  a {
+
+    .link;
+
+    &:not([href*='digitallinguistics.io']) {
+      .external-link;
+    }
+
+  }
+
+}
+
+.octicon {
+  margin: 1rem;
+}
+
+.page-title {
+  font-size: var(--text-xxxl);
+}
+
+.subtitle {
+  font-size: larger;
+}
+
+.titles {
+  margin:  auto;
+  padding: var(--text-padding-lg);
+}
+
+.wug {
+  margin-right: var(--space-xs);
+  transform:    scaleX(-1);
+}
+
+.wugbot {
+  transform: scale(-1, 0.9) translateY(-9%);
+}
+
+@media (max-width: 40em) {
+
+  .banner {
+
+    .subtitle,
+    .wug,
+    .wugbot {
+      display: none;
+    }
+
+  }
+
+  .footer {
+
+    flex-direction: column;
+
+    .octicon {
+      margin-bottom: -0.5em;
+    }
+
+  }
+
+  .menu {
+    flex-direction: column;
+  }
+
+}
+
+@media (min-width: 49.99em) {
+  .nav {
+    position: sticky;
+  }
 }
