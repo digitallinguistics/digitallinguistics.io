@@ -1,10 +1,16 @@
 /* eslint-disable
+  camelcase,
+  max-statements,
   no-await-in-loop,
+  no-param-reassign,
 */
 
 const { capitalCase } = require(`capital-case`);
-const { compile }     = require(`./handlebars`);
-const createSprites   = require(`./buildSVG.js`);
+const compare         = require(`compare-func`);
+const createSprites   = require(`./buildSVG`);
+const getReferences   = require(`./bibliography`);
+const hbs             = require(`./handlebars`);
+const markdown        = require(`./markdown`);
 const path            = require(`path`);
 const recurse         = require(`recursive-readdir`);
 
@@ -18,7 +24,7 @@ async function buildHTML() {
   const svg = await createSprites();
 
   const mainLayout   = await readFile(path.join(srcDir, `layouts/main/main.hbs`), `utf8`);
-  const mainTemplate = compile(mainLayout);
+  const mainTemplate = hbs.compile(mainLayout);
 
   // generate home page
 
@@ -29,8 +35,9 @@ async function buildHTML() {
     title:    `Home`,
   };
 
+
   const homePage     = await readFile(path.join(srcDir, `pages/home/home.hbs`), `utf8`);
-  const homeTemplate = compile(homePage);
+  const homeTemplate = hbs.compile(homePage);
   const homeHTML     = homeTemplate(homeContext);
   const outputHTML   = mainTemplate({ page: homeHTML, ...homeContext });
 
@@ -42,11 +49,32 @@ async function buildHTML() {
 
   for (const file of files) {
 
-    const page         = await readFile(file, `utf8`);
-    const pageName     = path.basename(file, `.hbs`);
-    const title        = capitalCase(pageName);
-    const context      = { pageName, svg, title };
-    const pageTemplate = compile(page);
+    const page     = await readFile(file, `utf8`);
+    const pageName = path.basename(file, `.hbs`);
+    const title    = capitalCase(pageName);
+    const context  = { pageName, svg, title };
+
+    if (pageName === `bibliography`) {
+
+      context.references = await getReferences();
+
+      context.references = context.references
+      .filter(ref => ref.read)
+      .map(convertMarkdown)
+      .sort(compare(`citation_key`));
+
+      const lastModified = context.references
+      .reduce((latest, { last_modified }) => (last_modified >= latest ? last_modified : latest), ``);
+
+      context.lastUpdated = new Date(lastModified || new Date).toLocaleDateString(`en-US`, {
+        day:   'numeric',
+        month: 'long',
+        year:  'numeric',
+      });
+
+    }
+
+    const pageTemplate = hbs.compile(page);
     const pageHTML     = pageTemplate(context);
     const html         = mainTemplate({
       page:       pageHTML,
@@ -60,6 +88,11 @@ async function buildHTML() {
 
 }
 
+function convertMarkdown(ref) {
+  ref.title = new hbs.SafeString(markdown.renderInline(ref.title));
+  return ref;
+}
+
 function ignoreHomeFiles(file, stats) {
   if (stats.isDirectory() && path.basename(file) === `home`) return true;
   if (stats.isDirectory()) return false;
@@ -67,3 +100,5 @@ function ignoreHomeFiles(file, stats) {
 }
 
 module.exports = buildHTML;
+
+buildHTML();
