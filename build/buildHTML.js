@@ -62,6 +62,8 @@ async function buildHTML() {
       .map(convertMarkdown)
       .sort(compare(`citation_key`));
 
+      context.numReferences = context.references.length;
+
       const lastModified = context.references
       .reduce((latest, { last_modified }) => (last_modified >= latest ? last_modified : latest), ``);
 
