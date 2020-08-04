@@ -23,8 +23,7 @@
     <link rel=me href=https://danielhieber.com type=text/html>
     <link rel='shortcut icon' href=favicon.ico type=image/x-icon>
 
-    {{!-- CSS --}}
-    <link rel=stylesheet href=main.css>
+    <link rel=stylesheet href={{#if home}}main.css{{else}}../main.css{{/if}}>
 
     {{!-- Head Content for Specific Pages --}}
     {{{sections.head}}}

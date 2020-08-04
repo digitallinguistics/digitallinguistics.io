@@ -1,5 +1,5 @@
 {{#section 'head'}}
-  <link rel=stylesheet href=about/about.css>
+  <link rel=stylesheet href={{#if production}}about.css{{else}}about/about.css{{/if}}>
 {{/section}}
 
 <main id={{pageName}}>

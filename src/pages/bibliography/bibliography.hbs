@@ -1,5 +1,5 @@
 {{#section 'head'}}
-  <link rel=stylesheet href=bibliography/bibliography.css>
+  <link rel=stylesheet href={{#if production}}bibliography.css{{else}}bibliography/bibliography.css{{/if}}>
 {{/section}}
 
 <main id={{pageName}}>

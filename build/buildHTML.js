@@ -23,6 +23,11 @@ async function buildHTML() {
 
   const svg = await createSprites();
 
+  const mainContext = {
+    production: process.env.GITHUB_ACTIONS,
+    svg,
+  };
+
   const mainLayout   = await readFile(path.join(srcDir, `layouts/main/main.hbs`), `utf8`);
   const mainTemplate = hbs.compile(mainLayout);
 
@@ -31,13 +36,12 @@ async function buildHTML() {
   const homeContext = {
     home:     true,
     pageName: `home`,
-    svg,
     title:    `Home`,
   };
 
   const homePage     = await readFile(path.join(srcDir, `pages/home/home.hbs`), `utf8`);
   const homeTemplate = hbs.compile(homePage);
-  const homeHTML     = homeTemplate(homeContext);
+  const homeHTML     = homeTemplate(Object.assign(homeContext, mainContext));
   const outputHTML   = mainTemplate({ page: homeHTML, ...homeContext });
 
   await outputFile(path.join(docsDir, `index.html`), outputHTML);
@@ -51,7 +55,7 @@ async function buildHTML() {
     const page     = await readFile(file, `utf8`);
     const pageName = path.basename(file, `.hbs`);
     const title    = capitalCase(pageName);
-    const context  = { pageName, svg, title };
+    const context  = Object.assign({ pageName, title }, mainContext);
 
     if (pageName === `bibliography`) {
 
