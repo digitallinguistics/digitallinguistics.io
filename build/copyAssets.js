@@ -6,7 +6,7 @@ const currentDir = path.dirname(fileURLToPath(import.meta.url));
 
 const { copy } = fs;
 
-const distDir     = path.join(currentDir, `../docs`);
+const distDir     = path.join(currentDir, `../dist`);
 const imgDir      = path.join(currentDir, `../src/img`);
 const faviconPath = path.join(currentDir, `../src/favicon.ico`);
 const fontsDir    = path.join(currentDir, `../src/fonts`);
