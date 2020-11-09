@@ -19,7 +19,10 @@ const cleanCSSPlugin = new CleanCSSPlugin;
 
 const lessOptions = {
   math:    `strict`,
-  paths:   [`src/layouts/main`],
+  paths:   [
+    `node_modules/@digitallinguistics/styles`,
+    `src/layouts/main`,
+  ],
   plugins: [cleanCSSPlugin],
 };
 
