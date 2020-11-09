@@ -7,6 +7,7 @@
 
 import { capitalCase }   from 'capital-case';
 import compare           from 'compare-func';
+import convertReference  from '@dwhieb/ling-ref';
 import createSprites     from './buildSVG.js';
 import { fileURLToPath } from 'url';
 import fs                from 'fs-extra';
@@ -78,7 +79,8 @@ export default async function buildHTML() {
       context.references = context.references
       .filter(ref => ref.read)
       .map(convertMarkdown)
-      .sort(compare(`citation_key`));
+      .sort(compare(`citation_key`))
+      .map(convertReference);
 
       context.numReferences = context.references.length;
 
