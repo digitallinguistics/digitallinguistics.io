@@ -1,10 +1,10 @@
 @componentsPath: 'node_modules/@digitallinguistics/styles/components';
 
-@import '@{componentsPath}/bulleted/bulleted.less';
-@import '@{componentsPath}/button/button.less';
-@import '@{componentsPath}/cite/cite.less';
-@import '@{componentsPath}/paragraph/paragraph.less';
-@import '@{componentsPath}/warning/warning.less';
+@import (reference) '@{componentsPath}/bulleted/bulleted.less';
+@import (reference) '@{componentsPath}/button/button.less';
+@import (reference) '@{componentsPath}/cite/cite.less';
+@import (reference) '@{componentsPath}/paragraph/paragraph.less';
+@import (reference) '@{componentsPath}/warning/warning.less';
 
 #bibliography {
   align-self: center;
@@ -12,6 +12,7 @@
 }
 
 .bulleted {
+  .bulleted;
   margin-left: 1.5em;
 }
 
@@ -22,12 +23,11 @@
 }
 
 .button {
+  .button;
   padding: var(--text-padding-lg);
 }
 
-cite {
-  .cite;
-}
+cite { .cite; }
 
 h2 {
   border-bottom: 0.025em solid silver;
@@ -62,9 +62,7 @@ h2 {
 
 }
 
-.ref {
-  .hanging;
-}
+.ref { .hanging; }
 
 .statistic {
   align-items: center;
@@ -83,5 +81,6 @@ h2 {
 }
 
 .warning {
+  .warning;
   margin: var(--space);
 }
