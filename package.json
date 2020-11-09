@@ -31,7 +31,7 @@
   "type": "module",
   "scripts": {
     "build": "node build/index.js",
-    "server": "static-server docs -p 1138"
+    "server": "static-server dist -p 1138"
   },
   "devDependencies": {
     "capital-case": "^1.0.3",
