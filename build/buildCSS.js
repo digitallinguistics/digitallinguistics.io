@@ -52,18 +52,16 @@ export default async function buildCSS() {
 
   // build remaining pages
 
-  // const files = await recurse(srcDir, [ignore]);
+  const files = await recurse(srcDir, [ignore]);
 
-  // for (const file of files) {
-  //
-  //   const less    = await readFile(file, `utf8`);
-  //   const { css } = await render(less, lessOptions);
-  //   const page    = path.basename(file, `.less`);
-  //
-  //   await outputFile(path.join(distDir, `${page}/${page}.css`), css, `utf8`);
-  //
-  // }
+  for (const file of files) {
+
+    const lessStyles = await readFile(file, `utf8`);
+    const { css }    = await less.render(lessStyles, lessOptions);
+    const page       = path.basename(file, `.less`);
+
+    await outputFile(path.join(distDir, `${page}/${page}.css`), css, `utf8`);
+
+  }
 
 }
-
-buildCSS();
