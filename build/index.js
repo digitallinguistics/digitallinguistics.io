@@ -1,16 +1,23 @@
-const buildCSS   = require(`./buildCSS`);
-const buildHTML  = require(`./buildHTML`);
-const copyImages = require(`./copyImages`);
-const emptyDocs  = require(`./emptyDocs`);
+import buildCSS   from './buildCSS.js';
+import buildHTML  from './buildHTML.js';
+import copyAssets from './copyAssets.js';
+import emptyDocs  from './emptyDocs.js';
 
 void async function build() {
+
+  if (!process.env.GITHUB_ACTIONS) {
+    const { default: dotenv } = await import(`dotenv`);
+    dotenv.config();
+  }
+
   try {
     await emptyDocs();
     await buildHTML();
     await buildCSS();
-    await copyImages();
+    await copyAssets();
   } catch (e) {
     console.error(e);
     throw e;
   }
+
 }();

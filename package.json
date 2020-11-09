@@ -28,26 +28,28 @@
   "engines": {
     "node": "14.x"
   },
+  "type": "module",
   "scripts": {
     "build": "node build/index.js",
-    "server": "static-server docs -p 1138"
+    "server": "static-server dist -p 1138"
   },
-  "dependencies": {},
   "devDependencies": {
     "@digitallinguistics/styles": "^0.19.0",
+    "@dwhieb/ling-ref": "^1.0.8",
     "capital-case": "^1.0.3",
     "compare-func": "^2.0.0",
-    "eslint": "^7.6.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.13.0",
     "flexbox-reset": "^3.0.0",
     "fs-extra": "^9.0.1",
     "handlebars": "^4.7.6",
     "less": "^3.12.2",
     "less-plugin-clean-css": "^1.5.1",
-    "ling-ref": "^0.9.0",
-    "markdown-it": "^11.0.0",
+    "markdown-it": "^12.0.2",
     "node-fetch": "^2.6.1",
     "recursive-readdir": "^2.2.2",
     "static-server": "^2.2.1",
+    "stylelint": "^13.7.2",
     "svg2sprite": "^2.0.1"
   }
 }

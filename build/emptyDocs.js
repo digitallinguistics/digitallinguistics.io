@@ -1,8 +1,11 @@
-const { emptyDir } = require(`fs-extra`);
-const path         = require(`path`);
+import { fileURLToPath } from 'url';
+import fs                from 'fs-extra';
+import path              from 'path';
 
-async function emptyDocs() {
-  await emptyDir(path.join(__dirname, `../docs`));
+const currentDir = path.dirname(fileURLToPath(import.meta.url));
+
+const { emptyDir } = fs;
+
+export default async function emptyDocs() {
+  await emptyDir(path.join(currentDir, `../dist`));
 }
-
-module.exports = emptyDocs;

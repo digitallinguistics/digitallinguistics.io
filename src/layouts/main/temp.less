@@ -1,7 +1,15 @@
-// This file contains styles that will be replaced when
-// the DLx styles library is updated to include them
-
 :root {
-  --text-xxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
-  --text-xxxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+
+  // @digitallinguistics/styles #187
+  --light-blue: hsl(var(--blue-hue), 100%, calc(var(--color-lightness) + 10%));
+
+  // @digitallinguistics/styles next release
+  // import variables.less once updated
+  --space-xs: 0.5em;
+  --space-sm: 0.75em;
+  --space:    1em;
+  --space-md: 1.25em;
+  --space-lg: 2em;
+  --space-xl: 3.25em;
+
 }

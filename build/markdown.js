@@ -1,11 +1,9 @@
-const Markdown = require('markdown-it');
+import Markdown from 'markdown-it';
 
-const markdown = new Markdown({
+export default new Markdown({
   breaks:      true,
   html:        true,
   linkify:     true,
   quotes:      `“”‘’`,
   typographer: true,
 });
-
-module.exports = markdown;

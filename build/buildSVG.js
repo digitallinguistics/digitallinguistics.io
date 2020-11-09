@@ -2,14 +2,15 @@
  * Creates SVG sprites from the SVG files in the /img folder
  */
 
-/* eslint-disable
-  no-shadow,
-*/
+import { fileURLToPath } from 'url';
+import fs                from 'fs';
+import path              from 'path';
+import recurse           from 'recursive-readdir';
+import spriter           from 'svg2sprite';
 
-const path         = require(`path`);
-const { readFile } = require(`fs-extra`);
-const recurse      = require(`recursive-readdir`);
-const spriter      = require(`svg2sprite`);
+const { readFile } = fs.promises;
+
+const currentDir = path.dirname(fileURLToPath(import.meta.url));
 
 const spriteOptions = {
   iconPrefix: `svg-`,
@@ -31,13 +32,24 @@ function createSprite({ name, svg }) {
 }
 
 /**
+ * Reads a single SVG file
+ * @param  {String} filePath Path to the SVG file
+ * @return {Object}          Returns a hash with "name" and "svg" properties
+ */
+async function readSVG(filePath) {
+  const svg  = await readFile(filePath, `utf8`);
+  const name = path.basename(filePath, `.svg`).replace(`.`, `-`);
+  return { name, svg };
+}
+
+/**
  * A singleton that returns a hash of sprites
  * @return {Object} Returns the hash of sprites
  */
-async function createSprites() {
+export default async function createSprites() {
 
   // add local SVG files
-  const imageFiles = await recurse(path.join(__dirname, `../src/img`));
+  const imageFiles = await recurse(path.join(currentDir, `../src/img`));
   const svgFiles   = imageFiles.filter(filePath => path.extname(filePath) === `.svg`);
   const svgs       = await Promise.all(svgFiles.map(readSVG));
 
@@ -49,16 +61,3 @@ async function createSprites() {
   }, {});
 
 }
-
-/**
- * Reads a single SVG file
- * @param  {String} filePath Path to the SVG file
- * @return {Object}          Returns a hash with "name" and "svg" properties
- */
-async function readSVG(filePath) {
-  const svg  = await readFile(filePath, `utf8`);
-  const name = path.basename(filePath, `.svg`).replace(`.`, `-`);
-  return { name, svg };
-}
-
-module.exports = createSprites;

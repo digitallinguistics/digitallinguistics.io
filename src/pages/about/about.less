@@ -1,14 +1,12 @@
 @componentsPath: 'node_modules/@digitallinguistics/styles/components';
 
-@import '@{componentsPath}/abbreviation/abbreviation.less';
-@import '@{componentsPath}/blockquote/blockquote.less';
-@import '@{componentsPath}/bulleted/bulleted.less';
-@import '@{componentsPath}/definition/definition.less';
-@import '@{componentsPath}/numbered/numbered.less';
+@import (reference) '@{componentsPath}/abbreviation/abbreviation.less';
+@import (reference) '@{componentsPath}/blockquote/blockquote.less';
+@import (reference) '@{componentsPath}/bulleted/bulleted.less';
+@import (reference) '@{componentsPath}/definition/definition.less';
+@import (reference) '@{componentsPath}/numbered/numbered.less';
 
-abbr {
-  .abbr;
-}
+abbr { .abbr; }
 
 #about {
 
@@ -21,17 +19,29 @@ abbr {
 
 }
 
+#austin .numbered {
+
+  .numbered;
+
+  li::before {
+    font-size: var(--text-lg);
+    left:      0;
+  }
+
+}
+
 .blockquote {
+  .blockquote;
+  --message-border-radius: var(--text-border-radius);
   margin: 1em 0;
 }
 
 .bulleted {
+  .bulleted;
   margin-left: 1.5em;
 }
 
-dfn {
-  .dfn;
-}
+dfn { .dfn; }
 
 h2 {
   font-size: var(--text-xxl);
@@ -42,9 +52,11 @@ h3 {
   margin-left: 1.5em;
 }
 
-.numbered {
-  li::before {
-    font-size: var(--text-lg);
-    left:      0;
-  }
+section, #toc {
+  margin-bottom: 1em;
+}
+
+#toc ol {
+  .numbered;
+  margin-left: 1.75em;
 }
