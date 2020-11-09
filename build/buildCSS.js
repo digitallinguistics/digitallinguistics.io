@@ -45,10 +45,10 @@ export default async function buildCSS() {
 
   // build CSS for Home page
 
-  // const homeLess         = await readFile(path.join(srcDir, `pages/home/home.less`), `utf8`);
-  // const { css: homeCSS } = await render(homeLess, lessOptions);
+  const homeLess         = await readFile(path.join(srcDir, `pages/home/home.less`), `utf8`);
+  const { css: homeCSS } = await less.render(homeLess, lessOptions);
 
-  // await outputFile(path.join(distDir, `home.css`), homeCSS, `utf8`);
+  await outputFile(path.join(distDir, `home.css`), homeCSS, `utf8`);
 
   // build remaining pages
 
