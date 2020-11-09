@@ -2,10 +2,15 @@
   no-invalid-this,
 */
 
-const hbs              = require(`handlebars`);
-const helpers          = require(`ling-ref`);
-const path             = require(`path`);
-const { readFileSync } = require(`fs`);
+import { fileURLToPath } from 'url';
+import fs                from 'fs';
+import hbs               from 'handlebars';
+import helpers           from 'ling-ref';
+import path              from 'path';
+
+const { readFileSync } = fs;
+
+const currentDir = path.dirname(fileURLToPath(import.meta.url));
 
 function section(name, opts) {
   if (!this.sections) this.sections = {};
@@ -15,9 +20,9 @@ function section(name, opts) {
 
 hbs.registerHelper({ section, ...helpers });
 
-const templatePath = path.join(__dirname, `../node_modules/ling-ref/dist/reference.hbs`);
+const templatePath = path.join(currentDir, `../node_modules/ling-ref/dist/reference.hbs`);
 const reference    = readFileSync(templatePath, `utf8`);
 
 hbs.registerPartial({ reference });
 
-module.exports = hbs;
+export default hbs;

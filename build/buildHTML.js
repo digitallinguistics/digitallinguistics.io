@@ -5,21 +5,35 @@
   no-param-reassign,
 */
 
-const { capitalCase } = require(`capital-case`);
-const compare         = require(`compare-func`);
-const createSprites   = require(`./buildSVG`);
-const getReferences   = require(`./bibliography`);
-const hbs             = require(`./handlebars`);
-const markdown        = require(`./markdown`);
-const path            = require(`path`);
-const recurse         = require(`recursive-readdir`);
+import { capitalCase }   from 'capital-case';
+import compare           from 'compare-func';
+import createSprites     from './buildSVG.js';
+import { fileURLToPath } from 'url';
+import fs                from 'fs-extra';
+import getReferences     from './getReferences.js';
+import hbs               from './handlebars.js';
+import markdown          from './markdown.js';
+import path              from 'path';
+import recurse           from 'recursive-readdir';
 
-const { readFile, outputFile } = require(`fs-extra`);
+const { readFile, outputFile } = fs;
 
-const srcDir  = path.join(__dirname, `../src`);
-const docsDir = path.join(__dirname, `../docs`);
+const currentDir = path.dirname(fileURLToPath(import.meta.url));
+const distDir    = path.join(currentDir, `../dist`);
+const srcDir     = path.join(currentDir, `../src`);
 
-async function buildHTML() {
+function convertMarkdown(ref) {
+  ref.title = new hbs.SafeString(markdown.renderInline(ref.title));
+  return ref;
+}
+
+function ignoreHomeFiles(file, stats) {
+  if (stats.isDirectory() && path.basename(file) === `home`) return true;
+  if (stats.isDirectory()) return false;
+  if (path.extname(file) !== `.hbs`) return true;
+}
+
+export default async function buildHTML() {
 
   const svg = await createSprites();
 
@@ -44,7 +58,7 @@ async function buildHTML() {
   const homeHTML     = homeTemplate(Object.assign(homeContext, mainContext));
   const outputHTML   = mainTemplate({ page: homeHTML, ...homeContext });
 
-  await outputFile(path.join(docsDir, `index.html`), outputHTML);
+  await outputFile(path.join(distDir, `index.html`), outputHTML);
 
   // generate individual pages
 
@@ -87,21 +101,8 @@ async function buildHTML() {
       ...context,
     });
 
-    await outputFile(path.join(docsDir, `${pageName}/index.html`), html);
+    await outputFile(path.join(distDir, `${pageName}/index.html`), html);
 
   }
 
 }
-
-function convertMarkdown(ref) {
-  ref.title = new hbs.SafeString(markdown.renderInline(ref.title));
-  return ref;
-}
-
-function ignoreHomeFiles(file, stats) {
-  if (stats.isDirectory() && path.basename(file) === `home`) return true;
-  if (stats.isDirectory()) return false;
-  if (path.extname(file) !== `.hbs`) return true;
-}
-
-module.exports = buildHTML;
