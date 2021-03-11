@@ -1,0 +1,33 @@
+---
+title:       Blog
+description: The Digital Linguistics (DLx) blog
+permalink:   /blog/
+pagination:
+  alias:   posts
+  data:    collections.posts
+  reverse: true
+  size:    10
+---
+{{#each posts}}
+  <article>
+
+    <h2><a href="{{ this.url }}">{{ data.title }}</a></h2>
+
+    {{#if data.date }}<p><time datetime="{{ data.date }}">{{ data.date }}</time></p>{{/if}}
+
+    <p>{{ data.description }}</p>
+
+  </article>
+{{/each}}
+
+<nav>
+
+  {{#if pagination.href.previous }}
+    <p><a href="{{ pagination.href.previous }}">previous</a></p>
+  {{/if}}
+
+  {{#if pagination.href.next}}
+    <p><a href="{{ pagination.href.next }}">next</a></p>
+  {{/if}}
+
+</nav>

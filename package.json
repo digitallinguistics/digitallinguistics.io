@@ -28,7 +28,16 @@
   "engines": {
     "node": ">=14.0"
   },
-  "type": "module",
-  "scripts": {},
-  "devDependencies": {}
+  "scripts": {
+    "prebuild": "node build/clearDist.js",
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "github:11ty/eleventy",
+    "eslint": "^7.21.0",
+    "fs-extra": "^9.1.0",
+    "html-minifier": "^4.0.0",
+    "inline-source": "^7.2.0"
+  }
 }
