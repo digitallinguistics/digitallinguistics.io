@@ -22,6 +22,7 @@ module.exports = config => {
   config.setTemplateFormats([
     `hbs`,
     `html`,
+    `jpg`,
     `md`,
   ]);
 
